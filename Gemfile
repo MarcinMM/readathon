@@ -5,7 +5,7 @@ gem 'json', '1.8.2'
 gem 'minitest', '5.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.1'
 
 #gem 'mysql2'
 
