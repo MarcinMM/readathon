@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 #site5 kind of blows
 gem 'json', '1.8.2'
+gem 'minitest', '5.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
