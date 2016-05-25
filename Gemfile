@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'json', '1.8.2'
 gem 'minitest', '5.6.1'
 gem 'rails-dom-testing', '1.0.6'
+gem 'loofah', '2.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
