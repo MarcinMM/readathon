@@ -11,7 +11,7 @@ gem 'json', '1.8.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-gem 'mysql', '2.8.1'
+gem 'mysql2', '0.3.18'
 
 #gem 'mysql2'
 
