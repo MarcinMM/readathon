@@ -2,12 +2,6 @@ source 'https://rubygems.org'
 
 #site5 kind of blows
 gem 'json', '1.8.2'
-#gem 'minitest', '5.6.1'
-#gem 'rails-dom-testing', '1.0.6'
-#gem 'loofah', '2.0.2'
-#gem 'rails-html-sanitizer', '1.0.2'
-#gem 'rack', '1.6.1'
-#gem 'globalid', '0.3.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
