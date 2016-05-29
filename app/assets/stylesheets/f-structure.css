@@ -3041,6 +3041,11 @@ and (max-device-width : 1024px){
 }
 
 
+.login-box-one em i{
+	padding-left:10px;
+	padding-right:10px;
+}
+
 .login-box-one div img{
 	position:absolute;
 	margin-top:-105px;

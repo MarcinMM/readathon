@@ -1,6 +1,17 @@
 class TestsController < ApplicationController
 
-  def test
+  def home
   end
 
+  def login
+  end
+
+  def register
+  end
+
+  def pri_profile
+  end
+
+  def pub_profile
+  end
 end

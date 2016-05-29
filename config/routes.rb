@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  match '/tests/test'         => 'tests#test',     :as => :tests_test,     :via => :get
+  match '/login' => 'tests#login', :as => :tests_login, :via => :get
+  match '/register' => 'tests#register', :as => :tests_register, :via => :get
 
-  root 'tests#test'
+  match '/priv/profile' => 'tests#pri_profile', :as => :tests_pri_profile, :via => :get
+  match '/pub/profile' => 'tests#pub_profile', :as => :tests_pub_profile, :via => :get
+
+  root 'tests#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
