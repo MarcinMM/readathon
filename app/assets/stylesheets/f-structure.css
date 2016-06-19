@@ -2785,7 +2785,7 @@ and (max-device-width : 1024px){
 }
 
 .portfolio-three-item{
-	width:29%;
+	width:20%;
 	margin-right:4%;
 	float:left;
 	transition:all 400ms easeIn;
