@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  match '/login' => 'tests#login', :as => :tests_login, :via => :get
-  match '/register' => 'tests#register', :as => :tests_register, :via => :get
+  match '/login' => 'tests#login', :as => :login, :via => :get
+  match '/register' => 'tests#register', :as => :register, :via => :get
 
-  match '/priv/profile' => 'tests#pri_profile', :as => :tests_pri_profile, :via => :get
-  match '/priv/profile/image' => 'tests#pri_profile_image', :as => :tests_pri_profile_image, :via => :get
-  match '/pub/profile' => 'tests#pub_profile', :as => :tests_pub_profile, :via => :get
+  match '/request/pledge' => 'tests#request_pledge', :as => :request_pledge, :via => :get
+  match '/priv/profile' => 'tests#pri_profile', :as => :pri_profile, :via => :get
+  match '/profile/avatar' => 'tests#profile_avatar', :as => :profile_avatar, :via => :get
+  match '/pub/profile' => 'tests#pub_profile', :as => :pub_profile, :via => :get
 
   root 'tests#home'
 
