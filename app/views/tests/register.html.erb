@@ -1,3 +1,12 @@
+<script>
+  jQuery(document).ready(function () {
+    jQuery('#register_button').click(function () {
+      jQuery('#email_form').hide();
+      jQuery('#notification_msg').show();
+    });
+  });
+</script>
+
 <div class="social-strip">
   <div class="box-960">
     <div class="left-social-strip animated fadeIn">
@@ -14,10 +23,10 @@
 <div class="content">
   <div class="full-bottom"></div>
   <div class="box-960">
+    <p><h1 style="margin-bottom:0;font-size:30px;">Hi Cain G</h1></p>
     <p>
-      Register to start blah blah blah blah blah blah blah blah!
-      Make sure to provide a working email. This will be used incase you forgot your code and
-      to allow the app to send you notification of future events blah blah blah blah.
+      Before entering the Read-A-Thon we need to get your, or your parents, email.  We will use this to communicate with you in the event
+      that you have lost your code, when you receive pledges, or with news of any special event regarding the Read-A-Thon.
     </p>
   </div>
 
@@ -29,20 +38,24 @@
     </div>
   </div>
 
-  <div class="one-third-responsive">
+  <div id="email_form" style="margin-top:30px;display:block;" class="one-third-responsive">
     <div class="register-box-one full-bottom">
       <div class="register-box-wrapper">
-        <h5 class="center-text">Registration Form</h5>
-        <p class="center-text half-bottom">
-          Please fill the form bellow to create an account! This is simply a template!
-        </p>
+        <h5 class="center-text">Email Registration</h5>
         <em><i class="fa fa-lock"></i>Code</em>
-        <input onfocus="if (this.value=='') this.value = ''" onblur="if (this.value=='') this.value = ''" type="text" value="" class="green-focus register-box-one-username">
+        <input type="text" diabled="true" value="X2M9D3" class="green-focus register-box-one-username">
         <em><i class="fa fa-envelope"></i>Email</em>
         <input onfocus="if (this.value=='') this.value = ''" onblur="if (this.value=='') this.value = ''" type="text" value="" class="green-focus register-box-one-email">
-        <a href="#" class="center-button button-red button">Register</a>
+        <a id="register_button" href="#" class="center-button button-red button">Register</a>
       </div>
     </div>
+  </div>
+
+  <div id="notification_msg" style="margin-top:30px;display:none;" class="big-notification green-notification full-bottom one-third-responsive">
+    <h5 class="uppercase">Registration Complete</h5>
+    <a href="#" class="close-big-notification">x</a>
+    <p>Thank you for registering.  We will remember you on this computer.  If you ever forget your code you can retrieve it using this email.</p>
+    <a href="#" style="width:200px;text-decoration: underline;" class="button button-green center-button">Take me to My Profile</a>
   </div>
 
   <div class="clear"></div>
