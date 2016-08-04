@@ -43,6 +43,12 @@
           <img src="/images/misc/logo.png" alt="img" width="150">
         </div>
 
+
+<% if current_user != nil %>
+    <%= current_user.email %> &nbsp;&nbsp;&nbsp;-
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
+
         <%= render '/includes/menu' %>
 
       </div>

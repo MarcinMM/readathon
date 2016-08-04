@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701001021) do
+ActiveRecord::Schema.define(version: 20160701001022) do
 
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160701001021) do
     t.string   "last",       limit: 56
     t.integer  "grade",      limit: 1,  default: 0
     t.string   "teacher",    limit: 56
+    t.integer  "user_id",    limit: 4
   end
 
   create_table "users", force: :cascade do |t|
