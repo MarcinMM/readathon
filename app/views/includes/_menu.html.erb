@@ -2,13 +2,23 @@
   <li class="mobile-navigation-breadcrumb">
     <em>Navigation</em>
   </li>
+  <% if current_user != nil %>
+      <li style="float:right">
+        <p>
+          <i class="fa fa-envelope"></i>
+          <i class="fa fa-circle"></i>
+          <span style="margin-left:30px;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
+          <em><%= current_user.email %></em>
+        </p>
+      </li>
+  <% end %>
   <li style="float:right">
     <p>
       <a href="/">
         <i class="fa fa-home"></i>
         <i class="fa fa-circle"></i>
         Richmond &nbsp; Foundation &nbsp; Read-A-Thon
-        <em>sponsor a child to read and help fund your school</em>
+        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsor a child to read and help fund your school</em>
       </a>
     </p>
   </li>
