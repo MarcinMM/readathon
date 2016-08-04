@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   match '/profile/avatar' => 'tests#profile_avatar', :as => :profile_avatar, :via => :get
   match '/pub/profile' => 'tests#pub_profile', :as => :pub_profile, :via => :get
 
+  devise_for :users, skip: :registrations
+
+  match '/rmgr/overview' => 'rmgr/overviews#index', :as => :rmgr_overview, :via => :get
+
   root 'tests#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
