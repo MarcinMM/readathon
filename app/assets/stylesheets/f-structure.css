@@ -977,6 +977,16 @@ table *{
 	border:none;
 }
 
+/* Form Defaults */
+
+.defaultField{
+	padding-bottom:5px;
+	font-size:12px;
+}
+.defaultField span{
+	float:right;
+	opacity:0.5;
+}
 
 
 /*Contact Form */

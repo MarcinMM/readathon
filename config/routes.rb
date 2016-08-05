@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  match '/denied' => 'tests#denied',  :as => :denied,     :via => :get
   match '/login' => 'tests#login', :as => :login, :via => :get
   match '/register' => 'tests#register', :as => :register, :via => :get
 
@@ -10,7 +11,13 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: :registrations
 
-  match '/rmgr/overview' => 'rmgr/overviews#index', :as => :rmgr_overview, :via => :get
+  # Admin Resources
+  namespace :rmgr do
+    resources :teachers, :profiles
+  end
+
+  match '/rmgr' => 'rmgr/overviews#index', :as => :rmgr_overviews, :via => :get
+  match '/teachers' => 'teachers/overviews#index', :as => :teachers_overviews, :via => :get
 
   root 'tests#home'
 
