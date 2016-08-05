@@ -1,0 +1,10 @@
+<h3>Read-A-Thon Edit Teacher</h3>
+
+<%= form_for @teacher, url: rmgr_teachers_path do |f| %>
+
+    <%= render 'edit', f: f, msg: "leave blank if you don't want to change it" %>
+
+    <%= f.submit "Update Teacher", :class => 'button button-blue', :style => "float:left; margin-right:10px;" %>
+    <%= link_to "Back", :back, :class => 'button button-light', :style => 'float:right; margin-left:10px;' %>
+
+<% end %>

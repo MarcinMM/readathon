@@ -54,8 +54,9 @@ class Rmgr::TeachersController < ApplicationController
   end
 
   def destroy
-    @teacher = Teacher.find(params[:id])
-    @teacher.destroy
+    teacher = Teacher.find(params[:id])
+    teacher.user.destroy
+    teacher.destroy
     redirect_to rmgr_teachers_path
   end
 
