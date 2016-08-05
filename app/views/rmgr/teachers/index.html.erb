@@ -1,4 +1,29 @@
 <h3>Read-A-Thon Teachers List</h3>
 
+<table class="table">
+  <tbody>
+  <tr>
+    <th style="width:100px;">GRADE</th>
+    <th class="table-title">FIRST</th>
+    <th class="table-title">LAST</th>
+    <th class="table-title">EMAIL</th>
+    <th class="table-title"></th>
+  </tr>
+  <% @teachers.each do |teacher| %>
+      <tr>
+        <td class="table-sub-title"><%= teacher.grade %></td>
+        <td><%= teacher.first %></td>
+        <td><%= teacher.last %></td>
+        <td><%= teacher.user.email %></td>
+        <td>
+          <%= link_to 'edit', edit_rmgr_teacher_path(teacher) %>
+          <%= link_to 'delete', rmgr_teacher_path(teacher), :method => 'delete', :confirm=>'Are you sure?' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br/>
 
 <%= link_to 'Add Teacher', new_rmgr_teacher_path %>
+<br/>

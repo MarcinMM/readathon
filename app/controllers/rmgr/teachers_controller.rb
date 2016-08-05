@@ -8,33 +8,33 @@ class Rmgr::TeachersController < ApplicationController
     @teachers = Teacher.all
   end
 
-  def show
-    @teacher = Teacher.find(params[:id])
-  end
-
   def new
     @teacher = Teacher.new
     @teacher.build_user
   end
 
-  def edit
-    @teacher = Teacher.find(params[:id])
-  end
-
   def create
-    @teacher = Teacher.new(params[:teacher])
+    @teacher = Teacher.new(teacher_params(params))
 
-    user = User.new(params[:teacher][:user])
+    user = User.new(user_params(params[:teacher]))
     user.teacher = @teacher
     user.save
-
-    @teacher = user
 
     if @teacher.save
       redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'Added teacher successfully.'}
     else
       render :action => "new"
     end
+
+    @teacher = user
+  end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+  end
+
+  def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   def update
@@ -58,6 +58,17 @@ class Rmgr::TeachersController < ApplicationController
     @teacher.destroy
     redirect_to rmgr_teachers_path
   end
+
+  private
+
+  def user_params params
+    params.require(:user).permit(:email, :password)
+  end
+
+  def teacher_params params
+    params.require(:teacher).permit(:first, :last, :grade)
+  end
+
 end
 
 
