@@ -1,6 +1,6 @@
 <h3>Read-A-Thon Add Teacher</h3>
 
-<%= form_for @teacher, url: rmgr_teachers_path do |f| %>
+<%= form_for [:rmgr, @teacher] do |f| %>
 
     <%= render 'edit', f: f , msg: "required" %>
 

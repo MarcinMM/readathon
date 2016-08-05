@@ -16,8 +16,8 @@
         <td><%= teacher.last %></td>
         <td><%= teacher.user.email %></td>
         <td>
-          <%= link_to 'edit', edit_rmgr_teacher_path(teacher) %>
-          <%= link_to 'delete', rmgr_teacher_path(teacher), :method => 'delete', :confirm=>'Are you sure?' %>
+          <%= link_to 'edit', edit_rmgr_teacher_path(teacher), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+          <%= link_to 'delete', rmgr_teacher_path(teacher), style: 'display:inline;', method: 'delete', confirm: 'Are you sure?' %>
         </td>
       </tr>
   <% end %>
@@ -25,5 +25,4 @@
 </table>
 <br/>
 
-<%= link_to 'Add Teacher', new_rmgr_teacher_path %>
-<br/>
+<%= link_to 'Add Teacher', new_rmgr_teacher_path, class: 'button button-blue half-bottom', style: "float:left; margin-right:10px;" %>
