@@ -41,19 +41,12 @@ class Rmgr::TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
 
     if @teacher.user.email != params[:teacher][:user][:email]
-      #@teacher.user.update_attribute params[:teacher][:user][:email]
+      @teacher.user.update_attribute :email,  params[:teacher][:user][:email]
     end
 
     if params[:teacher][:user][:password].length > 0
-Rails.logger.warn "!!!!!!!update password to #{params[:teacher][:user][:password].length}!!!!!!"
-      #@teacher.user.update_attribute :email, params[:teacher][:user].email
+      @teacher.user.update_attribute :password, params[:teacher][:user][:password]
     end
-
-#    if @teacher.user.email != params[:teacher][:user].email || params[:teacher][:user].password.length > 0
-#      unless @teacher.user.update_attributes(params[:teacher][:user])
-#        render :action => "edit"
-#      end
-#    end
 
     if @teacher.update_attributes(teacher_params(params))
       redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'User was successfully updated.'}
