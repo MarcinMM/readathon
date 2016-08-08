@@ -5,7 +5,7 @@ class Rmgr::TeachersController < ApplicationController
   end
 
   def index
-    @teachers = Teacher.all
+    @teachers = Teacher.order(:grade).all
   end
 
   def new

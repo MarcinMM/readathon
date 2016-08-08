@@ -1,3 +1,93 @@
-<h3>Read-A-Thon Administration</h3>
+<script>
+  jQuery(document).ready(function () {
+    jQuery("tr:even").addClass("even");
+  });
+</script>
 
-<%= link_to 'Teachers', rmgr_teachers_path %>
+<div class="content box-960 container" style="margin-bottom: 10px;">
+
+  <div class="small-breadcrumb">
+    <div class="left-breadcrumb">
+      <a href="#">Overview</a>
+    </div>
+    <div class="right-breadcrumb">
+      <a href="<%= rmgr_teachers_path %>"><i class="fa fa-list-alt"></i>Teacher Admin</a>
+      <a href="<%= rmgr_profiles_path %>"><i class="fa fa-user"></i>Student Admin</a>
+    </div>
+    <div class="clear"></div>
+    <div style="margin-bottom:20px;" class="decoration"></div>
+  </div>
+
+  <h4>Read-A-Thon Administration</h4>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th>GRADE</th>
+      <th class="table-title red-title">SETUP</th>
+      <th class="table-title green-title">REGISTERED</th>
+      <th class="table-title purple-title">MINUTES</th>
+      <th class="table-title orange-title">PLEDGED</th>
+      <th class="table-title blue-title">COLLECTED</th>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">K</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">1ST</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">2ND</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">3RD</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">4TH</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">5TH</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td class="price">$199.<sup class="small-price">99</sup></td>
+      <td class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    <tr>
+      <td class="table-sub-title dblue-title">TOTALS</td>
+      <td style="font-weight:bold;color:black;">No</td>
+      <td style="font-weight:bold;color:black;">No</td>
+      <td style="font-weight:bold;color:black;">No</td>
+      <td style="font-weight:bold;color:black;" class="price">$199.<sup class="small-price">99</sup></td>
+      <td style="font-weight:bold;color:black;" class="price">$599.<sup class="small-price">99</sup></td>
+    </tr>
+    </tbody>
+  </table>
+  <br/>
+
+</div>
