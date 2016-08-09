@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Admin Resources
   namespace :rmgr do
-    resources :teachers, :profiles
+    resources :teachers, :students
   end
 
   match '/rmgr' => 'rmgr/overviews#index', :as => :rmgr_overviews, :via => :get

@@ -49,7 +49,7 @@ class Rmgr::TeachersController < ApplicationController
     end
 
     if @teacher.update_attributes(teacher_params(params))
-      redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'User was successfully updated.'}
+      redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'Teacher was successfully updated.'}
     else
       render :action => "edit"
     end

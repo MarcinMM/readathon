@@ -1,12 +1,11 @@
-class CreateProfiles < ActiveRecord::Migration
+class CreateStudents < ActiveRecord::Migration
   def change
-    create_table "profiles", force: :cascade do |t|
+    create_table "students", force: :cascade do |t|
       t.datetime "created_at"
       t.datetime "updated_at"
 
       t.integer  "avatar_id",           limit: 4
       t.integer  "level_id",            limit: 4
-      t.integer  "user_id",             limit: 4
       t.integer  "teacher_id",          limit: 4
       t.string "code",                  limit: 10
       t.string "email",                 limit: 56

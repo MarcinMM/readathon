@@ -13,12 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20160623031842) do
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "avatar_id",  limit: 4
     t.integer  "level_id",   limit: 4
-    t.integer  "user_id",    limit: 4
     t.integer  "teacher_id", limit: 4
     t.string   "code",       limit: 10
     t.string   "email",      limit: 56
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160623031842) do
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.boolean  "admin",                  limit: 1,   default: false
-    t.boolean  "teacher",                limit: 1,   default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
