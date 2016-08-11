@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  match '/denied' => 'tests#denied',  :as => :denied,     :via => :get
-  match '/login' => 'tests#login', :as => :login, :via => :get
-  match '/register' => 'tests#register', :as => :register, :via => :get
+  match '/denied' => 'logins#denied',  :as => :denied,     :via => :get
+
+  match '/login' => 'logins#login_screen', :as => :login_screen, :via => :get
+  match '/login' => 'logins#login', :as => :login, :via => :post
+
+  match '/register' => 'logins#register_screen', :as => :register_screen, :via => :get
+  match '/register' => 'logins#register', :as => :register, :via => :post
 
   match '/request/pledge' => 'tests#request_pledge', :as => :request_pledge, :via => :get
   match '/priv/profile' => 'tests#pri_profile', :as => :pri_profile, :via => :get
