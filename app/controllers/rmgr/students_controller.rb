@@ -31,7 +31,8 @@ class Rmgr::StudentsController < ApplicationController
     @student = Student.new(student_params(params))
 
     if @student.save
-      redirect_to rmgr_students_path, notice: {title: 'Success', msg: 'Added student successfully.'}
+      teacher = Teacher.find(@student.teacher_id)
+      redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Added student successfully.'}
     else
       render :action => "new"
     end
