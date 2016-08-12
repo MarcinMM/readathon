@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   match '/login' => 'logins#login_screen', :as => :login_screen, :via => :get
   match '/login' => 'logins#login', :as => :login, :via => :post
 
-  match '/register' => 'logins#register_screen', :as => :register_screen, :via => :get
+  match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register' => 'logins#register', :as => :register, :via => :post
 
   match '/request/pledge' => 'tests#request_pledge', :as => :request_pledge, :via => :get

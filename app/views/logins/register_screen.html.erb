@@ -1,12 +1,3 @@
-<script>
-  jQuery(document).ready(function () {
-    jQuery('#register_button').click(function () {
-      jQuery('#email_form').hide();
-      jQuery('#notification_msg').show();
-    });
-  });
-</script>
-
 <div class="social-strip">
   <div class="box-960">
     <div class="left-social-strip animated fadeIn">
@@ -23,10 +14,13 @@
 <div class="content">
   <div class="full-bottom"></div>
   <div class="box-960">
-    <p><h1 style="margin-bottom:0;font-size:30px;">Hi Cain G</h1></p>
     <p>
-      Before entering the Read-A-Thon we need to get your, or your parents, email.  We will use this to communicate with you in the event
-      that you have lost your code, when you receive pledges, or with news of any special event regarding the Read-A-Thon.
+    <h1 style="margin-bottom:0;font-size:30px;">Hi Cain G</h1></p>
+    <p>
+      Before entering the Read-A-Thon we need to get your, or your parents, email. We will use this to communicate with
+      you in the event
+      that you have lost your code, when you receive pledges, or with news of any special event regarding the
+      Read-A-Thon.
     </p>
   </div>
 
@@ -41,21 +35,17 @@
   <div id="email_form" style="margin-top:30px;display:block;" class="one-third-responsive">
     <div class="register-box-one full-bottom">
       <div class="register-box-wrapper">
-        <h5 class="center-text">Email Registration</h5>
-        <em><i class="fa fa-lock"></i>Code</em>
-        <input type="text" diabled="true" value="X2M9D3" class="green-focus register-box-one-username">
-        <em><i class="fa fa-envelope"></i>Email</em>
-        <input onfocus="if (this.value=='') this.value = ''" onblur="if (this.value=='') this.value = ''" type="text" value="" class="green-focus register-box-one-email">
-        <a id="register_button" href="#" class="center-button button-red button">Register</a>
+        <%= form_tag(register_path, method: "post") do %>
+            <input type="hidden" name="code" value="<%= @code %>"/>
+            <h5 class="center-text">Email Registration</h5>
+            <em><i class="fa fa-lock"></i>Code</em>
+            <input type="text" diabled="true" value="<%= @code %>" class="green-focus register-box-one-username">
+            <em><i class="fa fa-envelope"></i>Email</em>
+            <input onfocus="if (this.value=='') this.value = ''" onblur="if (this.value=='') this.value = ''" name="email" type="text" value="" class="green-focus register-box-one-email">
+            <input type="submit" style="color:white" class="button button-green center-button" value="Register"/>
+        <% end %>
       </div>
     </div>
-  </div>
-
-  <div id="notification_msg" style="margin-top:30px;display:none;" class="big-notification green-notification full-bottom one-third-responsive">
-    <h5 class="uppercase">Registration Complete</h5>
-    <a href="#" class="close-big-notification">x</a>
-    <p>Thank you for registering.  We will remember you on this computer.  If you ever forget your code you can retrieve it using this email.</p>
-    <a href="#" style="width:200px;text-decoration: underline;" class="button button-green center-button">Take me to My Profile</a>
   </div>
 
   <div class="clear"></div>
