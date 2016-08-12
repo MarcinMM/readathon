@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   private
 
   def require_code
-    p "yes looking for code!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    if cookies[:code].nil?
+      redirect_to :login_screen
+    end
+  end
+
+  def current_student
+    Student.find_by_code cookies[:code]
   end
 end

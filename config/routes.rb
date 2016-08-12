@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register' => 'logins#register', :as => :register, :via => :post
 
-  match '/request/pledge' => 'tests#request_pledge', :as => :request_pledge, :via => :get
-  match '/priv/profile' => 'tests#pri_profile', :as => :pri_profile, :via => :get
-  match '/profile/avatar' => 'tests#profile_avatar', :as => :profile_avatar, :via => :get
+  match '/profile'        => 'priprofiles#index', :as => :priprofile_index, :via => :get
+  match '/profile/avatar' => 'priprofiles#avatar', :as => :priprofile_avatar, :via => :get
+  match '/profile/pledge' => 'priprofiles#pledge', :as => :priprofile_pledge, :via => :get
+
   match '/pub/profile' => 'tests#pub_profile', :as => :pub_profile, :via => :get
 
   devise_for :users, skip: :registrations
