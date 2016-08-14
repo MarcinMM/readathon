@@ -1,5 +1,7 @@
 class Student < ActiveRecord::Base
-  include CodeGen
+  include CodeGen, ReadlogMgr
 
   belongs_to :teacher
+  has_many :readlogs
+
 end

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623031842) do
+ActiveRecord::Schema.define(version: 20160623031843) do
+
+  create_table "readlogs", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "day"
+    t.integer  "teacher_id", limit: 4
+    t.integer  "student_id", limit: 4
+    t.integer  "minutes",    limit: 4
+  end
 
   create_table "students", force: :cascade do |t|
     t.datetime "created_at"

@@ -24,16 +24,16 @@
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:0;">
       <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %></h1>
-      <em>2nd Grade - Mrs Kapronos</em>
+      <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
 
       <a style="margin-top:10px;margin-left:35px" href="<%= priprofile_avatar_path %>">change your profile image</a>
       <img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:240px;" src="/images/profiles/dragon_l3.png"/>
 
       <div style="margin-bottom:20px;">
         Minutes you have read today.<br/>
-        <a href="/priv/profile" style="margin:0;height:70px;font-size:20px;padding-top:25px;" class="button button-light">- 15</a>
-        <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;">0</span>
-        <a href="/priv/profile" style="margin:0;height:70px;font-size:20px;padding-top:25px;" class="button button-light">+ 15</a>
+        <%= link_to "- 15", priprofile_subtract15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
+        <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= @student.student_minutes_today %></span>
+        <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
         <br/>Use the + and - to adjust the time.<br/><br/>
         <a id="challange" href="#" class="checkbox checkbox-class-3"><span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/> I read 15 minutes to to my pet.</a>
       </div>
@@ -45,7 +45,7 @@
     <div class="one-fifth-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h1>
-          Level 3 Reader
+          Level <%= @student.level_id %> Reader
         </h1>
         <h2>
           $9.99 Raised

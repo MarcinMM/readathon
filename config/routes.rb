@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register' => 'logins#register', :as => :register, :via => :post
 
-  match '/profile'        => 'priprofiles#index', :as => :priprofile_index, :via => :get
-  match '/profile/avatar' => 'priprofiles#avatar', :as => :priprofile_avatar, :via => :get
-  match '/profile/pledge' => 'priprofiles#pledge', :as => :priprofile_pledge, :via => :get
+  match '/profile'             => 'priprofiles#index',               :as => :priprofile_index,       :via => :get
+  match '/profile/avatar'      => 'priprofiles#avatar',              :as => :priprofile_avatar,      :via => :get
+  match '/profile/pledge'      => 'priprofiles#pledge',              :as => :priprofile_pledge,      :via => :get
+  match '/profile/add15m'      => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,      :via => :post
+  match '/profile/subtract15m' => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m, :via => :post
 
   match '/pub/profile' => 'tests#pub_profile', :as => :pub_profile, :via => :get
 
