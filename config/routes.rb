@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   match '/profile/add15m'      => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,      :via => :post
   match '/profile/subtract15m' => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m, :via => :post
 
-  match '/pub/profile' => 'tests#pub_profile', :as => :pub_profile, :via => :get
+  match '/public/profile/:id' => 'pubprofiles#show', :as => :pub_profile, :via => :get
+  match '/public/pledge/:id' => 'pubprofiles#pledge', :as => :pub_pledge, :via => :get
 
   devise_for :users, skip: :registrations
 
