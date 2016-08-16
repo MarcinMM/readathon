@@ -1,0 +1,43 @@
+<div class="social-strip">
+  <div class="box-960">
+    <div class="left-social-strip animated fadeIn">
+      <h3>Promote Your Read-A-Thon Profile</h3>
+      <h5>share your profile on social networks</h5>
+    </div>
+    <div class="right-social-strip">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="box-960">
+    <div class="small-breadcrumb">
+      <div class="left-breadcrumb">
+        <%= link_to "#{@student.first}'s Profile", pub_profile_path(@student.id) %>
+        <a href="<%= pub_make_pledge_path(@student.id) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Thank You</a>
+      </div>
+      <div class="right-breadcrumb">
+      </div>
+      <div class="clear"></div>
+      <div style="margin-bottom:20px;" class="decoration"></div>
+    </div>
+
+    <div class="one-half-responsive no-bottom" style="margin-right:5%">
+      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %></h1>
+      <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
+
+      <br/><br/>
+      <p>Some big thank you message here</p>
+
+    </div>
+
+
+    <div class="decoration hide-if-responsive"></div>
+    <div class="clear"></div>
+    <br/><br/>
+  </div>
+</div>
+

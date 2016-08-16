@@ -3,5 +3,6 @@ class Student < ActiveRecord::Base
 
   belongs_to :teacher
   has_many :readlogs
+  has_many :pledges
 
 end

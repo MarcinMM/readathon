@@ -54,49 +54,55 @@
         <div id="tab-3">
           <h6 class="half-bottom">Hourly Pledge</h6>
           <p class="half-bottom">
-            <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
-                   type="text" class="text-input-one good-value"
-                   value="Name or Nickname (optional)">
-            <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Email Address (required)'"
-                   type="text" class="text-input-one good-value"
-                   value="Email Address (required)">
-            <input onfocus="if (this.value=='Pledge Amount Per Hour Read') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Pledge Amount Per Hour Read'"
-                   type="text" class="text-input-one good-value"
-                   value="Pledge Amount Per Hour Read">
-            <textarea name="contactMessageTextarea" class="textarea-input contactTextarea field-deco requiredField"
-                      onfocus="if (this.value=='Message (optional)') this.value = ''"
-                      onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-            <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
-                   type="text" class="text-input-one good-value"
-                   style="width: 47%; float:left;"
-                   value="Min Amount (optional)">
-            <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
-                   type="text" class="text-input-one good-value"
-                   style="width: 47%; float:left; margin-left:20px;"
-                   value="Max Amount (optional)">
-            <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+            <%= form_tag(pub_make_pledge_path(@student.id), method: "post") do %>
+                <input type="hidden" name="pledge[ptype]" value="hourly"/>
+                <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
+                       type="text" class="text-input-one good-value" name="pledge[name]"
+                       value="Name or Nickname (optional)">
+                <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Email Address (required)'"
+                       type="text" class="text-input-one good-value" name="pledge[email]"
+                       value="Email Address (required)">
+                <input onfocus="if (this.value=='Pledge Amount Per Hour Read') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Pledge Amount Per Hour Read'"
+                       type="text" class="text-input-one good-value" name="pledge[amount]"
+                       value="Pledge Amount Per Hour Read">
+                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                          onfocus="if (this.value=='Message (optional)') this.value = ''"
+                          onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
+                <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
+                       type="text" class="text-input-one good-value" name="pledge[min_amt]"
+                       style="width: 47%; float:left;"
+                       value="Min Amount (optional)">
+                <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
+                       type="text" class="text-input-one good-value" name="pledge[max_amt]"
+                       style="width: 47%; float:left; margin-left:20px;"
+                       value="Max Amount (optional)">
+                <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+            <% end %>
           </p>
         </div>
         <div id="tab-4">
           <h6 class="half-bottom">Fixed Pledge</h6>
           <p class="half-bottom">
-            <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
-                   type="text" class="text-input-one good-value"
-                   value="Name or Nickname (optional)">
-            <textarea name="contactMessageTextarea" class="textarea-input contactTextarea field-deco requiredField"
-                      onfocus="if (this.value=='Message (optional)') this.value = ''"
-                      onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-            <input onfocus="if (this.value=='Fixed Pledage Amount') this.value = ''"
-                   onblur="if (this.value=='') this.value = 'Fixed Pledage Amount'"
-                   type="text" class="text-input-one good-value"
-                   value="Fixed Pledage Amount">
-            <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+            <%= form_tag(pub_make_pledge_path(@student.id), method: "post") do %>
+                <input type="hidden" name="pledge[ptype]" value="flat"/>
+                <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
+                       type="text" class="text-input-one good-value" name="pledge[name]"
+                       value="Name or Nickname (optional)">
+                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                          onfocus="if (this.value=='Message (optional)') this.value = ''"
+                          onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
+                <input onfocus="if (this.value=='Fixed Pledage Amount') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Fixed Pledage Amount'"
+                       type="text" class="text-input-one good-value" name="pledge[amount]"
+                       value="Fixed Pledage Amount">
+                <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+            <% end %>
           </p>
         </div>
       </div>
@@ -121,8 +127,10 @@
 
     <div class="container center-heading">
       <p class="center-text larger">
-        The information you provide us is only used to this read-a-thon.  It will not be shared with any 3rd party organizations.  Or used in any way by our organization other than to help power this read-a-thon.
-        We ask for your name or nickname, so that your sponsor can see who sponsdered them.  Your email address will be used to contact you at the end of the read-a-thon for payment.  We will not use thia address
+        The information you provide us is only used to this read-a-thon. It will not be shared with any 3rd party
+        organizations. Or used in any way by our organization other than to help power this read-a-thon.
+        We ask for your name or nickname, so that your sponsor can see who sponsdered them. Your email address will be
+        used to contact you at the end of the read-a-thon for payment. We will not use thia address
         to contact you for any other purposes.
       </p>
     </div>
