@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  include CodeGen, ReadlogMgr, PledgeSummary
+  include CodeGen, ReadlogMgr, PledgeSummary, LevelMgr
 
   belongs_to :teacher
   belongs_to :level

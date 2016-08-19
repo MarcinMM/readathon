@@ -51,13 +51,13 @@
         </h1>
         <h2>
           <%= number_to_currency(@student.money_raised) %> Raised
-          <em>pledged at <%= number_to_currency(@student.pledged_per_hour) %> an hour</em>
+          <em>pledged at <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(@student.pledged_per_hour) %></span> an hour</em>
         </h2>
         <ul>
-          <li>You have read for <%= mins_to_words(@student.student_minutes_total) %></li>
-          <li>30 minutes to next level</li>
-          <li>8 badges earned</li>
-          <li><%= @student.pledges.length %> people have pledged you</li>
+          <li>You have read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
+          <li><strong><%= @student.mins_to_next_level %></strong> minutes to next level</li>
+          <li><strong>8</strong> badges earned</li>
+          <li><strong><%= @student.pledges.length %></strong> people have pledged you</li>
         </ul>
         <a href="<%= priprofile_pledge_path %>" class="button center-button button-red">Request a Pledge</a>
       </div>
