@@ -45,18 +45,19 @@
     <div class="one-fifth-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h1>
-          Level <%= @student.level_id %> Reader
+          <strong style="font-size: 1.3em;">Level <%= @student.level_id %> Reader</strong>
+          <br/>
+          <em><%= @student.level.description %></em>
         </h1>
         <h2>
-          $9.99 Raised
-          <em>pledged at $2.34 an hour</em>
+          <%= number_to_currency(@student.money_raised) %> Raised
+          <em>pledged at <%= number_to_currency(@student.pledged_per_hour) %> an hour</em>
         </h2>
         <ul>
-          <li>You have read for 1h 30m</li>
+          <li>You have read for <%= mins_to_words(@student.student_minutes_total) %></li>
           <li>30 minutes to next level</li>
           <li>8 badges earned</li>
-          <li>9 people have pledged you</li>
-          <li>2nd Grade has raised $2,345.00</li>
+          <li><%= @student.pledges.length %> people have pledged you</li>
         </ul>
         <a href="<%= priprofile_pledge_path %>" class="button center-button button-red">Request a Pledge</a>
       </div>
@@ -113,7 +114,14 @@
         <h5>Recent people who have pledged</h5>
         <% @student.pledges.each do |pledge| %>
             <blockquote class="quote-one">
-              <strong><%= pledge.name %> has pledged $<%= pledge.amount %> an hour</strong><br/><%= pledge.message %>
+              <strong>
+                <%= pledge.name %> has pledged
+                <% if pledge.ptype == "flat" %>
+                    flat donation of <%= number_to_currency(pledge.amount) %>
+                <% else %>
+                    $<%= number_to_currency(pledge.amount) %> an hour
+                <% end %>
+              </strong><br/><%= pledge.message %>
             </blockquote>
             <br><br>
         <% end %>

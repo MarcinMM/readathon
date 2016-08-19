@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623031844) do
+ActiveRecord::Schema.define(version: 20160623031845) do
+
+  create_table "levels", force: :cascade do |t|
+    t.string  "name",        limit: 24
+    t.string  "description", limit: 56
+    t.integer "minutes",     limit: 4
+  end
 
   create_table "pledges", force: :cascade do |t|
     t.datetime "created_at"

@@ -13,6 +13,10 @@ module ReadlogMgr
     readlog_today.nil? ? 0 : readlog_today.minutes
   end
 
+  def student_minutes_total
+    self.readlogs.sum(:minutes)
+  end
+
   def student_minutes_update minutes
     readlog_today = student_readlog_today
 
