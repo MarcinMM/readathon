@@ -1,3 +1,11 @@
+<script>
+  jQuery(document).ready(function () {
+    jQuery(".close-big-notification").click(function () {
+      jQuery(".big-notification").toggle();
+    });
+  });
+</script>
+
 <div class="social-strip">
   <div class="box-960">
     <div class="left-social-strip animated fadeIn">
@@ -18,6 +26,18 @@
   </div>
 </blockquote>
 
+<% if @levelup %>
+    <div class="big-notification red-notification" style="margin:20px;margin-bottom:0;">
+      <h5 class="uppercase">Level Up!</h5>
+      <center>
+        <a href="#" class="close-big-notification">x</a>
+        <span style="color:white;">Congratulation - You have reached level <%= @student.level_id %>!</span>
+        <img src="/images/badges/level<%= @student.level_id %>.png"/>
+        <p>You have unlocked new Avatars.
+          <a style="color:white;font-weight:bold;" href="<%= priprofile_avatar_path %>">Check them out</a></p>
+      </center>
+    </div>
+<% end %>
 
 <div class="content">
   <div style="margin-bottom:20px;"></div>
@@ -35,7 +55,8 @@
         <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= @student.student_minutes_today %></span>
         <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
         <br/>Use the + and - to adjust the time.<br/><br/>
-        <a id="challange" href="#" class="checkbox checkbox-class-3"><span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/> I read 15 minutes to to my pet.</a>
+        <a id="challange" href="#" class="checkbox checkbox-class-3"><span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/>
+          I read 15 minutes to to my pet.</a>
       </div>
 
     </div>
@@ -51,7 +72,9 @@
         </h1>
         <h2>
           <%= number_to_currency(@student.money_raised) %> Raised
-          <em>pledged at <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(@student.pledged_per_hour) %></span> an hour</em>
+          <em>pledged at
+            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(@student.pledged_per_hour) %></span>
+            an hour</em>
         </h2>
         <ul>
           <li>You have read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
