@@ -12,7 +12,11 @@ module LevelMgr
   end
 
   def promote_to_next_level
-    self.update_attribute :level_id,  self.level_id + 1
+    self.update_attribute :level_id, next_level_id
+  end
+
+  def next_level_id
+    self.level_id + 1
   end
 
 end

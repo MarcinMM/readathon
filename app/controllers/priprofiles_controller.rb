@@ -19,4 +19,16 @@ class PriprofilesController < ApplicationController
     redirect_to :priprofile_index
   end
 
+  def avatar
+    @student = current_student
+    @avatars = Avatar.where("level_id > 0 and level_id < ?", @student.next_level_id).order(level_id: :desc, category: :asc)
+    @nextlevel = Avatar.where("level_id = ?", @student.next_level_id).order(:category)
+  end
+
+  def avatar_update
+    student = current_student
+    student.update_attribute :avatar_id, params[:avatar_id]
+    redirect_to :priprofile_index
+  end
+
 end

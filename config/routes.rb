@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register' => 'logins#register', :as => :register, :via => :post
 
-  match '/profile'             => 'priprofiles#index',               :as => :priprofile_index,       :via => :get
-  match '/profile/avatar'      => 'priprofiles#avatar',              :as => :priprofile_avatar,      :via => :get
-  match '/profile/pledge'      => 'priprofiles#pledge',              :as => :priprofile_pledge,      :via => :get
-  match '/profile/add15m'      => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,      :via => :post
-  match '/profile/subtract15m' => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m, :via => :post
+  match '/profile'             => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
+  match '/profile/avatar'      => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get
+  match '/profile/avatar'      => 'priprofiles#avatar_update',       :as => :priprofile_avatar_update, :via => :post
+  match '/profile/pledge'      => 'priprofiles#pledge',              :as => :priprofile_pledge,        :via => :get
+  match '/profile/add15m'      => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
+  match '/profile/subtract15m' => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
 
   match '/public/profile/:id' => 'pubprofiles#show',        :as => :pub_profile,     :via => :get
   match '/public/pledge/:id'  => 'pubprofiles#pledge',      :as => :pub_pledge,      :via => :get

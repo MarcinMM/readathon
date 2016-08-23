@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623031845) do
+ActiveRecord::Schema.define(version: 20160623031846) do
+
+  create_table "avatars", force: :cascade do |t|
+    t.integer "level_id", limit: 4
+    t.string  "category", limit: 24
+  end
 
   create_table "levels", force: :cascade do |t|
     t.string  "name",        limit: 24
