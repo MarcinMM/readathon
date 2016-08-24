@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160623031846) do
   create_table "students", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "avatar_id",  limit: 4
-    t.integer  "level_id",   limit: 4
+    t.integer  "avatar_id",  limit: 4,  default: 0
+    t.integer  "level_id",   limit: 4,  default: 0
     t.integer  "teacher_id", limit: 4
     t.string   "code",       limit: 10
     t.string   "email",      limit: 56
