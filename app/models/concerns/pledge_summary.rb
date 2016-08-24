@@ -5,11 +5,13 @@ module PledgeSummary
   end
 
   def pledged_per_hour
-    self.pledges.select{ |p| p.ptype == "hourly"}.map{ |p| p.amount}.reduce {|sum, n| sum + n}
+    pph = self.pledges.select{ |p| p.ptype == "hourly"}.map{ |p| p.amount}.reduce {|sum, n| sum + n}
+    pph.nil? ? 0 : pph
   end
 
   def pledged_flat
-    self.pledges.select{ |p| p.ptype == "flat"}.map{ |p| p.amount}.reduce {|sum, n| sum + n}
+    pf = self.pledges.select{ |p| p.ptype == "flat"}.map{ |p| p.amount}.reduce {|sum, n| sum + n}
+    pf.nil? ? 0 : pph
   end
 
 
