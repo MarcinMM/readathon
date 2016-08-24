@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_code
-    if cookies[:code].nil?
+    if cookies[:code].nil? || current_student.nil?
       redirect_to :login_screen
     end
   end
