@@ -43,7 +43,7 @@
   <div style="margin-bottom:20px;"></div>
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:0;">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %></h1>
+      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0,1] %></h1>
       <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
 
       <a style="margin-top:10px;margin-left:35px" href="<%= priprofile_avatar_path %>">change your profile image</a>
@@ -77,6 +77,7 @@
             an hour</em>
         </h2>
         <ul>
+          <li><strong><%= days_to_end %> days reamaing</strong></li>
           <li>You have read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
           <li><strong><%= @student.mins_to_next_level %></strong> minutes to next level</li>
           <li><strong>8</strong> badges earned</li>

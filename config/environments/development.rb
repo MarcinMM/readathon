@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.end_date = Date.strptime("9/1/2016", "%m/%d/%Y")
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

@@ -15,7 +15,7 @@
   <div class="full-bottom"></div>
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:5%">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %></h1>
+      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0,1] %></h1>
       <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
 
       <br/><br/>
@@ -33,12 +33,12 @@
     <div class="one-half-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h2>
-          13 day remaining
+          <%= days_to_end %> day remaining
         </h2>
         <ul>
-          <li>Cain has read for 1h 30m</li>
-          <li>8 badges earned</li>
-          <li>9 pledges</li>
+          <li>Cain has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
+          <li><strong>8</strong> badges earned</li>
+          <li><%= @student.pledges.length %> pledges</li>
         </ul>
         <a href="<%= pub_pledge_path %>" class="button center-button button-red">Pledge <%= @student.first %></a>
       </div>
