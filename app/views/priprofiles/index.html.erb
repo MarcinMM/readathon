@@ -22,7 +22,7 @@
 <blockquote class="quote-one yellow-quote">
   <div style="color:black;float:left;"><img style="width:50px;" src="/images/badges/badge14.png"/></div>
   <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Daily Challange:</strong>
-    <span style="margin-left:10px;color:black;">Read at least 15 minutes to a pet.</span>
+    <span style="margin-left:10px;color:black;"><%= Challange.daily_challange.description %></span>
   </div>
 </blockquote>
 
@@ -32,7 +32,7 @@
       <center>
         <a href="#" class="close-big-notification">x</a>
         <span style="color:white;">Congratulation - You have reached level <%= @student.level_id %>!</span>
-        <img src="/images/badges/level<%= @student.level_id %>.png"/>
+        <img src="/images/levels/level<%= @student.level_id %>.png"/>
         <p>You have unlocked new Avatars.
           <a style="color:white;font-weight:bold;" href="<%= priprofile_avatar_path %>">Check them out</a></p>
       </center>

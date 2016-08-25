@@ -12,6 +12,16 @@
   <li class="mobile-navigation-breadcrumb">
     <em>Navigation</em>
   </li>
+  <% if current_user != nil %>
+      <li>
+        <p id="logout">
+          <i class="fa fa-user"></i>
+          <i class="fa fa-circle"></i>
+          Logout
+          <em><%= current_user.email %></em>
+        </p>
+      </li>
+  <% end %>
   <% if current_student != nil %>
       <li>
         <p>
@@ -32,16 +42,6 @@
             Richmond Read-A-Thon
             <em>sponsor and help fund our school</em>
           </a>
-        </p>
-      </li>
-  <% end %>
-  <% if current_user != nil %>
-      <li>
-        <p id="logout">
-          <i class="fa fa-user"></i>
-          <i class="fa fa-circle"></i>
-          Logout
-          <em><%= current_user.email %></em>
         </p>
       </li>
   <% end %>

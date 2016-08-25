@@ -11,12 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623031846) do
+ActiveRecord::Schema.define(version: 20160825063919) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer "level_id", limit: 4
     t.string  "category", limit: 24
   end
+
+  create_table "challanges", force: :cascade do |t|
+    t.string "description", limit: 255
+  end
+
+  create_table "challanges_students", id: false, force: :cascade do |t|
+    t.integer "challange_id", limit: 4, null: false
+    t.integer "student_id",   limit: 4, null: false
+  end
+
+  add_index "challanges_students", ["challange_id", "student_id"], name: "index_challanges_students_on_challange_id_and_student_id", using: :btree
+  add_index "challanges_students", ["student_id", "challange_id"], name: "index_challanges_students_on_student_id_and_challange_id", using: :btree
 
   create_table "levels", force: :cascade do |t|
     t.string  "name",        limit: 24
