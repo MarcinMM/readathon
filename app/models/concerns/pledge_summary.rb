@@ -11,7 +11,7 @@ module PledgeSummary
 
   def pledged_flat
     pf = self.pledges.select{ |p| p.ptype == "flat"}.map{ |p| p.amount}.reduce {|sum, n| sum + n}
-    pf.nil? ? 0 : pph
+    pf.nil? ? 0 : pf
   end
 
 
