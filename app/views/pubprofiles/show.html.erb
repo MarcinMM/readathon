@@ -67,7 +67,7 @@
 
       <div class="one-half-responsive last no-bottom">
         <h5>Recent people who have pledged</h5>
-        <% @student.pledges.each do |pledge| %>
+        <% @student.pledges.take(5).each do |pledge| %>
             <blockquote class="quote-one">
               <strong><%= pledge.name %> has pledged $<%= pledge.amount %> an hour</strong><br/><%= pledge.message %>
             </blockquote>
