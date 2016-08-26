@@ -34,7 +34,7 @@ class Rmgr::StudentsController < ApplicationController
       teacher = Teacher.find(@student.teacher_id)
       redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Added student successfully.'}
     else
-      render :action => "new"
+      render :new
     end
   end
 
@@ -45,7 +45,7 @@ class Rmgr::StudentsController < ApplicationController
       teacher = Teacher.find(@student.teacher_id)
       redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Student was successfully updated.'}
     else
-      render :action => "edit"
+      render :edit
     end
   end
 

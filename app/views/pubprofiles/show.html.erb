@@ -37,7 +37,7 @@
         </h2>
         <ul>
           <li>Cain has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
-          <li><strong>8</strong> badges earned</li>
+          <li><strong><%= @student.challanges.length %></strong> badges earned</li>
           <li><%= @student.pledges.length %> pledges</li>
         </ul>
         <a href="<%= pub_pledge_path %>" class="button center-button button-red">Pledge <%= @student.first %></a>
@@ -57,40 +57,12 @@
     <div class="container no-bottom">
       <div class="one-half-responsive">
         <h5>Badges Cain has earned</h5>
-
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge1.png"/>
-          Read to Pet
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge11.png"/>
-          Read Outside
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge3.png"/>
-          Read Under Blankets
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge4.png"/>
-          Read In The Car
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge5.png"/>
-          Read With Friends
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge6.png"/>
-          Read In Japanese
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge7.png"/>
-          Read With Parent
-        </div>
-        <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-          <img style="width:120px;" src="/images/badges/badge8.png"/>
-          Read While Running
-        </div>
-
+        <% @student.challanges.each do |challange| %>
+            <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
+              <img style="width:120px;" src="/images/badges/badge<%= challange.id %>.png"/>
+              <%= challange.description %>
+            </div>
+        <% end %>
       </div>
 
       <div class="one-half-responsive last no-bottom">

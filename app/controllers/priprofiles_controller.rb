@@ -31,4 +31,11 @@ class PriprofilesController < ApplicationController
     redirect_to :priprofile_index
   end
 
+  def challange
+    @challange = Challange.daily_challange
+    @student = current_student
+    @student.challanges << @challange
+    render :index
+  end
+
 end

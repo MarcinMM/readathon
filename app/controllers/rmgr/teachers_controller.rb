@@ -31,7 +31,7 @@ class Rmgr::TeachersController < ApplicationController
     if @teacher.save
       redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'Added teacher successfully.'}
     else
-      render :action => "new"
+      render :new
     end
 
     @teacher = user
@@ -51,7 +51,7 @@ class Rmgr::TeachersController < ApplicationController
     if @teacher.update_attributes(teacher_params(params))
       redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'Teacher was successfully updated.'}
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
