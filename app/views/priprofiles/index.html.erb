@@ -141,7 +141,7 @@
                 <% if pledge.ptype == "flat" %>
                     flat donation of <%= number_to_currency(pledge.amount) %>
                 <% else %>
-                    $<%= number_to_currency(pledge.amount) %> an hour
+                    <%= number_to_currency(pledge.amount) %> an hour
                 <% end %>
               </strong><br/><%= pledge.message %>
             </blockquote>
