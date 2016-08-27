@@ -11,7 +11,7 @@
         <p style="font-style: italic;"><%= @student.teacher.last %> sensei's class</p>
       </div>
       <div class="clear"></div>
-      <p class="dropcaps dropcaps-2">Cain Giacomini is asking for your help to raise money for Richmond Elementary
+      <p class="dropcaps dropcaps-2"><%= @student.first %> is asking for your help to raise money for Richmond Elementary
         School.<br/><br/>
         Money raised through this
         drive will be used by the Foundation to help support teaching positions at Richmond. In the past these dollars
@@ -28,7 +28,7 @@
           <%= days_to_end %> day remaining
         </h2>
         <ul>
-          <li>Cain has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
+          <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
           <li><strong><%= @student.challanges.length %></strong> badges earned</li>
           <li><strong><%= @student.pledges.length %></strong> pledges</li>
         </ul>
