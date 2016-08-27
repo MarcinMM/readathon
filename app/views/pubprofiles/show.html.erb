@@ -48,7 +48,7 @@
 
     <div class="container no-bottom">
       <div class="one-half-responsive">
-        <h5>Badges Cain has earned</h5>
+        <h5>Badges <%= @student.first %> has earned</h5>
         <% @student.challanges.each do |challange| %>
             <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
               <img style="width:120px;" src="/images/badges/badge<%= challange.id %>.png"/>
