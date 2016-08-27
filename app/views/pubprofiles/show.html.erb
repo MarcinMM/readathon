@@ -4,13 +4,15 @@
   <div class="full-bottom"></div>
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:5%">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0,1] %></h1>
-      <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
-
-      <br/><br/>
-      <p class="dropcaps dropcaps-2">Cain Giacomini is asking for your help to raise money for Richmond Elementary School.</p>
-      <br/>
-      <p class="dropcaps dropcaps-2"> Money raised through this
+      <img style="float:left; margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:150px;" src="/images/profiles/<%= @student.avatar_id %>.png"/>
+      <div style="margin-left:30px; margin-top:10px; float:left;">
+        <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0, 1] %></h1>
+        <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
+      </div>
+      <div class="clear"></div>
+      <p class="dropcaps dropcaps-2">Cain Giacomini is asking for your help to raise money for Richmond Elementary
+        School.<br/><br/>
+        Money raised through this
         drive will be used by the Foundation to help support teaching positions at Richmond. In the past these dollars
         have helped us hire a reading specialist, teaching aids, music, and library.</p>
       <br/>
