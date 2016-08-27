@@ -12,15 +12,6 @@
 </div>
 
 <div class="content">
-  <div class="full-bottom"></div>
-  <div class="box-960">
-    <p>
-      Login windows are optional but you can use them if you wish to add an admin panel to this template,
-      these are just templates, so at the moment, you can just see how they would look if they'd get coded
-      Again, emphesizing this strongly, these are just templates, at the moment, they do not login into any
-      page and they are NOT connected to a WordPress panel or anyother CMS!
-    </p>
-  </div>
 
   <div class="login-box-one one-third-responsive">
     <div style="display: none; width: 270px;margin: 0 auto;">
@@ -30,11 +21,11 @@
     </div>
   </div>
 
-  <div class="login-box-one one-third-responsive full-bottom">
+  <div class="login-box-one one-third-responsive half-bottom">
     <div class="login-wrapper half-bottom">
       <%= form_tag(login_path, method: "post") do %>
           <img src="images/rsf_logo.png" alt="img">
-          <p class="half-bottom">A sweet simple login page template, there are a few variations you'll love!</p>
+          <p class="half-bottom">Enter the code provided on your read-a-thon flyer.</p>
 
           <% if flash[:alert] %>
               <div class="small-notification red-notification" style="margin-bottom:10px;">
