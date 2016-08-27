@@ -985,7 +985,11 @@
 	.breadcrumb{
 		display:none;
 	}
-	
+
+	.next_level_preview{
+		display:none;
+	}
+
 	.right-header-strip{
 		display:none;
 	}

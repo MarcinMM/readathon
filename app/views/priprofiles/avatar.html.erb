@@ -24,33 +24,35 @@
     <div style="margin-bottom:20px;" class="decoration"></div>
   </div>
 
-  <div class="portfolio-three-item-categories-title">
-    <p>Unlock these images at your next level</p>
+  <div class="next_level_preview">
+    <div class="portfolio-three-item-categories-title">
+      <p style="margin-bottom:20px; margin-top:0;">Unlock these images at your next level</p>
+    </div>
+    <div style="margin-bottom:20px;" class="clear decoration"></div>
+
+    <div class="portfolio-three-wrapper">
+      <% @nextlevel.each do |avatar| %>
+          <div class="<%= avatar.category %> portfolio-three-item">
+            <div>
+              <div class="overlay"></div>
+              <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>"><span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span></a>
+              <img src="/images/profiles/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div style="" class="decoration no-bottom"></div>
   </div>
-  <div style="margin-bottom:20px" class="portfolio-three-item-categories">
+
+  <div class="portfolio-three-item-categories-title" style="margin-bottom:20px; margin-top:10px;">
+    <p>Available Images</p>
+  </div>
+  <div style="margin-top:10px" class="portfolio-three-item-categories">
     <a href="#" class="selected-portfolio-three-cat" id="all">All</a>
     <a href="#" id="dragon">Dragons</a>
     <a href="#" id="princess">Princess</a>
     <a href="#" id="animal">Animal</a>
     <a href="#" id="sport">Sports</a>
-  </div>
-  <div style="margin-bottom:20px;" class="clear decoration"></div>
-
-  <div class="portfolio-three-wrapper">
-    <% @nextlevel.each do |avatar| %>
-        <div class="<%= avatar.category %> portfolio-three-item">
-          <div>
-            <div class="overlay"></div>
-            <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>"><span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span></a>
-            <img src="/images/profiles/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
-          </div>
-        </div>
-    <% end %>
-  </div>
-
-  <div style="" class="decoration no-bottom"></div>
-  <div class="portfolio-three-item-categories-title" style="margin-bottom:20px; margin-top:10px;">
-    <p>Available Images</p>
   </div>
   <div style="margin-bottom:20px;" class="clear decoration"></div>
 
