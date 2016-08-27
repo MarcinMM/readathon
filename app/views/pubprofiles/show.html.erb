@@ -1,15 +1,4 @@
-<div class="social-strip">
-  <div class="box-960">
-    <div class="left-social-strip animated fadeIn">
-      <h3>Promote Your Read-A-Thon Profile</h3>
-      <h5>share your profile on social networks</h5>
-    </div>
-    <div class="right-social-strip">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-    </div>
-  </div>
-</div>
+<%= render "share" %>
 
 <div class="content">
   <div class="full-bottom"></div>
@@ -38,7 +27,7 @@
         <ul>
           <li>Cain has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
           <li><strong><%= @student.challanges.length %></strong> badges earned</li>
-          <li><%= @student.pledges.length %> pledges</li>
+          <li><strong><%= @student.pledges.length %></strong> pledges</li>
         </ul>
         <a href="<%= pub_pledge_path %>" class="button center-button button-red">Pledge <%= @student.first %></a>
       </div>
@@ -73,8 +62,6 @@
             </blockquote>
             <br><br>
         <% end %>
-        <p><a href="">click to view all your pledges</a></p>
-        <br>
       </div>
       <div class="clear"></div>
     </div>

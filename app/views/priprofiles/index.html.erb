@@ -13,18 +13,7 @@
 <%= form_tag(priprofile_challange_path, id: 'accept-challange', method: 'post') do %>
 <% end %>
 
-<div class="social-strip">
-  <div class="box-960">
-    <div class="left-social-strip animated fadeIn">
-      <h3>Share Your Read-A-Thon Profile</h3>
-      <h5>promote on social networks</h5>
-    </div>
-    <div class="right-social-strip">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-    </div>
-  </div>
-</div>
+<%= render "pubprofiles/share" %>
 
 <% unless @student.daily_challange_complete %>
     <blockquote class="quote-one yellow-quote">
