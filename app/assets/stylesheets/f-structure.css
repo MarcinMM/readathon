@@ -2958,8 +2958,8 @@ and (max-device-width : 1024px){
 	font-size:14px;
 	float:left;
 	padding:10px;
-	padding-left:15px;
-	padding-right:15px;
+	/*padding-left:15px;*/
+	/*padding-right:15px;*/
 	text-align:center;
 }
 
@@ -3045,7 +3045,7 @@ and (max-device-width : 1024px){
 	
 	.portfolio-three-item-categories a{
 		font-size:10px!important;
-		width:25%!important;
+		width:20%!important;
 	}
 	
 }
