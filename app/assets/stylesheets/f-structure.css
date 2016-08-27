@@ -20,9 +20,10 @@
 /*////////////////*/
 
 body{
-	font-family:'Open Sans', sans-serif;
-	color:#666;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #464646;
 	height:100%;
+	font-size:14px;
 }
 
 * {
@@ -79,7 +80,7 @@ display:inline-block;
 p{
 	line-height: 24px;
 	margin-bottom:15px;
-	font-size:12px;
+	font-size:14px;
 	letter-spacing:0px;
 }
 
@@ -559,14 +560,14 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 /*//////*/
 
 .chart strong{
-	font-size:12px;
+	font-size:14px;
 	text-align:left;
 	font-weight:normal;
 	padding:3px;
 }
 
 .chart em{
-	font-size:12px;
+	font-size:14px;
 	text-align:right;
 	font-style:normal;
 	display:block;
@@ -647,7 +648,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 	display:inline;
 	text-align:left;
 	max-width:75%;
-	font-size:12px;
+	font-size:14px;
 	padding-left:10px;
 	padding-right:10px;
 	padding-top:5px;
@@ -672,7 +673,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 	text-align:right;
 	text-align:left;
 	max-width:75%;
-	font-size:12px;
+	font-size:14px;
 	padding-left:10px;
 	padding-right:10px;
 	padding-top:5px;
@@ -822,7 +823,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 }
 
 .pricing-table h2 em{
-	font-size:12px;
+	font-size:14px;
 	font-style:normal;
 	font-weight:400;
 	color:rgba(255,255,255,0.5);
@@ -833,7 +834,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 	text-shadow:0px 1px 0px #FFFFFF;
 	list-style:none;
 	text-align:center;
-	font-size:13px;
+	font-size:14px;
 	padding:15px 0px;
 	border-bottom:solid 1px rgba(255,255,255,0.5);
 	opacity:0.9;
@@ -879,7 +880,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 .table-sub-title{
 	font-family:'Lato', sans-serif;
 	font-weight:700;
-	font-size:12px;
+	font-size:14px;
 	text-align:center!important;
 	display:block;
 }
@@ -909,7 +910,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 }
 
 .price{
-	font-size:12px;
+	font-size:14px;
 }
 
 .small-price{
@@ -920,7 +921,7 @@ h1, h2, h3, h4, h5, h6{	font-family:'Source Sans Pro', sans-serif;	color:#1f1f1f
 }
 
 table {
-	font-size:12px;
+	font-size:14px;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
 }
@@ -995,7 +996,7 @@ table *{
 
 .defaultField{
 	padding-bottom:5px;
-	font-size:12px;
+	font-size:14px;
 }
 .defaultField span{
 	float:right;
@@ -1007,14 +1008,14 @@ table *{
 
 .contactField{
 	background-color:rgba(255,255,255,0.4);
-	font-size:12px;
+	font-size:14px;
 	color:#666;
 	border:solid 1px #cacaca;
 }
 
 .contactTextarea{
 	background-color:rgba(255,255,255,0.4);
-	font-size:12px;
+	font-size:14px;
 	border:solid 1px #cacaca;
 	color: #666;
 }
@@ -1029,7 +1030,7 @@ table *{
 
 .contactNameField{
 	padding-bottom:5px;	
-	font-size:12px;
+	font-size:14px;
 }
 
 .contactNameField span{
@@ -1039,7 +1040,7 @@ table *{
 
 .contactEmailField{
 	padding-bottom:5px;
-	font-size:12px;
+	font-size:14px;
 }
 
 .contactEmailField span{
@@ -1049,7 +1050,7 @@ table *{
 
 .contactMessageTextarea{
 	padding-bottom:5px;
-	font-size:12px;
+	font-size:14px;
 }
 
 .contactMessageTextarea span{
@@ -1287,7 +1288,7 @@ table *{
 
 .close-small-notification{
 	color:#FFFFFF;
-	font-size:12px;
+	font-size:14px;
 	position:absolute;
 	right:20px;
 	font-weight:800;
@@ -1295,7 +1296,7 @@ table *{
 
 .close-contact-notification{
 	color:#FFFFFF;
-	font-size:12px;
+	font-size:14px;
 	position:absolute;
 	right:20px;
 	font-weight:800;
@@ -1326,7 +1327,7 @@ table *{
 .accordion-header{
 	background-color:#2c3e50;	
 	color:#FFFFFF;
-	font-size:12px;
+	font-size:14px;
 	font-weight:400;
 	cursor:pointer;
 	padding:13px 20px;
@@ -1905,7 +1906,7 @@ table *{
 
 #swipebox-caption {
   color: white!important;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 43px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -2026,7 +2027,7 @@ table *{
 .webapp h3{
 	font-family:'Dosis', sans-serif;
 	font-weight:600!important;
-	font-size:12px;
+	font-size:14px;
 	font-weight:800;
 	margin-left:80px;
 	margin-top:5px;
@@ -2094,7 +2095,7 @@ and (max-device-width : 1024px){
 	.webapp img{
 		width:60px;
 		height:60px;
-		border-radius:12px;
+		border-radius:14px;
 		position:absolute;
 		margin-left:10px;
 		margin-top:10px;
@@ -3342,7 +3343,7 @@ and (max-device-width : 1024px){
 	}
 	
 	.fullscreen-page p{
-		font-size:12px;
+		font-size:14px;
 		width:70%;
 		margin-left:auto;
 		margin-right:auto;
