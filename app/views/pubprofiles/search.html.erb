@@ -11,20 +11,29 @@
   </div>
 </div>
 
-<blockquote class="quote-one yellow-quote">
-  <strong>Our read-a-thon has closed</strong> <span style="color:black;">but it is never too late to help the Richmond Foundation.  <strong>Donate here!</strong></span>
-</blockquote>
-<blockquote class="quote-one red-quote">
-  <strong>13 Days Remaining</strong> <span style="color:black;">Our read-a-thon runs from Oct 10th to Oct 24</span>
-</blockquote>
+<% if days_to_end > 0 %>
+    <blockquote class="quote-one red-quote">
+      <strong><%= days_to_end %> Days Remaining</strong>
+      <span style="color:black;">Our read-a-thon ends <%= Rails.configuration.end_date.strftime("%b %d") %></span>
+    </blockquote>
+<% else %>
+    <blockquote class="quote-one yellow-quote">
+      <strong>Our read-a-thon has closed</strong>
+      <span style="color:black;">but it is never too late to help the Richmond Foundation.  <strong>Donate here!</strong></span>
+    </blockquote>
+<% end %>
 
 <div class="content">
   <div class="full-bottom"></div>
   <div class="box-960">
-    <div class="one-half-responsive no-bottom">
+    <div class="one-half-responsive half-bottom">
       <h5>Support Reading At Richmond Elementary!</h5>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat justo, eu posuere tellus facilisis eu. Ut sed justo a augue sollicitudin iaculis at et justo. Vestibulum felis nulla, dignissim eu porta non, blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat justo, eu posuere tellus facilisis eu. Ut sed justo a augue sollicitudin iaculis at et justo. Vestibulum felis nulla, dignissim eu porta non, blandit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat justo, eu posuere tellus
+        facilisis eu. Ut sed justo a augue sollicitudin iaculis at et justo. Vestibulum felis nulla, dignissim eu porta
+        non, blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat justo, eu posuere
+        tellus facilisis eu. Ut sed justo a augue sollicitudin iaculis at et justo. Vestibulum felis nulla, dignissim eu
+        porta non, blandit.
       </p>
     </div>
 
@@ -59,7 +68,8 @@
   <div class="overlay"></div>
   <div class="box-960">
     <h1 class="center-text">So where does all the money go?</h1>
-    <p class="center-text larger transparent">The breakdown of the money is easy.  Our school keeps 97% of what is raised.</p>
+    <p class="center-text larger transparent">The breakdown of the money is easy. Our school keeps 97% of what is
+      raised.</p>
   </div>
 </div>
 
@@ -68,7 +78,8 @@
 
     <div class="container center-heading">
       <p class="center-text larger">
-        There is no better way for a school to raise money then a read-a-thon.  Family, Friends, and neighbors understand how important education and reading skills are.
+        There is no better way for a school to raise money then a read-a-thon. Family, Friends, and neighbors understand
+        how important education and reading skills are.
         Very few fundraising ideas offer such clear benefits to children and the groups they are raising money for.
       </p>
     </div>
@@ -79,7 +90,8 @@
           <h1><i class="fa fa-dollar fa-3x"></i></h1>
           <h5>Low Overhead</h5>
           <p class="half-bottom">
-            We keep as much of our fundraising dollars at Richmond.  Our only expense is a 3% credit card transaction fee.
+            We keep as much of our fundraising dollars at Richmond. Our only expense is a 3% credit card transaction
+            fee.
           </p>
           <a href="#" class="button button-red center-button">Read More</a>
         </div>
@@ -90,7 +102,8 @@
           <h1><i class="fa fa-hand-paper-o fa-3x"></i></h1>
           <h5>No Gimmick Prizes</h5>
           <p class="half-bottom">
-            Our read-a-thon is not about toys.  Children can redeem a small % of the money raised to buy books at our PTA book fare.
+            Our read-a-thon is not about toys. Children can redeem a small % of the money raised to buy books at our PTA
+            book fare.
           </p>
           <a href="#" class="button button-blue center-button">Read More</a>
         </div>
@@ -101,7 +114,8 @@
           <h1><i class="fa fa-child fa-3x"></i></h1>
           <h5>Supports Teaching Positions</h5>
           <p class="half-bottom">
-            Our sole mission is to raise funds for staff positions at our school to help sustain Richmond's dual-immersion model.
+            Our sole mission is to raise funds for staff positions at our school to help sustain Richmond's
+            dual-immersion model.
           </p>
           <a href="#" class="button button-green center-button">Read More</a>
         </div>

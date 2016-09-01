@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   match '/public/pledge/thanks/:id'  => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
   match '/public/pledge/paypal/:id'  => 'pubprofiles#pledge_paypal', :as => :pub_pledge_paypal, :via => :get
 
+  match '/paypal/callback' => 'paypal#callback', :as => :paypal_callback, :via => :post
+
   devise_for :users, skip: :registrations
 
   # Admin Resources
