@@ -81,7 +81,7 @@
     <div class="one-fifth-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h1>
-          <strong style="font-size: 1.3em;">Level <%= @student.level_id %> Reader</strong>
+          <strong style="font-size: 1.3em;"><%= @student.level.name %></strong>
           <br/>
           <em><%= @student.level.description %></em>
         </h1>
