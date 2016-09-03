@@ -12,17 +12,10 @@
     <input type="hidden" id="avatar_id" name="avatar_id"/>
 <% end %>
 
+<%= render "pubprofiles/share", student_id: current_student.id %>
+
 <div class="content box-960">
-  <div class="small-breadcrumb">
-    <div class="left-breadcrumb">
-      <%= link_to 'Private Profile', priprofile_index_path %>
-      <a href="#"><i class="fa fa-angle-right"></i>Avatar Selection</a>
-    </div>
-    <div class="right-breadcrumb">
-    </div>
-    <div class="clear"></div>
-    <div style="margin-bottom:20px;" class="decoration"></div>
-  </div>
+  <%= render 'breadcrumb', page_name: 'Avatar Selection' %>
 
   <div class="next_level_preview">
     <div class="portfolio-three-item-categories-title">

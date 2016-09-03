@@ -2,9 +2,8 @@ class PriprofilesController < ApplicationController
   before_action :require_code
 
   def index
-    @student = current_student
-    if @student.mins_to_next_level == 0
-      @student.promote_to_next_level
+    if current_student.mins_to_next_level == 0
+      current_student.promote_to_next_level
       @levelup = true
     end
   end

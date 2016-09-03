@@ -13,9 +13,9 @@
 <%= form_tag(priprofile_challange_path, id: 'accept-challange', method: 'post') do %>
 <% end %>
 
-<%= render "pubprofiles/share" %>
+<%= render "pubprofiles/share", student_id: current_student.id %>
 
-<% unless @student.daily_challange_complete %>
+<% unless current_student.daily_challange_complete %>
     <blockquote class="quote-one yellow-quote">
       <div style="color:black;float:left;"><img style="width:50px;" src="/images/badges/badge14.png"/></div>
       <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Daily Challange:</strong>
@@ -29,8 +29,8 @@
       <h5 class="uppercase">Level Up!</h5>
       <center>
         <a href="#" class="close-big-notification">x</a>
-        <span style="color:white;">Congratulation - You have reached level <%= @student.level_id %>!</span>
-        <img src="/images/levels/level<%= @student.level_id %>.png"/>
+        <span style="color:white;">Congratulation - You have reached level <%= current_student.level_id %>!</span>
+        <img src="/images/levels/level<%= current_student.level_id %>.png"/>
         <p>You have unlocked new Avatars.
           <a style="color:white;font-weight:bold;" href="<%= priprofile_avatar_path %>">Check them out</a></p>
       </center>
@@ -53,20 +53,20 @@
   <div style="margin-bottom:20px;"></div>
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:0;">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0, 1] %></h1>
-      <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
+      <h1 style="margin-bottom:0;font-size:30px;"><%= current_student.first %> <%= current_student.last[0, 1] %></h1>
+      <em><%= current_student.teacher.grade.ordinalize %> Grade - <%= current_student.teacher.last %> sensei</em>
 
       <a style="margin-top:10px;margin-left:35px" href="<%= priprofile_avatar_path %>">change your profile image</a>
-      <a href="<%= priprofile_avatar_path %>"><img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:275px;" src="/images/profiles/<%= @student.avatar_id %>.png"/></a>
+      <a href="<%= priprofile_avatar_path %>"><img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:275px;" src="/images/profiles/<%= current_student.avatar_id %>.png"/></a>
 
       <div style="margin-bottom:20px;">
         Minutes you have read today.<br/>
         <%= link_to "- 15", priprofile_subtract15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
-        <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= @student.student_minutes_today %></span>
+        <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= current_student.student_minutes_today %></span>
         <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
         <br/>Use the + and - to adjust the time.<br/><br/>
 
-        <% unless @student.daily_challange_complete %>
+        <% unless current_student.daily_challange_complete %>
             <a id="challange" href="#" class="checkbox checkbox-class-3">
               <span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/>
               <%= Challange.daily_challange.description %>
@@ -81,22 +81,22 @@
     <div class="one-fifth-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h1>
-          <strong style="font-size: 1.3em;"><%= @student.level.name %></strong>
+          <strong style="font-size: 1.3em;"><%= current_student.level.name %></strong>
           <br/>
-          <em><%= @student.level.description %></em>
+          <em><%= current_student.level.description %></em>
         </h1>
         <h2>
-          <%= number_to_currency(@student.money_raised) %> Raised
+          <%= number_to_currency(current_student.money_raised) %> Raised
           <em>pledged at
-            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(@student.pledged_per_hour) %></span>
+            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>
             an hour</em>
         </h2>
         <ul>
           <li><strong><%= days_to_end %> days reamaing</strong></li>
-          <li>You have read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
-          <li><strong><%= @student.mins_to_next_level %></strong> minutes to next level</li>
-          <li><strong><%= @student.challanges.length %></strong> badges earned</li>
-          <li><strong><%= @student.pledges.length %></strong> people have pledged you</li>
+          <li>You have read for <strong><%= mins_to_words(current_student.student_minutes_total) %></strong></li>
+          <li><strong><%= current_student.mins_to_next_level %></strong> minutes to next level</li>
+          <li><strong><%= current_student.challanges.length %></strong> badges earned</li>
+          <li><strong><%= current_student.pledges.length %></strong> people have pledged you</li>
         </ul>
         <a href="<%= priprofile_pledge_path %>" style="width:170px;" class="button center-button button-red">Request a Pledge</a>
       </div>
@@ -113,7 +113,7 @@
     <div class="container no-bottom">
       <div class="one-half-responsive">
         <h5>Badges you have earned</h5>
-        <% @student.challanges.each do |challange| %>
+        <% current_student.challanges.each do |challange| %>
             <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
               <img style="width:120px;" src="/images/badges/badge<%= challange.id %>.png"/>
               <%= challange.description %>
@@ -123,7 +123,7 @@
 
       <div class="one-half-responsive last no-bottom">
         <h5>Recent people who have pledged</h5>
-        <% @student.pledges.take(5).each do |pledge| %>
+        <% current_student.pledges.take(5).each do |pledge| %>
             <blockquote class="quote-one">
               <strong>
                 <%= pledge.name %> has pledged
