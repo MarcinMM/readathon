@@ -35,7 +35,9 @@
           <div class="<%= avatar.category %> portfolio-three-item">
             <div>
               <div class="overlay"></div>
-              <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>"><span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span></a>
+              <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>">
+                <span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span>
+              </a>
               <img src="/images/profiles/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
             </div>
           </div>
@@ -62,7 +64,9 @@
         <div class="<%= avatar.category %> portfolio-three-item">
           <div>
             <div class="overlay"></div>
-            <a href="javascript:void(0)" data-avatar-id="<%= avatar.id %>" class="clicked-gallery selectable_avatar" title="<%= avatar.category %> L<%= avatar.level_id %>"><span style="background-color:#2980b9;padding:35px;color:#FFF">Select Image</span></a>
+            <a href="javascript:void(0)" data-avatar-id="<%= avatar.id %>" class="clicked-gallery selectable_avatar" title="<%= avatar.category %> L<%= avatar.level_id %>">
+              <span style="background-color:#2980b9;padding:22px;color:#FFF">Select Image</span>
+            </a>
             <img src="/images/profiles/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
           </div>
         </div>
