@@ -8,6 +8,7 @@ gem 'rails', '4.2.5.2'
 gem 'mysql2', '0.4.3'
 gem "bitly"
 gem 'devise'
+gem 'pg'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
