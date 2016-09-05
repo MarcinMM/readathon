@@ -1,0 +1,109 @@
+<%= render "pubprofiles/share", student_id: current_student.id %>
+
+<div class="content box-960">
+  <%= render 'breadcrumb', page_name: 'Email Pledge Wizard' %>
+
+  <div class="container center-heading">
+    <p class="center-text larger">
+      Use the tabs below to choose one of our standard pledge request email templates. Then customize it with your
+      personal message.
+    </p>
+
+    <div style="margin-top:20px;">
+      <div class="horizontalTab">
+        <ul>
+          <li><a href="#tab-3">Single</a></li>
+          <li><a href="#tab-4">Group</a></li>
+          <li><a href="#tab-5">Free Form</a></li>
+        </ul>
+
+        <div id="tab-3">
+          <%= form_tag(pub_make_pledge_path(current_student.id), method: "post") do %>
+              <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Email Address (required)'"
+                     type="text" class="text-input-one good-value" name="pledge[email]"
+                     value="Email Address (required)">
+              Dear <input onfocus="if (this.value=='Name (required)') this.value = ''"
+                          onblur="if (this.value=='') this.value = 'Name or Nickname (required)'"
+                          type="text" class="text-input-one good-value" name="pledge[name]"
+                          style="display:inline-block; width:300px;"
+                          value="Name or Nickname (required)">,
+              <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                        onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
+                        onblur="if (this.value=='') this.value = 'Message (optional)'">Personal Message (optional)</textarea>
+              Will you please support me in my school’s Read-a-thon?
+              <br/><br/>
+              The money I raise will support art, reading, and science docent programs, a kindergarten music teacher,
+              a computer teacher, field trips, and classroom supplies.
+              <br/><br/>
+              I am committed to reading everyday and will keep track of the minutes I read.
+              A pledge of $1 to $5 an hour or a flat donation of $5 to $50 will help me reach my personal goal of
+              raising
+              $250 or more!
+              <br/><br/>
+              I appreciate any amount you are able to send!
+              <br/><br/>
+              The easist way to pledge me is through our read-a-thon system <%= profile_bitly_url %>.
+              <br/><br/>
+              Or you can mail a check to me, payable to Richmond Elementary School Foundation.
+              <br/><br/>
+              Thank you for helping me to reach my goal!
+              <br/><br/>
+              Love,
+              <%= current_student.first %> <%= current_student.last %>
+              <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
+          <% end %>
+        </div>
+        <div id="tab-4">
+          <%= form_tag(pub_make_pledge_path(current_student.id), method: "post") do %>
+                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                          onfocus="if (this.value=='Email Addresses (separated by comma)') this.value = ''"
+                          onblur="if (this.value=='') this.value = 'Email Addresses (separated by comma)'">Email Addresses (separated by comma)</textarea>
+
+              Dear Friends and Family,
+              <br/><br/>
+              <%= current_student.first %> is currently participating in Richmond Elementary School's Read-a-thon to
+              help raise money for school’s art, garden, and science docent programs, a kindergarten music teacher, a
+              computer teacher,
+              field trips, and classroom supplies. Limited state funding has cut these important programs, activities,
+              and supplies, which are not provided by the school but instead are funded by the
+              Foundation.
+              <br/><br/>
+              <%= current_student.first %> has committed
+              to reading 35 minutes a day during the read-a-thon and is looking forward to your support.
+              <br/><br/>
+              If you are interested in sponsoring <%= current_student.first %> in the Read-a-thon and helping our
+              fundraising goal (even a little bit goes a long way!).
+              <br/><br/>
+              You can pledge or donate online by clicking on the following link:  <%= profile_bitly_url %>
+              <br/><br/>
+              Thank you so much for your support.
+              <br/><br/>
+              Sincerely,
+              <input onfocus="if (this.value=='Parent Name (required)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Parent Name (required)'"
+                     type="text" class="text-input-one good-value" name="pledge[name]"
+                     style="display:inline-block; width:300px;"
+                     value="Parent Name (required)">,
+
+              <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
+          <% end %>
+        </div>
+
+        <div id="tab-5">
+          <%= form_tag(pub_make_pledge_path(current_student.id), method: "post") do %>
+                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                          onfocus="if (this.value=='Email Addresses (separated by comma)') this.value = ''"
+                          onblur="if (this.value=='') this.value = 'Email Addresses (separated by comma)'">Email Addresses (separated by comma)</textarea>
+              <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                        onfocus="if (this.value=='Message (required)') this.value = ''" style="height:200px;"
+                        onblur="if (this.value=='') this.value = 'Message (optional)'">Message (required)</textarea>
+              <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+  </div>
+</div>

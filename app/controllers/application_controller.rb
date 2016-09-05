@@ -19,7 +19,10 @@ class ApplicationController < ActionController::Base
   end
 
   def profile_bitly_url
-    Bitly.client.shorten(pub_profile_url(current_student.id)).short_url
-    #Bitly.client.shorten("http://readathon.gltech.com/public/profile/1").short_url
+    if Rails.env.development?
+      Bitly.client.shorten("http://readathon.gltech.com/public/profile/1").short_url
+    else
+      Bitly.client.shorten(pub_profile_url(current_student.id)).short_url
+    end
   end
 end

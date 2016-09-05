@@ -37,4 +37,7 @@ class PriprofilesController < ApplicationController
     render :index
   end
 
+  def pledge_email
+
+  end
 end
