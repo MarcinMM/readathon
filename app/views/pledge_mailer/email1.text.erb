@@ -1,0 +1,21 @@
+Dear <%= @name %>,
+
+<% unless @message.nil? %>
+  <%= @message %>
+
+<% end %>
+Will you please support me in my school's Read-a-thon?
+
+The money I raise will support art, reading, and science docent programs, a kindergarten music teacher, a computer teacher, field trips, and classroom supplies.
+
+I am committed to reading everyday and will keep track of the minutes I read. A pledge of $1 to $5 an hour or a flat donation of $5 to $50 will help me reach my personal goal of raising $250 or more!
+
+I appreciate any amount you are able to send!
+
+The easist way to pledge me is through our read-a-thon system <%= @profile_bitly_url %>
+
+Or you can mail a check to me, payable to Richmond Elementary School Foundation.
+
+Thank you for helping me to reach my goal!
+
+Love, <%= @student.first %> <%= @student.last %>

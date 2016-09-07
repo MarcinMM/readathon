@@ -8,14 +8,17 @@ Rails.application.routes.draw do
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register' => 'logins#register', :as => :register, :via => :post
 
-  match '/profile'              => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
-  match '/profile/avatar'       => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get
-  match '/profile/avatar'       => 'priprofiles#avatar_update',       :as => :priprofile_avatar_update, :via => :post
-  match '/profile/challange'    => 'priprofiles#challange',           :as => :priprofile_challange,     :via => :post
-  match '/profile/pledge'       => 'priprofiles#pledge',              :as => :priprofile_pledge,        :via => :get
-  match '/profile/pledge/email' => 'priprofiles#pledge_email',        :as => :priprofile_pledge_email,  :via => :get
-  match '/profile/add15m'       => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
-  match '/profile/subtract15m'  => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
+  match '/profile'               => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
+  match '/profile/avatar'        => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get
+  match '/profile/avatar'        => 'priprofiles#avatar_update',       :as => :priprofile_avatar_update, :via => :post
+  match '/profile/challange'     => 'priprofiles#challange',           :as => :priprofile_challange,     :via => :post
+  match '/profile/pledge'        => 'priprofiles#pledge',              :as => :priprofile_pledge,        :via => :get
+  match '/profile/pledge/email'  => 'priprofiles#pledge_email',        :as => :priprofile_pledge_email,  :via => :get
+  match '/profile/pledge/email1' => 'priprofiles#pledge_email1',       :as => :priprofile_pledge_email1, :via => :post
+  match '/profile/pledge/email2' => 'priprofiles#pledge_email2',       :as => :priprofile_pledge_email2, :via => :post
+  match '/profile/pledge/email3' => 'priprofiles#pledge_email3',       :as => :priprofile_pledge_email3, :via => :post
+  match '/profile/add15m'        => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
+  match '/profile/subtract15m'   => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
 
   match '/search'             => 'pubprofiles#search',      :as => :pub_search,      :via => :get
   match '/public/profile/:id' => 'pubprofiles#show',        :as => :pub_profile,     :via => :get

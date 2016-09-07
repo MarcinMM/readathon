@@ -38,6 +38,17 @@ class PriprofilesController < ApplicationController
   end
 
   def pledge_email
+  end
 
+  def pledge_email1
+    PledgeMailer.email1(params[:email], params[:name], params[:message], profile_bitly_url, current_student).deliver
+    @request_again = true
+    render :pledge
+  end
+
+  def pledge_email2
+  end
+
+  def pledge_email3
   end
 end
