@@ -6,7 +6,7 @@
 <body>
   Dear <%= @name %>,
   <br/><br/>
-  <% unless @message.nil? %>
+  <% unless @message == "Message (optional)" %>
       <%= @message %>
     <br/><br/>
   <% end %>

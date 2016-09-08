@@ -42,13 +42,26 @@ class PriprofilesController < ApplicationController
 
   def pledge_email1
     PledgeMailer.email1(params[:email], params[:name], params[:message], profile_bitly_url, current_student).deliver
-    @request_again = true
-    render :pledge
+    redirect_to :priprofile_pledge, alert: "true"
   end
 
   def pledge_email2
+    email_list = ""
+    params[:emails].split(/\s*[,;]\s*|[\r\n]+/).each do |email|
+      email_list += "#{email},"
+    end
+
+    PledgeMailer.email2(email_list, params[:name], profile_bitly_url, current_student).deliver
+    redirect_to :priprofile_pledge, alert: "true"
   end
 
   def pledge_email3
+    email_list = ""
+    params[:emails].split(/\s*[,;]\s*|[\r\n]+/).each do |email|
+      email_list += "#{email},"
+    end
+
+    PledgeMailer.email3(email_list, params[:message], current_student).deliver
+    redirect_to :priprofile_pledge, alert: "true"
   end
 end
