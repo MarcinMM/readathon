@@ -4,7 +4,7 @@
   <div class="full-bottom"></div>
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:5%">
-      <img style="float:left; margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:150px;" src="/images/profiles/<%= @student.avatar_id %>.png"/>
+      <img style="float:left; margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:150px;" src="/images/avatars/<%= @student.avatar_id %>.png"/>
       <div style="margin-left:30px; margin-top:10px; float:left;">
         <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0, 1] %></h1>
         <p style="margin-bottom:0; margin-top:10px;font-style: italic;"><%= @student.teacher.grade.ordinalize %> Grade</p>
