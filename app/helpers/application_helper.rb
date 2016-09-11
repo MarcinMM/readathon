@@ -6,6 +6,7 @@ module ApplicationHelper
   end
 
   def days_to_end
-    (Rails.configuration.end_date - Date.today).to_i
+    days_to_end = (Rails.configuration.end_date - Date.today).to_i
+    days_to_end < 0 ? 0 : days_to_end
   end
 end

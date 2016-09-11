@@ -25,14 +25,21 @@
     <div class="one-half-responsive one-half-full" style="float:right;">
       <div class="pricing-table pricing-selected-green">
         <h2>
-          <%= days_to_end %> day remaining
+          <%= days_to_end %> day(s) remaining
         </h2>
         <ul>
           <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
           <li><strong><%= @student.challanges.length %></strong> badges earned</li>
           <li><strong><%= @student.pledges.length %></strong> pledges</li>
         </ul>
-        <a href="<%= pub_pledge_path %>" class="button center-button button-red">Pledge <%= @student.first %></a>
+
+        <% if Challange.days_remaining > 0 %>
+            <a href="<%= pub_pledge_path %>" class="button center-button button-red">Pledge <%= @student.first %></a>
+        <% else %>
+          <p style="margin:20px;"><strong>The Read-A-Thon has ended but...</strong> You can contribute securely online at the <%= link_to 'All Hands Raised', 'http://allhandsraised.org/donate/' %> website either a single donation,
+          or setup a recurring, monthly contribution. Make sure to select “Richmond ES” as the designated school.</p>
+        <% end %>
+
       </div>
     </div>
 

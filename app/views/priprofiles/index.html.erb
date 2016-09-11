@@ -59,20 +59,22 @@
       <a style="margin-top:10px;margin-left:35px" href="<%= priprofile_avatar_path %>">change your profile image</a>
       <a href="<%= priprofile_avatar_path %>"><img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:275px;" src="/images/profiles/<%= current_student.avatar_id %>.png"/></a>
 
-      <div style="margin-bottom:20px;">
-        Minutes you have read today.<br/>
-        <%= link_to "- 15", priprofile_subtract15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
-        <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= current_student.student_minutes_today %></span>
-        <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
-        <br/>Use the + and - to adjust the time.<br/><br/>
+      <% if Challange.days_remaining > 0 %>
+        <div style="margin-bottom:20px;">
+          Minutes you have read today.<br/>
+          <%= link_to "- 15", priprofile_subtract15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
+          <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= current_student.student_minutes_today %></span>
+          <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
+          <br/>Use the + and - to adjust the time.<br/><br/>
 
-        <% unless current_student.daily_challange_complete %>
-            <a id="challange" href="#" class="checkbox checkbox-class-3">
-              <span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/>
-              <%= Challange.daily_challange.description %>
-            </a>
-        <% end %>
-      </div>
+          <% unless current_student.daily_challange_complete %>
+              <a id="challange" href="#" class="checkbox checkbox-class-3">
+                <span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challange</span><br/>
+                <%= Challange.daily_challange.description %>
+              </a>
+          <% end %>
+        </div>
+      <% end %>
 
     </div>
 
@@ -98,7 +100,9 @@
           <li><strong><%= current_student.challanges.length %></strong> badges earned</li>
           <li><strong><%= current_student.pledges.length %></strong> people have pledged you</li>
         </ul>
-        <a href="<%= priprofile_pledge_path %>" style="width:170px;" class="button center-button button-red">Request a Pledge</a>
+        <% if Challange.days_remaining > 0 %>
+          <a href="<%= priprofile_pledge_path %>" style="width:170px;" class="button center-button button-red">Request a Pledge</a>
+        <% end %>
       </div>
     </div>
     <div class="clear"></div>
