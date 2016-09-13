@@ -41,7 +41,7 @@ class PriprofilesController < ApplicationController
   end
 
   def pledge_email1
-    PledgeMailer.email1(params[:email], params[:name], params[:message], profile_bitly_url, current_student).deliver
+    PledgeMailer.email1(params[:email], params[:name], params[:message], profile_bitly_url(current_student.id), current_student).deliver
     redirect_to :priprofile_pledge, alert: "true"
   end
 
@@ -51,7 +51,7 @@ class PriprofilesController < ApplicationController
       email_list += "#{email},"
     end
 
-    PledgeMailer.email2(email_list, params[:name], profile_bitly_url, current_student).deliver
+    PledgeMailer.email2(email_list, params[:name], profile_bitly_url(current_student.id), current_student).deliver
     redirect_to :priprofile_pledge, alert: "true"
   end
 

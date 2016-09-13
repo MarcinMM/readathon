@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
     @current_student = Student.find_by_code cookies[:code]
   end
 
-  def profile_bitly_url
+  def profile_bitly_url id
     if Rails.env.development?
       Bitly.client.shorten("http://readathon.gltech.com/public/profile/1").short_url
     else
-      Bitly.client.shorten(pub_profile_url(current_student.id)).short_url
+      Bitly.client.shorten(pub_profile_url(id)).short_url
     end
   end
 end
