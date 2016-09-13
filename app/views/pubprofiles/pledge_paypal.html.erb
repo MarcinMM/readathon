@@ -20,7 +20,7 @@
   <input type="hidden" name="currency_code" value="USD">
   <input type="hidden" name="notify_url" value="<%= paypal_callback_url %>">
   <input type="hidden" name="shopping_url" value="<%= pub_profile_url(@pledge.student.id) %>">
-  <input type="hidden" name="invoice" value="<%= @pledge.id %>-<%= @pledge.student.id %>-<%= Time.now.to_i %>">
+  <input type="hidden" name="invoice" value="<%= @pledge.id %>-<%= @pledge.student.id %>-<%= Time.zone.now.to_i %>">
   <input type="hidden" name="item_name_1" value="Flat Pledge to <%= @pledge.student.first %> <%= @pledge.student.last %>">
   <input type="hidden" name="item_number_1" value="Pledge Id: <%= @pledge.id %>-<%= @pledge.student.id %>">
   <input type="hidden" name="quantity_1" value="1">
