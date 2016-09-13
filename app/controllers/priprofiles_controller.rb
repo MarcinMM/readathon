@@ -5,6 +5,7 @@ class PriprofilesController < ApplicationController
     if current_student.mins_to_next_level == 0
       current_student.promote_to_next_level
       @levelup = true
+      @new_avatars = Avatar.where("level_id = ?", current_student.level_id).order(:category)
     end
   end
 

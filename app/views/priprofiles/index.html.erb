@@ -26,13 +26,24 @@
 
 <% if @levelup %>
     <div class="big-notification red-notification" style="margin:20px;margin-bottom:0;">
-      <h5 class="uppercase">Level Up!</h5>
+      <h5 class="uppercase">Congratulation - Level Up!</h5>
       <center>
         <a href="#" class="close-big-notification">x</a>
-        <span style="color:white;">Congratulation - You have reached level <%= current_student.level_id %>!</span>
-        <img src="/images/levels/level<%= current_student.level_id %>.png"/>
-        <p>You have unlocked new Avatars.
-          <a style="color:white;font-weight:bold;" href="<%= priprofile_avatar_path %>">Click HERE to check them out</a></p>
+        <span style="color:white;">You have reached level <%= current_student.level_id %> and unlocked new Avatars!</span>
+          <br/>
+          <% @new_avatars.each do |avatar| %>
+            <ul style="list-style-type: none;margin: 10px;padding: 0;text-align:center;display:inline-block">
+              <li style="float:left;display:inline;">
+                <a href="<%= priprofile_avatar_path %>">
+                  <img src="/images/avatars/<%= avatar.id %>.png" style="width:100px;">
+                </a>
+              </li>
+            </ul>
+        <% end %>
+        <div style="clear:both;"></div>
+        <p>
+          <a style="color:white;" href="<%= priprofile_avatar_path %>">Click <strong>here</strong> to select a new avatar or see which avatars are comming up next.</a>
+        </p>
       </center>
     </div>
 <% end %>
