@@ -1,11 +1,11 @@
-<%= render "share", student_id: @student.id %>
+<%= render "share", student_id: @pledge.student.id %>
 
 <div class="content">
   <div class="box-960">
     <div class="small-breadcrumb">
       <div class="left-breadcrumb">
-        <%= link_to "#{@student.first}'s Profile", pub_profile_path(@student.id) %>
-        <a href="<%= pub_make_pledge_path(@student.id) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
+        <%= link_to "#{@pledge.student.first}'s Profile", pub_profile_path(@pledge.student.id) %>
+        <a href="<%= pub_make_pledge_path(@pledge.student.id) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
         <a href="#"><i class="fa fa-angle-right"></i>Thank You</a>
       </div>
       <div class="right-breadcrumb">
@@ -15,8 +15,8 @@
     </div>
 
     <div class="one-half-responsive no-bottom" style="margin-right:5%">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %></h1>
-      <em><%= @student.teacher.grade.ordinalize %> Grade - <%= @student.teacher.last %> sensei</em>
+      <h1 style="margin-bottom:0;font-size:30px;"><%= @pledge.student.first %></h1>
+      <em><%= @pledge.student.teacher.grade.ordinalize %> Grade - <%= @pledge.student.teacher.last %> sensei</em>
 
       <br/><br/>
       <p>Some big thank you message here</p>
