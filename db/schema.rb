@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20160825063919) do
     t.string   "name",       limit: 24
     t.string   "email",      limit: 36
     t.string   "ptype",      limit: 10
-    t.integer  "amount",     limit: 4
-    t.integer  "min_amt",    limit: 4
-    t.integer  "max_amt",    limit: 4
+    t.decimal  "amount",                   precision: 6, scale: 2
+    t.decimal  "min_amt",                  precision: 6, scale: 2
+    t.decimal  "max_amt",                  precision: 6, scale: 2
     t.text     "message",    limit: 65535
   end
 
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160825063919) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.boolean  "admin",                  limit: 1,   default: false
+    t.boolean  "admin",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

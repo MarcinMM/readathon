@@ -9,6 +9,7 @@ gem 'mysql2', '0.4.3'
 gem "bitly"
 gem 'devise'
 gem 'pg'
+gem 'raygun4ruby'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
