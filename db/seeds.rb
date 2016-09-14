@@ -127,9 +127,9 @@ Teacher.create(first: 'Jen', last: 'Loveland', grade: '5', user_id: user.id)
 puts "#{user.email} #{password}"
 
 Level.create(id: 0, name: 'Level 0', description: "Let's get reading!" , minutes: 0)
-Level.create(id: 1, name: 'Level 1', description: 'xxx', minutes: 15)     # 15
-Level.create(id: 2, name: 'Level 2', description: 'xxx', minutes: 30)     # 15
-Level.create(id: 3, name: 'Level 3', description: 'xxx', minutes: 60)     # 30
+Level.create(id: 1, name: 'Level 1', description: '', minutes: 15)     # 15
+Level.create(id: 2, name: 'Level 2', description: '', minutes: 30)     # 15
+Level.create(id: 3, name: 'Level 3', description: '', minutes: 60)     # 30
 Level.create(id: 4, name: 'Level 4', description: 'xxx', minutes: 90)     # 30
 Level.create(id: 5, name: 'Level 5', description: 'xxx', minutes: 120)    # 30
 Level.create(id: 6, name: 'Level 6', description: 'xxx', minutes: 180)    # 60
