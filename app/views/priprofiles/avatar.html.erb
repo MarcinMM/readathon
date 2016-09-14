@@ -17,26 +17,28 @@
 <div class="content box-960">
   <%= render 'breadcrumb', page_name: 'Avatar Selection' %>
 
-  <div class="next_level_preview">
-    <div class="portfolio-three-item-categories-title">
-      <p style="margin-bottom:20px; margin-top:0;">Unlock these images at your next level</p>
-    </div>
+  <% if current_student.level_id < 13 %>
+    <div class="next_level_preview">
+      <div class="portfolio-three-item-categories-title">
+        <p style="margin-bottom:20px; margin-top:0;">Unlock these images at your next level</p>
+      </div>
 
-    <div class="portfolio-three-wrapper">
-      <% @nextlevel.each do |avatar| %>
-          <div class="<%= avatar.category %> portfolio-three-item">
-            <div>
-              <div class="overlay"></div>
-              <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>">
-                <span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span>
-              </a>
-              <img src="/images/avatars/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
+      <div class="portfolio-three-wrapper">
+        <% @nextlevel.each do |avatar| %>
+            <div class="<%= avatar.category %> portfolio-three-item">
+              <div>
+                <div class="overlay"></div>
+                <a href="javascript:void(0)" class="clicked-gallery" title="<%= avatar.category %> L<%= avatar.level_id %>">
+                  <span style="background-color:#2980b9;padding:35px;color:#FFF">Next Level</span>
+                </a>
+                <img src="/images/avatars/<%= avatar.id %>.png" class="responsive-image preload" style="display: block;">
+              </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div style="" class="decoration no-bottom"></div>
     </div>
-    <div style="" class="decoration no-bottom"></div>
-  </div>
+  <% end %>
 
   <div class="portfolio-three-item-categories-title" style="margin-bottom:20px; margin-top:10px;">
     <p>Available Images</p>

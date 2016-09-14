@@ -127,19 +127,19 @@ Teacher.create(first: 'Jen', last: 'Loveland', grade: '5', user_id: user.id)
 puts "#{user.email} #{password}"
 
 Level.create(id: 0, name: 'Level 0', description: "Let's get reading!" , minutes: 0)
-Level.create(id: 1, name: 'Level 1', description: 'You gotta start somewhere.', minutes: 15)
-Level.create(id: 2, name: 'Level 2', description: 'That first hour is behind you.', minutes: 30)
-Level.create(id: 3, name: 'Level 3', description: 'Enough to complete your first short story.', minutes: 60)
-Level.create(id: 4, name: 'Level 4', description: 'You gotta start somewhere.', minutes: 90)
-Level.create(id: 5, name: 'Level 5', description: 'You gotta start somewhere.', minutes: 120)
-Level.create(id: 6, name: 'Level 6', description: 'You gotta start somewhere.', minutes: 150)
-Level.create(id: 7, name: 'Level 7', description: 'You gotta start somewhere.', minutes: 180)
-Level.create(id: 8, name: 'Level 8', description: 'You gotta start somewhere.', minutes: 240)
-Level.create(id: 9, name: 'Level 9', description: 'You gotta start somewhere.', minutes: 270)
-Level.create(id: 10, name: 'Level 10', description: 'You gotta start somewhere.', minutes: 330)
-Level.create(id: 11, name: 'Level 11', description: 'You gotta start somewhere.', minutes: 390)
-Level.create(id: 12, name: 'Level 12', description: 'You gotta start somewhere.', minutes: 390)
-Level.create(id: 13, name: 'Level 13', description: 'You gotta start somewhere.', minutes: 390)
+Level.create(id: 1, name: 'Level 1', description: 'xxx', minutes: 15)     # 15
+Level.create(id: 2, name: 'Level 2', description: 'xxx', minutes: 30)     # 15
+Level.create(id: 3, name: 'Level 3', description: 'xxx', minutes: 60)     # 30
+Level.create(id: 4, name: 'Level 4', description: 'xxx', minutes: 90)     # 30
+Level.create(id: 5, name: 'Level 5', description: 'xxx', minutes: 120)    # 30
+Level.create(id: 6, name: 'Level 6', description: 'xxx', minutes: 180)    # 60
+Level.create(id: 7, name: 'Level 7', description: 'xxx', minutes: 240)    # 60
+Level.create(id: 8, name: 'Level 8', description: 'xxx', minutes: 360)    # 120
+Level.create(id: 9, name: 'Level 9', description: 'xxx', minutes: 480)    # 120
+Level.create(id: 10, name: 'Level 10', description: 'xxx', minutes: 720)  # 240
+Level.create(id: 11, name: 'Level 11', description: 'xxx', minutes: 960)  # 240
+Level.create(id: 12, name: 'Level 12', description: 'xxx', minutes: 1020) # 360
+Level.create(id: 13, name: 'Level 13', description: 'xxx', minutes: 1380) # 360
 
 Avatar.create(id: 0, level_id: 0, category: 'leaf')
 Avatar.create(id: 1, level_id: 1, category: 'mythical')
