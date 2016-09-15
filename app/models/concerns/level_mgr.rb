@@ -17,7 +17,6 @@ module LevelMgr
 
   def earned_level_id
     level = Level.where("minutes <= ?", self.student_minutes_total).order(id: :desc).first
-logger.info "!!!!!!!!!!!!!! #{level.id} !!!!!!!!!!!!!!!!!!!!!!!!! #{self.level_id}"
     level.id
   end
 
