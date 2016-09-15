@@ -22,40 +22,38 @@
 
     </p><br/>
   </div>
-  <div style="width:330px;" class="orange-decoration half-bottom"></div>
+  <div style="width:50%;" class="orange-decoration half-bottom"></div>
+
   <div class="container half-bottom">
-    <div class="one-third-responsive">
-      <div class="center-icon-column red-center-icon-column">
-        <h1><i class="fa fa-envelope fa-3x"></i></h1>
-        <h5>Email</h5>
-        <p class="half-bottom">
-          Grandparents, aunts, uncles, and family friends are a great resource for sponsorship.
-          <br/><br/>Send them an email personal email using our email wizard.
-          We will help you with samples ideas.
-        </p>
-        <a href="<%= priprofile_pledge_email_path %>" style="width:160px;" class="button button-red center-button"><i style="margin-right:10px;" class="fa fa-envelope"></i>Email Wizard</a>
-      </div>
+    <div class="column-3 one-third-responsive">
+      <h1 style="text-align:center;"><i class="fa fa-envelope fa-3x"></i></h1>
+      <h5 style="padding-top:0;">Email</h5>
+      <p class="half-bottom">
+        Grandparents, aunts, uncles, and family friends are a great resource for sponsorship.
+        <br/><br/>Send them an email personal email using our email wizard.
+        We will help you with samples ideas.
+      </p>
+      <a href="<%= priprofile_pledge_email_path %>" style="width:160px;" class="button button-red center-button"><i style="margin-right:10px;" class="fa fa-envelope"></i>Email Wizard</a>
+      <div class="clear"></div>
     </div>
-    <div class="decoration hide-if-responsive half-bottom"></div>
-    <div class="one-third-responsive">
-      <div class="center-icon-column blue-center-icon-column">
-        <h1><i class="fa fa-facebook-official fa-3x"></i></h1>
-        <h5>Facebook</h5>
-        <p class="half-bottom">
-          Let your community know about you Read-a-Thon.  If you or your parents have a facebook account have them use the button below to share your Read-a-Thon with your social circle.
-        </p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(current_student.id) %>" style="width:160px;" class="button button-blue center-button"><i style="margin-right:10px;" class="fa fa-facebook"></i>Request Pledge</a>
-      </div>
+
+    <div class="column-3 one-third-responsive">
+      <h1 style="text-align:center;"><i class="fa fa-facebook-official fa-3x"></i></h1>
+      <h5 style="padding-top:0;">Facebook</h5>
+      <p class="half-bottom">
+        Let your community know about you Read-a-Thon.  If you or your parents have a facebook account have them use the button below to share your Read-a-Thon with your social circle.
+      </p>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(current_student.id) %>" style="width:160px;" class="button button-blue center-button"><i style="margin-right:10px;" class="fa fa-facebook"></i>Request Pledge</a>
+      <div class="clear"></div>
     </div>
-    <div class="decoration hide-if-responsive half-bottom"></div>
-    <div class="one-third-responsive no-bottom last">
-      <div class="center-icon-column green-center-icon-column">
-        <h1><i class="fa fa-twitter fa-3x"></i></h1>
-        <h5>Twitter</h5>
-        <p class="half-bottom">
-          The world is listening to your twitter feed, so broadcast out the opertunity to support your school via this Read-a-thon.
-        </p>
-        <center>
+
+    <div class="column-3 one-third-responsive last">
+      <h1 style="text-align:center;"><i class="fa fa-twitter fa-3x"></i></h1>
+      <h5 style="padding-top:0;">Twitter</h5>
+      <p class="half-bottom">
+        The world is listening to your twitter feed, so broadcast out the opertunity to support your school via this Read-a-thon.
+      </p>
+      <center>
         <a class="twitter-share-button button button-green center-button"
            href="https://twitter.com/share"
            data-size="large"
@@ -63,9 +61,10 @@
            data-text="Help support me in my Read-A-Thon through Richmond Elementary School.  <%= profile_bitly_url(current_student.id) %>">
           Request Pledge
         </a>
-        </center>
-      </div>
+      </center>
+      <div class="clear"></div>
     </div>
+
     <div class="clear"></div>
   </div>
 </div>

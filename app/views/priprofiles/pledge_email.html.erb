@@ -19,18 +19,18 @@
 
         <div id="tab-3">
           <%= form_tag(priprofile_pledge_email1_path, method: "post") do %>
-              <input onfocus="if (this.value==' To: Email Address (required)') this.value = ''"
+              <input onfocus="if (this.value=='To: Email Address (required)') this.value = ''"
                      onblur="if (this.value=='') this.value = 'To: Email Address (required)'"
                      type="text" class="text-input-one good-value" name="email"
                      value="To: Email Address (required)">
-              Dear <input onfocus="if (this.value=='Name (required)') this.value = ''"
+              Dear <input onfocus="if (this.value=='Name or Nickname (required)') this.value = ''"
                           onblur="if (this.value=='') this.value = 'Name or Nickname (required)'"
                           type="text" class="text-input-one good-value" name="name"
                           style="display:inline-block; width:300px;"
                           value="Name or Nickname (required)">,
               <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
                         onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
-                        onblur="if (this.value=='') this.value = 'Message (optional)'">Personal Message (optional)</textarea>
+                        onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
               Will you please support me in my school’s Read-a-thon?
               <br/><br/>
               The money I raise will support art, reading, and science docent programs, a kindergarten music teacher,
