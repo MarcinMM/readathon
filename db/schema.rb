@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160825063919) do
 
   create_table "levels", force: :cascade do |t|
     t.string  "name",        limit: 24
-    t.string  "description", limit: 56
+    t.string  "description", limit: 255
     t.integer "minutes",     limit: 4
   end
 

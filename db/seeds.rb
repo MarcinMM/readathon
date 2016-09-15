@@ -126,20 +126,20 @@ user = User.create(email: 'jlovela1@pps.net', password: password)
 Teacher.create(first: 'Jen', last: 'Loveland', grade: '5', user_id: user.id)
 puts "#{user.email} #{password}"
 
-Level.create(id: 0, name: 'Level 0', description: "Let's get reading!" , minutes: 0)
-Level.create(id: 1, name: 'Level 1', description: '', minutes: 15)     # 15
-Level.create(id: 2, name: 'Level 2', description: '', minutes: 30)     # 15
-Level.create(id: 3, name: 'Level 3', description: '', minutes: 60)     # 30
-Level.create(id: 4, name: 'Level 4', description: 'xxx', minutes: 90)     # 30
-Level.create(id: 5, name: 'Level 5', description: 'xxx', minutes: 120)    # 30
-Level.create(id: 6, name: 'Level 6', description: 'xxx', minutes: 180)    # 60
-Level.create(id: 7, name: 'Level 7', description: 'xxx', minutes: 240)    # 60
-Level.create(id: 8, name: 'Level 8', description: 'xxx', minutes: 360)    # 120
-Level.create(id: 9, name: 'Level 9', description: 'xxx', minutes: 480)    # 120
-Level.create(id: 10, name: 'Level 10', description: 'xxx', minutes: 720)  # 240
-Level.create(id: 11, name: 'Level 11', description: 'xxx', minutes: 960)  # 240
-Level.create(id: 12, name: 'Level 12', description: 'xxx', minutes: 1020) # 360
-Level.create(id: 13, name: 'Level 13', description: 'xxx', minutes: 1380) # 360
+Level.create(id: 0, name: 'Level 0 Reader', description: "If you don’t like to read, you haven’t found the right book." , minutes: 0)
+Level.create(id: 1, name: 'Level 1 Reader', description: 'Reading one book is like eating just one potato chip.', minutes: 15)     # 15
+Level.create(id: 2, name: 'Level 2 Reader', description: 'Today a reader, tomorrow a leader.', minutes: 30)     # 15
+Level.create(id: 3, name: 'Level 3 Reader', description: 'Judge a man not by what he reads, but what he rereads.', minutes: 60)     # 30
+Level.create(id: 4, name: 'Level 4 Reader', description: 'Literature is the most agreeable way of ignoring life.', minutes: 90)     # 30
+Level.create(id: 5, name: 'Level 5 Reader', description: 'Books are no more threatened by Kindle than stairs by elevators.', minutes: 120)    # 30
+Level.create(id: 6, name: 'Level 6 Reader', description: 'Everything in the world exists in order to end up as a book.', minutes: 180)    # 60
+Level.create(id: 7, name: 'Level 7 Reader', description: 'Reading is to the mind what exercise is to the body.', minutes: 240)    # 60
+Level.create(id: 8, name: 'Level 8 Reader', description: 'Never trust anyone who has not brought a book with them', minutes: 360)    # 120
+Level.create(id: 9, name: 'Level 9 Reader', description: 'Literature adds to reality, it does not simply describe it.', minutes: 480)    # 120
+Level.create(id: 10, name: 'Level 10 Reader', description: 'There are worse crimes than burning books. One of them is not reading them.', minutes: 720)  # 240
+Level.create(id: 11, name: 'Level 11 Reader', description: 'A reader lives a thousand lives before he dies. The man who never reads lives only one', minutes: 960)  # 240
+Level.create(id: 12, name: 'Level 12 Reader', description: 'Sleep is good, but books are better.', minutes: 1020) # 360
+Level.create(id: 13, name: 'Level 13 Reader', description: 'I always read. You know how sharks have to keep swimming or they die? I’m like that. If I stop reading, I die', minutes: 1380) # 360
 
 Avatar.create(id: 0, level_id: 0, category: 'leaf')
 Avatar.create(id: 1, level_id: 1, category: 'mythical')
