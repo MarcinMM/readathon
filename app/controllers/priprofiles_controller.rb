@@ -2,7 +2,7 @@ class PriprofilesController < ApplicationController
   before_action :require_code
 
   def index
-    if current_student.mins_to_next_level == 0 && current_student.level_id < 13
+    if current_student.earned_level_id > current_student.level_id && current_student.level_id < 13
       current_student.promote_to_next_level
       @levelup = true
       @new_avatars = Avatar.where("level_id = ?", current_student.level_id).order(:category)

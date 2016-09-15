@@ -137,9 +137,9 @@ Level.create(id: 7, name: 'Level 7 Reader', description: 'Reading is to the mind
 Level.create(id: 8, name: 'Level 8 Reader', description: 'Never trust anyone who has not brought a book with them', minutes: 360)    # 120
 Level.create(id: 9, name: 'Level 9 Reader', description: 'Literature adds to reality, it does not simply describe it.', minutes: 480)    # 120
 Level.create(id: 10, name: 'Level 10 Reader', description: 'There are worse crimes than burning books. One of them is not reading them.', minutes: 720)  # 240
-Level.create(id: 11, name: 'Level 11 Reader', description: 'A reader lives a thousand lives before he dies. The man who never reads lives only one', minutes: 960)  # 240
+Level.create(id: 11, name: 'Level 11 Reader', description: 'In a good book the best is between the lines.', minutes: 960)  # 240
 Level.create(id: 12, name: 'Level 12 Reader', description: 'Sleep is good, but books are better.', minutes: 1020) # 360
-Level.create(id: 13, name: 'Level 13 Reader', description: 'I always read. You know how sharks have to keep swimming or they die? I’m like that. If I stop reading, I die', minutes: 1380) # 360
+Level.create(id: 13, name: 'Level 13 Reader', description: 'Either write something worth reading or do something worth writing.', minutes: 1380) # 360
 
 Avatar.create(id: 0, level_id: 0, category: 'leaf')
 Avatar.create(id: 1, level_id: 1, category: 'mythical')

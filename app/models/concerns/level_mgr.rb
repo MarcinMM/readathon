@@ -15,8 +15,14 @@ module LevelMgr
     mins_left < 0 ? 0 : mins_left
   end
 
+  def earned_level_id
+    level = Level.where("minutes <= ?", self.student_minutes_total).order(id: :desc).first
+logger.info "!!!!!!!!!!!!!! #{level.id} !!!!!!!!!!!!!!!!!!!!!!!!! #{self.level_id}"
+    level.id
+  end
+
   def promote_to_next_level
-    self.update_attribute :level_id, next_level_id
+    self.update_attribute :level_id, earned_level_id
   end
 
   def next_level_id
