@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
       if student.email.nil?
         redirect_to register_screen_path(student.code)
       else
-        cookies[:code] = student.code
+        cookies.permanent[:code] = student.code
         redirect_to :priprofile_index
       end
     end
