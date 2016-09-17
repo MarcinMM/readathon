@@ -6,10 +6,13 @@ class Rmgr::StudentsController < ApplicationController
 
   def index
     @students = Array.new
+    @grade = 'K'
 
-    if params[:grade] != nil
-      @students = Student.joins(:teacher).where("teachers.grade=?", params[:grade])
+    if ['K', '1', '2', '3', '4', '5'].include? params[:grade]
+      @grade = params[:grade]
     end
+
+    @students = Student.joins(:teacher).where("teachers.grade=?", @grade)
   end
 
   def new

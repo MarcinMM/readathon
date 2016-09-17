@@ -1,6 +1,10 @@
 <script>
   jQuery(document).ready(function () {
     jQuery("tr:even").addClass("even");
+
+    jQuery('#grade_select').change(function() {
+      self.location = '<%= rmgr_students_path %>?grade='+ jQuery('#grade_select').val();
+    });
   });
 </script>
 
@@ -19,34 +23,44 @@
 
   <h4>Read-A-Thon Students List</h4>
 
-<table class="table">
-  <tbody>
-  <tr>
-    <th style="width:100px;">GRADE</th>
-    <th>TEACHER</th>
-    <th>FIRST</th>
-    <th>LAST</th>
-    <th>CODE</th>
-    <th>EMAIL</th>
-    <th></th>
-  </tr>
-  <% @students.each do |student| %>
-      <tr>
-        <td><%= student.teacher.grade %></td>
-        <td><%= student.teacher.last %></td>
-        <td><%= student.first %></td>
-        <td><%= student.last %></td>
-        <td><%= student.code %></td>
-        <td><%= student.email %></td>
-        <td>
-          <%= link_to 'edit', edit_rmgr_student_path(student), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
-          <%= link_to 'delete', rmgr_student_path(student), style: 'display:inline;', method: 'delete', confirm: 'Are you sure?' %>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-<br/>
+  <%= form_for rmgr_students_path, method: 'get' do |f| %>
 
-<%= link_to 'Add Student', new_rmgr_student_path, class: 'button button-blue half-bottom', style: "float:left; margin-right:10px;" %>
+      Select Grade:
+      <%= f.select :grade,
+                   options_for_select([['Kindergarten', 'K'], ['1st Grade', '1'], ['2nd Grade', '2'], ['3rd Grade', '3'], ['4th Grade', '4'], ['5th Grade', '5']], @grade),
+                   {}, {id: 'grade_select', style: 'width:230px;', class: 'contactField field-deco requiredField'} %>
+
+  <% end %>
+  <br/>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th style="width:100px;">GRADE</th>
+      <th>TEACHER</th>
+      <th>FIRST</th>
+      <th>LAST</th>
+      <th>CODE</th>
+      <th>EMAIL</th>
+      <th></th>
+    </tr>
+    <% @students.each do |student| %>
+        <tr>
+          <td><%= student.teacher.grade %></td>
+          <td><%= student.teacher.last %></td>
+          <td><%= student.first %></td>
+          <td><%= student.last %></td>
+          <td><%= student.code %></td>
+          <td><%= student.email %></td>
+          <td>
+            <%= link_to 'edit', edit_rmgr_student_path(student), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+            <%= link_to 'delete', rmgr_student_path(student), style: 'display:inline;', method: 'delete', confirm: 'Are you sure?' %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br/>
+
+  <%= link_to 'Add Student', new_rmgr_student_path, class: 'button button-blue half-bottom', style: "float:left; margin-right:10px;" %>
 </div>
