@@ -41,9 +41,8 @@
         </ul>
 
         <div id="tab-3">
-          <h6 class="half-bottom">Hourly Pledge</h6>
-          <p class="half-bottom">
-            <%= form_tag(pub_make_pledge_path(@student.id), method: "post") do %>
+          <h6>Hourly Pledge</h6>
+            <%= form_tag(pub_make_pledge_path(@student.id), id: 'hpledge', method: 'post') do %>
                 <input type="hidden" name="pledge[ptype]" value="hourly"/>
                 <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
                        onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
@@ -51,28 +50,26 @@
                        value="Name or Nickname (optional)">
                 <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
                        onblur="if (this.value=='') this.value = 'Email Address (required)'"
-                       type="text" class="text-input-one good-value" name="pledge[email]"
-                       value="Email Address (required)">
-                <input onfocus="if (this.value=='Pledge Amount Per Hour Read') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Pledge Amount Per Hour Read'"
-                       type="text" class="text-input-one good-value" name="pledge[amount]"
-                       value="Pledge Amount Per Hour Read">
+                       type="email" class="text-input-one good-value" name="pledge[email]"
+                       value="Email Address (required)" required>
                 <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
                           onfocus="if (this.value=='Message (optional)') this.value = ''"
                           onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
+                <input onfocus="if (this.value=='Pledge Per Hour (required)') this.value = ''"
+                       onblur="if (this.value=='') this.value = 'Pledge Per Hour (required)'"
+                       type="text" class="text-input-one good-value" name="pledge[amount]"
+                       value="Pledge Per Hour (required)">
                 <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
                        onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
                        type="text" class="text-input-one good-value" name="pledge[min_amt]"
-                       style="width: 47%; float:left;"
                        value="Min Amount (optional)">
                 <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
                        onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
                        type="text" class="text-input-one good-value" name="pledge[max_amt]"
-                       style="width: 47%; float:left; margin-left:20px;"
                        value="Max Amount (optional)">
                 <input type="submit" class="button button-green center-button" value="Make Pledge"/>
             <% end %>
-          </p>
+          <p class="half-bottom"></p>
         </div>
         <div id="tab-4">
           <h6 class="half-bottom">Fixed Pledge</h6>
@@ -96,6 +93,26 @@
         </div>
       </div>
     </div>
+
+    <script>
+      jQuery.validator.addMethod("notEqual", function(value, element, param) {
+        return this.optional(element) || value != param;
+      }, "Required Field");
+      jQuery.validator.addMethod("currencyIfNotEq", function(value, element, param) {
+        return this.optional(element) || value != param;
+      }, "Required Field");
+
+      $("#hpledge").validate({
+        rules: {
+          "pledge[amount]": { notEqual: "Pledge Per Hour (required)" },
+          "pledge[amount]":  { currency: ['$', false] },
+
+          "pledge[min_amt]": { currencyIfNotEq: "Min Amount (optional)" },
+          "pledge[max_amt]": { currencyIfNotEq: "Max Amount (optional)" },
+        }
+      });
+
+    </script>
 
     <div class="decoration hide-if-responsive"></div>
     <div class="clear"></div>
