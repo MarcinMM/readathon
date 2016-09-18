@@ -42,33 +42,33 @@
 
         <div id="tab-3">
           <h6>Hourly Pledge</h6>
-            <%= form_tag(pub_make_pledge_path(@student.id), id: 'hpledge', method: 'post') do %>
-                <input type="hidden" name="pledge[ptype]" value="hourly"/>
-                <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[name]"
-                       value="Name or Nickname (optional)">
-                <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Email Address (required)'"
-                       type="email" class="text-input-one good-value" name="pledge[email]"
-                       value="Email Address (required)" required>
-                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
-                          onfocus="if (this.value=='Message (optional)') this.value = ''"
-                          onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-                <input onfocus="if (this.value=='Pledge Per Hour (required)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Pledge Per Hour (required)'"
-                       type="text" class="text-input-one good-value" name="pledge[amount]"
-                       value="Pledge Per Hour (required)">
-                <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[min_amt]"
-                       value="Min Amount (optional)">
-                <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[max_amt]"
-                       value="Max Amount (optional)">
-                <input type="submit" class="button button-green center-button" value="Make Pledge"/>
-            <% end %>
+          <%= form_tag(pub_make_pledge_path(@student.id), id: 'hpledge', method: 'post') do %>
+              <input type="hidden" name="pledge[ptype]" value="hourly"/>
+              <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
+                     type="text" class="text-input-one good-value" name="pledge[name]"
+                     value="Name or Nickname (optional)">
+              <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Email Address (required)'"
+                     type="email" class="text-input-one good-value" name="pledge[email]"
+                     value="Email Address (required)" required>
+              <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                        onfocus="if (this.value=='Message (optional)') this.value = ''"
+                        onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
+              <input onfocus="if (this.value=='Pledge Per Hour (required)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Pledge Per Hour (required)'"
+                     type="text" class="text-input-one good-value" name="pledge[amount]"
+                     value="Pledge Per Hour (required)">
+              <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
+                     type="text" class="text-input-one good-value" name="pledge[min_amt]"
+                     value="Min Amount (optional)">
+              <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
+                     type="text" class="text-input-one good-value" name="pledge[max_amt]"
+                     value="Max Amount (optional)">
+              <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+          <% end %>
           <p class="half-bottom"></p>
         </div>
         <div id="tab-4">
@@ -95,20 +95,36 @@
     </div>
 
     <script>
-      jQuery.validator.addMethod("notEqual", function(value, element, param) {
+      jQuery.validator.addMethod("notEqual", function (value, element, param) {
         return this.optional(element) || value != param;
       }, "Required Field");
-      jQuery.validator.addMethod("currencyIfNotEq", function(value, element, param) {
-        return this.optional(element) || value != param;
-      }, "Required Field");
+
+      $.validator.addMethod("currencyIfNotEq", function (value, element, param) {
+        if(param == value)
+        {
+          return true;
+        }
+
+        var symbol = '$',
+            soft = false,
+            regex;
+
+        symbol = symbol.replace(/,/g, "");
+        symbol = soft ? symbol + "]" : symbol + "]?";
+        regex = "^[" + symbol + "([1-9]{1}[0-9]{0,2}(\\,[0-9]{3})*(\\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\\.[0-9]{0,2})?|0(\\.[0-9]{0,2})?|(\\.[0-9]{1,2})?)$";
+        regex = new RegExp(regex);
+        return this.optional(element) || regex.test(value);
+
+      }, "Please specify a valid currency");
+
 
       $("#hpledge").validate({
         rules: {
-          "pledge[amount]": { notEqual: "Pledge Per Hour (required)" },
-          "pledge[amount]":  { currency: ['$', false] },
+          "pledge[amount]": {notEqual: "Pledge Per Hour (required)"},
+          "pledge[amount]": {currency: ['$', false]},
 
-          "pledge[min_amt]": { currencyIfNotEq: "Min Amount (optional)" },
-          "pledge[max_amt]": { currencyIfNotEq: "Max Amount (optional)" },
+          "pledge[min_amt]": {currencyIfNotEq: "Min Amount (optional)"},
+          "pledge[max_amt]": {currencyIfNotEq: "Max Amount (optional)"},
         }
       });
 
