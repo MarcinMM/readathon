@@ -1,16 +1,3 @@
-<div class="social-strip">
-  <div class="box-960">
-    <div class="left-social-strip animated fadeIn">
-      <h3>Help us spread the word</h3>
-      <h5>share us on your favorite social networks</h5>
-    </div>
-    <div class="right-social-strip">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-    </div>
-  </div>
-</div>
-
 <% if days_to_end > 0 %>
     <blockquote class="quote-one red-quote">
       <strong><%= days_to_end %> Days Remaining</strong>
@@ -23,7 +10,7 @@
     </blockquote>
 <% end %>
 
-<div class="content">
+<div class="content half-bottom">
   <div class="full-bottom"></div>
   <div class="box-960">
     <div class="one-half-responsive half-bottom">
@@ -40,26 +27,26 @@
     <div class="decoration hide-if-responsive"></div>
 
     <div class="contact-box one-half-responsive last">
-      <h5>Lookup a Reader!</h5>
-      <div class="contact-form no-bottom">
-        <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
-          <fieldset class="full-bottom">
-            <div class="formFieldWrap container">
-              <label class="field-title contactNameField" for="contactNameField">
-                Name
-                <em class="formValidationError no-bottom" id="contactNameFieldError">field is required!</em>
-                <span>(required)</span>
-              </label>
-              <input type="text" name="contactNameField" value="" class="contactField field-deco requiredField" id="contactNameField"/>
-            </div>
-            <div class="formSubmitButtonErrorsWrap">
-              <i class="fa fa-book"></i>
-              <input type="submit" class="buttonWrap contactSubmitButton" id="contactSubmitButton" value="Sponsor" data-formId="contactForm"/>
-            </div>
-          </fieldset>
-        </form>
+      <div>
+      <p class="dropcaps dropcaps-2">
+        Students and parents all you need to access the site is your
+        read-a-thon code.  If you have not recieved your code please
+        contact us at <a href="mailto:rsf.pdx@gmail.com">rsf.pdx@gmail.com</a>
+        <br/>
+        <a href="<%= priprofile_index_path %>" class="button button-icon button-green">  <i class="fa fa-angle-double-right"></i>Student Home Page</a>
+      </p>
       </div>
+      <div style="margin-top:30px;">
+      <p class="dropcaps dropcaps-2">
+        Teachers use your read-a-thon portal page to credit students for
+        minutes that have been read in the classroom.  If you are having
+        issues with your username/password or have not received one contact
+        us <a href="mailto:rsf.pdx@gmail.com">rsf.pdx@gmail.com</a>
+        <br/>
+        <a href="#" class="button button-icon button-green">  <i class="fa fa-angle-double-right"></i>Teacher Portal</a>
+      </p>
     </div>
+  </div>
     <div class="clear"></div>
   </div>
 </div>
@@ -83,7 +70,7 @@
         Very few fundraising ideas offer such clear benefits to children and the groups they are raising money for.
       </p>
     </div>
-    <div class="orange-decoration half-bottom"></div>
+    <div style="width:50%;" class="orange-decoration half-bottom"></div>
     <div class="container half-bottom">
       <div class="one-third-responsive">
         <div class="center-icon-column red-center-icon-column">
@@ -93,7 +80,6 @@
             We keep as much of our fundraising dollars at Richmond. Our only expense is a 3% credit card transaction
             fee.
           </p>
-          <a href="#" class="button button-red center-button">Read More</a>
         </div>
       </div>
       <div class="decoration hide-if-responsive half-bottom"></div>
@@ -105,7 +91,6 @@
             Our read-a-thon is not about toys. Children can redeem a small % of the money raised to buy books at our PTA
             book fare.
           </p>
-          <a href="#" class="button button-blue center-button">Read More</a>
         </div>
       </div>
       <div class="decoration hide-if-responsive half-bottom"></div>
@@ -117,7 +102,6 @@
             Our sole mission is to raise funds for staff positions at our school to help sustain Richmond's
             dual-immersion model.
           </p>
-          <a href="#" class="button button-green center-button">Read More</a>
         </div>
       </div>
       <div class="clear"></div>
