@@ -12,6 +12,11 @@ class PubprofilesController < ApplicationController
     @student = Student.find params[:id]
     @pledge = Pledge.new(pledge_params(params))
     @pledge.student_id = params[:id]
+    @pledge.name = @pledge.name == 'Name or Nickname (optional)' ? 'Anonymous' : @pledge.name
+    @pledge.message.delete!('Message (optional)')
+    @pledge.amount = params[:pledge]['amount'].delete('$ ,')
+    @pledge.min_amt = params[:pledge]['min_amt'].delete('$ ,')
+    @pledge.max_amt = params[:pledge]['max_amt'].delete('$ ,')
 
     if @pledge.save
       if @pledge.ptype == "flat"

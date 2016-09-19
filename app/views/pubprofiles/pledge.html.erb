@@ -95,13 +95,8 @@
     </div>
 
     <script>
-      jQuery.validator.addMethod("notEqual", function (value, element, param) {
-        return this.optional(element) || value != param;
-      }, "Required Field");
-
       $.validator.addMethod("currencyIfNotEq", function (value, element, param) {
-        if(param == value)
-        {
+        if (param == value) {
           return true;
         }
 
@@ -117,14 +112,41 @@
 
       }, "Please specify a valid currency");
 
+      $.validator.addMethod('between0N9999', function (value, element, param) {
+        if (value == param) {
+          return true;
+        }
+
+        try {
+          value = value.replace(/[^0-9|.|-]/g,'');
+          return this.optional(element) || (parseInt(value) <= 9999 && parseInt(value) > 0);
+        }
+        catch (err) {
+          return false;
+        }
+      }, "Must be an amount between 1 and 9999");
+
+      jQuery.validator.addMethod("requiredNotEqual", function (value, element, param) {
+        return this.optional(element) || value != param;
+      }, "Required Field");
+
+      jQuery.validator.addMethod("lengthBetween", function (value, element, param) {
+        if (param[0] == value) {
+          return true;
+        }
+
+        return this.optional(element) || (value.length >= param[1] && value.length <= param[2]);
+      }, "Length between {1} and {2}.");
 
       $("#hpledge").validate({
         rules: {
-          "pledge[amount]": {notEqual: "Pledge Per Hour (required)"},
+          "pledge[name]": {lengthBetween: ["Name or Nickname (optional)", 3, 24]},
+          "pledge[amount]": {requiredNotEqual: "Pledge Per Hour (required)"},
           "pledge[amount]": {currency: ['$', false]},
-
           "pledge[min_amt]": {currencyIfNotEq: "Min Amount (optional)"},
+          "pledge[min_amt]": {between0N9999: "Min Amount (optional)"},
           "pledge[max_amt]": {currencyIfNotEq: "Max Amount (optional)"},
+          "pledge[max_amt]": {between0N9999: "Max Amount (optional)"},
         }
       });
 
