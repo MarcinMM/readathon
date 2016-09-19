@@ -41,7 +41,7 @@
         </ul>
 
         <div id="tab-3">
-          <h6>Hourly Pledge</h6>
+          <h6 style="margin-bottom:0">Hourly Pledge</h6>
           <%= form_tag(pub_make_pledge_path(@student.id), id: 'hpledge', method: 'post') do %>
               <input type="hidden" name="pledge[ptype]" value="hourly"/>
               <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
@@ -72,24 +72,27 @@
           <p class="half-bottom"></p>
         </div>
         <div id="tab-4">
-          <h6 class="half-bottom">Fixed Pledge</h6>
-          <p class="half-bottom">
-            <%= form_tag(pub_make_pledge_path(@student.id), method: "post") do %>
-                <input type="hidden" name="pledge[ptype]" value="flat"/>
-                <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[name]"
-                       value="Name or Nickname (optional)">
-                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
-                          onfocus="if (this.value=='Message (optional)') this.value = ''"
-                          onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-                <input onfocus="if (this.value=='Fixed Pledage Amount') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Fixed Pledage Amount'"
-                       type="text" class="text-input-one good-value" name="pledge[amount]"
-                       value="Fixed Pledage Amount">
-                <input type="submit" class="button button-green center-button" value="Make Pledge"/>
-            <% end %>
-          </p>
+          <h6 style="margin-bottom:0">Fixed Pledge</h6>
+          <%= form_tag(pub_make_pledge_path(@student.id), id: 'fpledge', method: "post") do %>
+              <input type="hidden" name="pledge[ptype]" value="flat"/>
+              <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
+                     type="text" class="text-input-one good-value" name="pledge[name]"
+                     value="Name or Nickname (optional)">
+              <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Email Address (required)'"
+                     type="email" class="text-input-one good-value" name="pledge[email]"
+                     value="Email Address (required)" required>
+              <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
+                        onfocus="if (this.value=='Message (optional)') this.value = ''"
+                        onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
+              <input onfocus="if (this.value=='Pledage Amount') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Pledage Amount'"
+                     type="text" class="text-input-one good-value" name="pledge[amount]"
+                     value="Pledage Amount">
+              <input type="submit" class="button button-green center-button" value="Make Pledge"/>
+          <% end %>
+          <p class="half-bottom"></p>
         </div>
       </div>
     </div>
@@ -118,7 +121,7 @@
         }
 
         try {
-          value = value.replace(/[^0-9|.|-]/g,'');
+          value = value.replace(/[^0-9|.|-]/g, '');
           return this.optional(element) || (parseInt(value) <= 9999 && parseInt(value) > 0);
         }
         catch (err) {
@@ -150,6 +153,13 @@
         }
       });
 
+      $("#fpledge").validate({
+        rules: {
+          "pledge[name]": {lengthBetween: ["Name or Nickname (optional)", 3, 24]},
+          "pledge[amount]": {requiredNotEqual: "Pledage Amount"},
+          "pledge[amount]": {currency: ['$', false]},
+        }
+      });
     </script>
 
     <div class="decoration hide-if-responsive"></div>
