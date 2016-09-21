@@ -5,7 +5,6 @@ module ReadlogMgr
   end
 
   def student_readlog_today
-puts "Query for day: #{Time.zone.now.to_date}"
     Readlog.where("student_id=? and day=?", self.id, Time.zone.now.to_date).first
   end
 
@@ -22,7 +21,6 @@ puts "Query for day: #{Time.zone.now.to_date}"
     readlog_today = student_readlog_today
 
     if readlog_today.nil?
-puts "crate for day: #{Time.zone.now.to_date}"
       readlog_today = Readlog.create(student_id: self.id, minutes: 0, day:  Time.zone.now.to_date)
     end
 
