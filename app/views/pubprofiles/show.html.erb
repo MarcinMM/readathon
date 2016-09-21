@@ -54,31 +54,12 @@
     <div class="decoration"></div>
 
     <div class="container no-bottom">
-      <div class="one-half-responsive">
-        <h5>Badges <%= @student.first %> has earned</h5>
-        <% @student.challanges.each do |challange| %>
-            <div style="width:120px; float:left; text-align:center; margin:10px 20px 10px 0;">
-              <img style="width:120px;" src="/images/badges/badge<%= challange.id %>.png"/>
-              <%= challange.description %>
-            </div>
-        <% end %>
-      </div>
-
-      <div class="one-half-responsive last no-bottom">
-        <h5>Recent people who have pledged</h5>
-        <% @student.pledges.take(5).each do |pledge| %>
-            <blockquote class="quote-one">
-              <strong><%= pledge.name %> has pledged $<%= pledge.amount %> an hour</strong><br/><%= pledge.message %>
-            </blockquote>
-            <br><br>
-        <% end %>
-      </div>
+      <%= render "pubprofiles/badges", student: @student %>
+      <%= render "pubprofiles/pledges", student: @student %>
       <div class="clear"></div>
     </div>
   </div>
 </div>
-
-
 
 <div id="more_info" class="parallax-strip bg5 full-bottom item" data-0="background-position:0px 0px;" data-150000="background-position:0px -50000px;">
   <div class="overlay"></div>
