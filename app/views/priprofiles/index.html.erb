@@ -18,7 +18,7 @@
 <% unless current_student.daily_challange_complete %>
     <blockquote class="quote-one yellow-quote">
       <div style="color:black;float:left;"><img style="width:50px;" src="/images/badges/badge<%= Challange.daily_challange.id %>.png"/></div>
-      <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Daily Challange:</strong>
+      <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Today's Challenge:</strong>
         <span style="margin-left:10px;color:black;"><%= Challange.daily_challange.description %></span>
       </div>
     </blockquote>
@@ -96,13 +96,13 @@
         <h1>
           <strong style="font-size: 1.3em;"><%= current_student.level.name %></strong>
           <br/>
-          <em><%= current_student.level.description %></em>
+          <em>"<%= current_student.level.description %>"</em>
         </h1>
         <h2>
           <%= number_to_currency(current_student.money_raised) %> Raised
-          <em>pledged at
-            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>
-            an hour</em>
+          <em>
+            (<span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_flat) %></span>  in donations, plus pledges totaling <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>/hour)
+          </em>
         </h2>
         <ul>
           <li><strong><%= days_to_end %> days reamaing</strong></li>
