@@ -14,22 +14,22 @@
   </li>
   <% if current_user != nil %>
       <li>
-        <p id="logout">
+        <p id="logout" style="margin-top:15px;">
           <i class="fa fa-user"></i>
           <i class="fa fa-circle"></i>
           Logout
-          <em><%= current_user.email %></em>
+          <!--em><%= current_user.email %></em-->
         </p>
       </li>
   <% end %>
   <% if current_student != nil %>
       <li>
-        <p>
+        <p style="margin-top:15px;">
           <a href="<%= priprofile_index_path %>">
             <i class="fa fa-home"></i>
             <i class="fa fa-circle"></i>
-            My Profile
-            <em>my home page</em>
+            <%= current_student.first %>'s &nbsp;&nbsp; Profile
+            <!--em>my home page</em-->
           </a>
         </p>
       </li>
