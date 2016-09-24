@@ -24,10 +24,8 @@ Rails.application.routes.draw do
   match '/public/profile/:id' => 'pubprofiles#show',        :as => :pub_profile,     :via => :get
   match '/public/pledge/:id'  => 'pubprofiles#pledge',      :as => :pub_pledge,      :via => :get
   match '/public/pledge/:id'  => 'pubprofiles#make_pledge', :as => :pub_make_pledge, :via => :post
-  match '/public/pledge/thanks/:id'  => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
-  match '/public/pledge/paypal/:id'  => 'pubprofiles#pledge_paypal', :as => :pub_pledge_paypal, :via => :get
-
-  match '/paypal/callback' => 'paypal#callback', :as => :paypal_callback, :via => :post
+  match '/public/pledge/thanks/:id' => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
+  match '/public/pledge/ahr/:id'    => 'pubprofiles#pledge_ahr',    :as => :pub_pledge_ahr,    :via => :get
 
   devise_for :users, skip: :registrations
 

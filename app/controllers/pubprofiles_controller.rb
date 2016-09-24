@@ -26,7 +26,7 @@ class PubprofilesController < ApplicationController
 
     if @pledge.save
       if @pledge.ptype == "flat"
-        redirect_to pub_pledge_paypal_path(@pledge.id)
+        redirect_to pub_pledge_ahr_path(@pledge.id)
       else
         redirect_to pub_pledge_thanks_path(@pledge.id)
       end
@@ -39,7 +39,7 @@ class PubprofilesController < ApplicationController
     @pledge = Pledge.find params[:id]
   end
 
-  def pledge_paypal
+  def pledge_ahr
     @pledge = Pledge.find params[:id]
   end
 
