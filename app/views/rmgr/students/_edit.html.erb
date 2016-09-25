@@ -25,6 +25,13 @@
 </div>
 
 <div class="field half-bottom">
+  <%= f.label :email, class: 'field-title defaultField' do %>
+      email <span>(required)</span>
+  <% end %>
+  <%= f.text_field :email, class: 'contactField field-deco requiredField' %>
+</div>
+
+<div class="field half-bottom">
   <%= f.label :teacher_id, class: 'field-title defaultField' do %>
       Teacher <span>(required)</span>
   <% end %>
