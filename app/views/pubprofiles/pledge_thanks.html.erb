@@ -14,14 +14,19 @@
       <div style="margin-bottom:20px;" class="decoration"></div>
     </div>
 
-    <div class="one-half-responsive no-bottom" style="margin-right:5%">
-      <h1 style="margin-bottom:0;font-size:30px;"><%= @pledge.student.first %></h1>
-      <em><%= @pledge.student.teacher.grade.ordinalize %> Grade - <%= @pledge.student.teacher.last %></em>
+    <h1 style="margin-bottom:0;font-size:30px;"><%= @pledge.student.first %></h1>
+    <em><%= @pledge.student.teacher.grade.ordinalize %> Grade - <%= @pledge.student.teacher.last %></em>
 
+    <br/><br/>
+    <p>
+      Thank you for pledging to support <%= @pledge.student.first %> during the Read-A-Thon!  You will receive an e-mail notification of your
+      total pledge commitment at the end of the Read-A-Thon (during the week of October 31).  Please check back during the coming days to see how <%= @pledge.student.first %> is progressing!
       <br/><br/>
-      <p>Some big thank you message here</p>
-
-    </div>
+      Do you know someone else who values childhood reading and dual-language education?  Invite them to join you in supporting <%= @pledge.student.first %>.
+      Use the buttons at the top of the page to share via social media, or e-mail this link to friends and family: <strong><%= @profile_pledge_bitly_url %></strong>.
+      <br/><br/>
+      Together we can do it!  Issho ni ganbarou!
+    </p>
 
 
     <div class="decoration hide-if-responsive"></div>

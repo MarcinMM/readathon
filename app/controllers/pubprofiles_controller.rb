@@ -37,6 +37,7 @@ class PubprofilesController < ApplicationController
 
   def pledge_thanks
     @pledge = Pledge.find params[:id]
+    @profile_pledge_bitly_url = profile_pledge_bitly_url @pledge.student.id
   end
 
   def pledge_ahr

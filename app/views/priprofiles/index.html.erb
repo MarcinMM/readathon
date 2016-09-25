@@ -26,7 +26,7 @@
 
 <% if @levelup %>
     <div class="big-notification red-notification" style="margin:20px;margin-bottom:0;">
-      <h5 class="uppercase">Congratulation - Level Up!</h5>
+      <h5 class="uppercase">Congratulations! - Level Up!</h5>
       <center>
         <a href="#" class="close-big-notification">x</a>
         <span style="color:white;">You have reached level <%= current_student.level_id %> and unlocked new Avatars!</span>
@@ -53,7 +53,7 @@
       <h5 class="uppercase">Completed Daily Challange!</h5>
       <center>
         <a href="#" class="close-big-notification">x</a>
-        <span style="color:white;">Congratulation - You have completed the daily challange!</span>
+        <span style="color:white;">Congratulations! - You have completed the daily challange!</span>
         <img src="/images/badges/badge<%= @challange.id %>.png"/>
         <span style="color:white;"><%= @challange.description %></span>
       </center>
@@ -101,7 +101,8 @@
         <h2>
           <%= number_to_currency(current_student.money_raised) %> Raised
           <em>
-            (<span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_flat) %></span>  in donations, plus pledges totaling <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>/hour)
+            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>/hour in pledges, plus
+            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_flat) %></span> in donations
           </em>
         </h2>
         <ul>

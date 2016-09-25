@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_student
   helper_method :profile_bitly_url
+  helper_method :profile_pledge_bitly_url
 
   private
 
@@ -23,6 +24,14 @@ class ApplicationController < ActionController::Base
       Bitly.client.shorten("http://readathon.gltech.com/public/profile/1").short_url
     else
       Bitly.client.shorten(pub_profile_url(id)).short_url
+    end
+  end
+
+  def profile_pledge_bitly_url id
+    if Rails.env.development?
+      Bitly.client.shorten("http://readathon.gltech.com/public/pledge/1").short_url
+    else
+      Bitly.client.shorten(pub_make_pledge_url(id)).short_url
     end
   end
 end
