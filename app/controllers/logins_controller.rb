@@ -6,7 +6,7 @@ class LoginsController < ApplicationController
     if student.nil?
       redirect_to :login_screen, alert: "Invalid Code"
     else
-      if student.email.nil? || student.email.len == 0
+      if student.email.nil? || student.email.length == 0
         redirect_to register_screen_path(student.code)
       else
         cookies.permanent[:code] = student.code
