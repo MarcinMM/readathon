@@ -15,13 +15,18 @@ class LoginsController < ApplicationController
     end
   end
 
+  def logout
+    cookies.permanent[:code] = nil
+    redirect_to :login_screen, alert: "Signed Off"
+  end
+
   def register_screen
     student = Student.find_by_code params[:code]
 
     if student.nil?
       redirect_to :login_screen
     else
-      @code = student.code
+      @student = student
     end
   end
 

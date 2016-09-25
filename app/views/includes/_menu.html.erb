@@ -1,12 +1,16 @@
 <script>
   jQuery(document).ready(function () {
-    jQuery("#logout").click(function () {
-      jQuery("#logout_form").submit();
+    jQuery("#logout1").click(function () {
+      jQuery("#logout_form1").submit();
+    });
+    jQuery("#logout2").click(function () {
+      jQuery("#logout_form2").submit();
     });
   });
 </script>
 
-<%= form_tag(destroy_user_session_path, id: 'logout_form', method: 'post') do %><% end %>
+<%= form_tag(destroy_user_session_path, id: 'logout_form1', method: 'post') do %><% end %>
+<%= form_tag(logout_path, id: 'logout_form2', method: 'post') do %><% end %>
 
 <ul class="navigation">
   <li class="mobile-navigation-breadcrumb">
@@ -14,15 +18,23 @@
   </li>
   <% if current_user != nil %>
       <li>
-        <p id="logout" style="margin-top:15px;">
+        <p id="logout1" style="margin-top:15px;">
+          <i class="fa fa-user"></i>
+          <i class="fa fa-circle"></i>
+          Admin Logout
+          <!--em><%= current_user.email %></em-->
+        </p>
+      </li>
+  <% end %>
+  <% if current_student != nil %>
+      <li>
+        <p id="logout2" style="margin-top:15px;">
           <i class="fa fa-user"></i>
           <i class="fa fa-circle"></i>
           Logout
           <!--em><%= current_user.email %></em-->
         </p>
       </li>
-  <% end %>
-  <% if current_student != nil %>
       <li>
         <p style="margin-top:15px;">
           <a href="<%= priprofile_index_path %>">
