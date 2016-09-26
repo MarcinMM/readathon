@@ -6,9 +6,9 @@ class Rmgr::StudentsController < ApplicationController
 
   def index
     @students = Array.new
-    @grade = 'K'
+    @grade = '0'
 
-    if ['K', '1', '2', '3', '4', '5'].include? params[:grade]
+    if ['0', '1', '2', '3', '4', '5'].include? params[:grade]
       @grade = params[:grade]
     end
 
