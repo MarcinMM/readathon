@@ -10,20 +10,20 @@
       </a>
     </div>
     <div class="right-social-strip">
-      <% if !current_student.nil? && current_student.id == student_id %>
+      <% if !current_student.nil? && current_student.id == student.id %>
         <a href="<%= priprofile_pledge_email_path %>"><img src="/images/email_button.png"/></a>
       <% end %>
-      <a target="_blank" style="margin-right:20px;" href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(student_id) %>"><img src="/images/fb_share.png"/></a>
+      <a target="_blank" style="margin-right:20px;" href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(student.id) %>"><img src="/images/fb_share.png"/></a>
       <a class="twitter-share-button"
          href="https://twitter.com/share"
          data-size="small"
          data-url="pub_profile_url(student_id)"
-         data-text="Help support me in my Read-A-Thon through Richmond Elementary School.  <%= profile_bitly_url(student_id) %>">
+         data-text="Please support <%= student.first %>'s Read-A-Thon through Richmond Elementary School.  <%= profile_bitly_url(student.id) %>">
         Tweet
       </a>
       &nbsp;
       <a href="https://www.pinterest.com/pin/create/button/">
-        <img data-pin-url="<%= profile_bitly_url(student_id) %>" src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
+        <img data-pin-url="<%= profile_bitly_url(student.id) %>" src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
       </a>
     </div>
   </div>

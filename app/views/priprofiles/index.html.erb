@@ -13,7 +13,7 @@
 <%= form_tag(priprofile_challange_path, id: 'accept-challange', method: 'post') do %>
 <% end %>
 
-<%= render "pubprofiles/share", student_id: current_student.id %>
+<%= render "pubprofiles/share", student: current_student %>
 
 <% unless Challange.days_remaining > 0 %>
     <blockquote class="quote-one blue-quote" style="margin:20px;">
