@@ -1,3 +1,12 @@
+<script>
+  jQuery(document).ready(function () {
+    jQuery('#more_pledge_link').click(function() {
+      jQuery('#more_pledge_link').toggle();
+      jQuery('#hidden_pledges').toggle();
+    });
+  });
+</script>
+
 <div class="one-half-responsive last no-bottom">
   <h5>Recent people who have pledged</h5>
   <% student.pledges.take(5).each do |pledge| %>
@@ -13,6 +22,24 @@
       </blockquote>
       <br><br>
   <% end %>
-  <p><a href="">click to view all your pledges</a></p>
+  <div id="hidden_pledges" style="display:none;">
+    <% student.pledges.drop(5).each do |pledge| %>
+        <blockquote class="quote-one">
+          <strong>
+            <%= pledge.name %> has pledged
+            <% if pledge.ptype == "flat" %>
+                flat donation of <%= number_to_currency(pledge.amount) %>
+            <% else %>
+                <%= number_to_currency(pledge.amount) %> an hour
+            <% end %>
+          </strong><br/><%= pledge.message %>
+        </blockquote>
+        <br><br>
+    <% end %>
+  </div>
+
+  <% if show_all_pledge_link == true %>
+      <a id="more_pledge_link" href="javascript:void(0)">click to view all your pledges</a>
+  <% end %>
   <br>
 </div>
