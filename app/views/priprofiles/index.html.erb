@@ -15,7 +15,17 @@
 
 <%= render "pubprofiles/share", student_id: current_student.id %>
 
-<% unless current_student.daily_challange_complete %>
+<% unless Challange.days_remaining > 0 %>
+    <blockquote class="quote-one blue-quote" style="margin:20px;">
+      <div style="color:black;float:left;"><img style="width:150px;" src="/images/the_end.png"/></div>
+      <div style="float:left;margin-left:30px;margin-top:50px;"><strong>Congratulations!  The Read-A-Thon has ended.</strong>
+        <br/>You have done a fantastic job reading and raising money for the school!
+      </div>
+    </blockquote>
+<% end %>
+
+
+<% if Challange.days_remaining > 0 && !current_student.daily_challange_complete %>
     <blockquote class="quote-one yellow-quote">
       <div style="color:black;float:left;"><img style="width:50px;" src="/images/badges/badge<%= Challange.daily_challange.id %>.png"/></div>
       <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Today's Challenge:</strong>
