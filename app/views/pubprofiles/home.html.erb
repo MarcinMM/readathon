@@ -1,11 +1,11 @@
 <% if days_to_end > 0 %>
     <blockquote class="quote-one red-quote">
       <strong><%= days_to_end %> Days Remaining</strong>
-      <span style="color:black;">Our read-a-thon ends <%= Rails.configuration.end_date.strftime("%b %d") %></span>
+      <span style="color:black;">Our Read-A-Thon ends <%= Rails.configuration.end_date.strftime("%b %d") %></span>
     </blockquote>
 <% else %>
     <blockquote class="quote-one yellow-quote">
-      <strong>Our read-a-thon has closed</strong>
+      <strong>Our Read-A-Thon has closed</strong>
       <span style="color:black;">but it is never too late to help the Richmond Foundation.  <strong>Donate here!</strong></span>
     </blockquote>
 <% end %>
