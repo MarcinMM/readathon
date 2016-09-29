@@ -59,30 +59,20 @@
 
               Dear Friends and Family,
               <br/><br/>
-              <%= current_student.first %> is currently participating in Richmond Elementary School's Read-a-thon to
-              help raise money for school’s art, garden, and science docent programs, a kindergarten music teacher, a
-              computer teacher,
-              field trips, and classroom supplies. Limited state funding has cut these important programs, activities,
-              and supplies, which are not provided by the school but instead are funded by the
-              Foundation.
+              I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
               <br/><br/>
-              <%= current_student.first %> has committed
-              to reading 35 minutes a day during the read-a-thon and is looking forward to your support.
+              I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.
               <br/><br/>
-              If you are interested in sponsoring <%= current_student.first %> in the Read-a-thon and helping our
-              fundraising goal (even a little bit goes a long way!).
+              Your pledge will help support Richmond's two-classroom teaching model, which helps me learn in both Japanese and English each day.  You will also be supporting P.E., library time, computer literacy, and the teachers and staff that make Richmond such a great school.
               <br/><br/>
-              You can pledge or donate online by clicking on the following link:  <%= profile_bitly_url(current_student.id) %>
+              You can choose to pledge each hour that I read, or make a flat donation of any amount.  The easist way to pledge me is by filling out this online pledge form: <%= profile_pledge_bitly_url(current_student.id)%>.
+              <i>(Note from the Richmond School Foundation: If you choose to make flat donation today, you will be re-directed to the donation page at All Hands Raised, who administers our foundation.
+                Don't worry if you see an error message at the top of the donation page!  Once you fill in your information and click "Submit Donation", it will disappear.)</i>
+              You can also mail a check to Richmond School Foundation, 2276 SE 41st Ave., Portland, OR, 97214.  Just be sure to put my name in the memo line!
               <br/><br/>
-              Thank you so much for your support.
+              Thank you for encouraging me to read, and for supporting literacy and teachers at Richmond!
               <br/><br/>
-              Sincerely,
-              <input onfocus="if (this.value=='Parent Name (required)') this.value = ''"
-                     onblur="if (this.value=='') this.value = 'Parent Name (required)'"
-                     type="text" class="text-input-one good-value" name="name"
-                     style="display:inline-block; width:300px;"
-                     value="Parent Name (required)">,
-
+              Sincerely, <%= current_student.first %> <%= current_student.last %>
               <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
           <% end %>
         </div>
