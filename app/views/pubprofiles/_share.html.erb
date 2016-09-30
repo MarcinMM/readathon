@@ -13,11 +13,11 @@
       <% if !current_student.nil? && current_student.id == student.id %>
         <a href="<%= priprofile_pledge_email_path %>"><img src="/images/email_button.png"/></a>
       <% end %>
-      <a target="_blank" style="margin-right:20px;" href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(student.id) %>"><img src="/images/fb_share.png"/></a>
+      <a target="_blank" style="margin-right:20px;" href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(obscure_id(student.id)) %>"><img src="/images/fb_share.png"/></a>
       <a class="twitter-share-button"
          href="https://twitter.com/share"
          data-size="small"
-         data-url="pub_profile_url(student_id)"
+         data-url="<%= pub_profile_url(obscure_id(student.id)) %>"
          data-text="Please support <%= student.first %>'s Read-A-Thon through Richmond Elementary School.  <%= profile_bitly_url(student.id) %>">
         Tweet
       </a>

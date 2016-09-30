@@ -4,7 +4,7 @@
   <div class="box-960">
     <div class="small-breadcrumb">
       <div class="left-breadcrumb">
-        <%= link_to "#{@pledge.student.first}'s Profile", pub_profile_path(@pledge.student.id) %>
+        <%= link_to "#{@pledge.student.first}'s Profile", pub_profile_path(obscure_id(@pledge.student.id)) %>
         <a href="<%= pub_make_pledge_path(@pledge.student.id) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
         <a href="#"><i class="fa fa-angle-right"></i>Thank You</a>
       </div>

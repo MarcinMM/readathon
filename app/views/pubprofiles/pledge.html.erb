@@ -4,7 +4,7 @@
   <div class="box-960">
     <div class="small-breadcrumb">
       <div class="left-breadcrumb">
-        <%= link_to "#{@student.first}'s Profile", pub_profile_path(@student.id) %>
+        <%= link_to "#{@student.first}'s Profile", pub_profile_path(obscure_id(@student.id)) %>
         <a href="#"><i class="fa fa-angle-right"></i>Make a Pledge</a>
       </div>
       <div class="right-breadcrumb">
@@ -27,8 +27,6 @@
         <br/><br/>
         No matter how you choose to give, your support makes a big difference - to your reader and to Richmond.  Thank you for supporting the Read-A-Thon!
       </p>
-
-      <a href="#more_info">Find out more about how our money is raised and spent.</a>
     </div>
 
     <div style="margin-top:20px;" class="one-half-responsive last no-bottom">

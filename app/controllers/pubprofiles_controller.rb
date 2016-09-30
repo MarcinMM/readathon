@@ -1,15 +1,15 @@
 class PubprofilesController < ApplicationController
 
   def show
-    @student = Student.find params[:id]
+    @student = Student.find unobscure_id(params[:id])
   end
 
   def pledge
-    @student = Student.find params[:id]
+    @student = Student.find unobscure_id(params[:id])
   end
 
   def make_pledge
-    @student = Student.find params[:id]
+    @student = Student.find unobscure_id(params[:id])
     @pledge = Pledge.new(pledge_params(params))
     @pledge.student_id = params[:id]
     @pledge.name = @pledge.name == 'Name or Nickname (optional)' ? 'Anonymous' : @pledge.name
@@ -36,12 +36,12 @@ class PubprofilesController < ApplicationController
   end
 
   def pledge_thanks
-    @pledge = Pledge.find params[:id]
+    @pledge = Pledge.find unobscure_id(params[:id])
     @profile_pledge_bitly_url = profile_pledge_bitly_url @pledge.student.id
   end
 
   def pledge_ahr
-    @pledge = Pledge.find params[:id]
+    @pledge = Pledge.find unobscure_id(params[:id])
   end
 
   private

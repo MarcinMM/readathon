@@ -21,6 +21,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: 10
   timeout: 5000
   url: <%= ENV['DATABASE_URL'] %>
