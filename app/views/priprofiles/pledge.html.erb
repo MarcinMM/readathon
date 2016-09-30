@@ -43,7 +43,7 @@
       <p class="half-bottom">
         Let your community know about you Read-a-Thon.  If you or your parents have a facebook account have them use the button below to share your Read-a-Thon with your social circle.
       </p>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=<%= pub_profile_url(obscure_id(current_student.id)) %>" style="width:160px;" class="button button-blue center-button"><i style="margin-right:10px;" class="fa fa-facebook"></i>Request Pledge</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%= profile_pledge_bitly_url(obscure_id(current_student.id)) %>" style="width:160px;" class="button button-blue center-button"><i style="margin-right:10px;" class="fa fa-facebook"></i>Request Pledge</a>
       <div class="clear"></div>
     </div>
 
@@ -57,8 +57,8 @@
         <a class="twitter-share-button button button-green center-button"
            href="https://twitter.com/share"
            data-size="large"
-           data-url="<%= pub_profile_url(obscure_id(current_student.id)) %>"
-           data-text="Help support me in my Read-A-Thon through Richmond Elementary School.  <%= profile_bitly_url(current_student.id) %>">
+           data-url="<%=  profile_pledge_bitly_url(current_student.id) %>"
+           data-text="Help support me in my Read-A-Thon through Richmond Elementary School.">
           Request Pledge
         </a>
       </center>
