@@ -8,7 +8,7 @@ class Student < ActiveRecord::Base
   has_and_belongs_to_many :challanges, -> { uniq }
 
   scope :find_by_obscure_id, lambda { |obscure_id|
-    Student.find unobscure_id(obscure_id)
+    Student.find self.unobscure_id(obscure_id)
   }
 
 end

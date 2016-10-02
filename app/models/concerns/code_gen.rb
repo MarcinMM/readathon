@@ -7,6 +7,10 @@ module CodeGen
   end
 
   module ClassMethods
+    def unobscure_id id
+      padded_id = Base64.urlsafe_decode64(id)
+      padded_id[10..-1]
+    end
   end
 
   def gen_bitly
@@ -29,11 +33,5 @@ module CodeGen
     padded_id = "#{rand.to_s[2..11]}#{id.to_s}"
     Base64.urlsafe_encode64(padded_id)
   end
-
-  def unobscure_id id
-    padded_id = Base64.urlsafe_decode64(id)
-    padded_id[10..-1]
-  end
-
 
 end

@@ -4,7 +4,7 @@
   <div class="box-960">
     <div class="small-breadcrumb">
       <div class="left-breadcrumb">
-        <%= link_to "#{@student.first}'s Profile", pub_profile_path(obscure_id(@student.id)) %>
+        <%= link_to "#{@student.first}'s Profile", @student.bitly_profile %>
         <a href="#"><i class="fa fa-angle-right"></i>Make a Pledge</a>
       </div>
       <div class="right-breadcrumb">
