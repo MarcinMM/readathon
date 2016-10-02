@@ -38,7 +38,7 @@
 
         <div id="tab-3">
           <h6 style="margin-bottom:0">Hourly Pledge</h6>
-          <%= form_tag(pub_make_pledge_path(@student.id), id: 'hpledge', method: 'post') do %>
+          <%= form_tag(pub_make_pledge_path(Student.obscure_id(@student.id)), id: 'hpledge', method: 'post') do %>
               <input type="hidden" name="pledge[ptype]" value="hourly"/>
               <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
                      onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
@@ -69,7 +69,7 @@
         </div>
         <div id="tab-4">
           <h6 style="margin-bottom:0">Fixed Pledge</h6>
-          <%= form_tag(pub_make_pledge_path(@student.id), id: 'fpledge', method: "post") do %>
+          <%= form_tag(pub_make_pledge_path(Student.obscure_id(@student.id)), id: 'fpledge', method: "post") do %>
               <input type="hidden" name="pledge[ptype]" value="flat"/>
               <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
                      onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"

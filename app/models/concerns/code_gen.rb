@@ -11,6 +11,11 @@ module CodeGen
       padded_id = Base64.urlsafe_decode64(id)
       padded_id[10..-1]
     end
+
+    def obscure_id id
+      padded_id = "#{rand.to_s[2..11]}#{id.to_s}"
+      Base64.urlsafe_encode64(padded_id)
+    end
   end
 
   def gen_bitly
@@ -27,11 +32,6 @@ module CodeGen
 
   def gen_code
     self.code = SecureRandom.urlsafe_base64(5)
-  end
-
-  def obscure_id id
-    padded_id = "#{rand.to_s[2..11]}#{id.to_s}"
-    Base64.urlsafe_encode64(padded_id)
   end
 
 end

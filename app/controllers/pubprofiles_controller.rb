@@ -11,7 +11,7 @@ class PubprofilesController < ApplicationController
   def make_pledge
     @student = Student.find_by_obscure_id params[:id]
     @pledge = Pledge.new(pledge_params(params))
-    @pledge.student_id = params[:id]
+    @pledge.student_id = @student.id
     @pledge.name = @pledge.name == 'Name or Nickname (optional)' ? 'Anonymous' : @pledge.name
     @pledge.message = @pledge.message == 'Message (optional)' ? '' : @pledge.message
     @pledge.amount = params[:pledge]['amount'].delete('$ ,')
@@ -36,11 +36,11 @@ class PubprofilesController < ApplicationController
   end
 
   def pledge_thanks
-    @pledge = Pledge.find_by_obscure_id params[:id]
+    @pledge = Pledge.find params[:id]
   end
 
   def pledge_ahr
-    @pledge = Pledge.find_by_obscure_id params[:id]
+    @pledge = Pledge.find params[:id]
   end
 
   private
