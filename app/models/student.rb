@@ -7,4 +7,8 @@ class Student < ActiveRecord::Base
   has_many :pledges, -> { order 'created_at desc' }
   has_and_belongs_to_many :challanges, -> { uniq }
 
+  scope :find_by_obscure_id, lambda { |obscure_id|
+    Student.find unobscure_id(obscure_id)
+  }
+
 end

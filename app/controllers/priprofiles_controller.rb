@@ -2,6 +2,11 @@ class PriprofilesController < ApplicationController
   before_action :require_code
 
   def index
+    students = Student.where('bitly_profile is null').each do |student|
+      p "-> #{student.first} #{student.last}"
+      student.gen_bitly
+    end
+
     if current_student.earned_level_id > current_student.level_id && current_student.level_id < 13
       current_student.promote_to_next_level
       @levelup = true
