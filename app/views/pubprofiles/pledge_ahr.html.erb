@@ -14,18 +14,19 @@
 </div>
 
 <form id="allhands" method="post" enctype="multipart/form-data" id="gform_2" action="https://allhandsraised.org/donate/">
-  <input name="input_19" id="input_2_19" type="hidden" value="<%= @pledge.email %>">
-  <input name="input_35" id="input_2_35" type="hidden" value="<%= @pledge.email %>">
+  <input name="input_19" type="hidden" value="<%= @pledge.email %>">
+  <input name="input_35" type="hidden" value="<%= @pledge.email %>">
   <input name="input_1" type="hidden" value="gf_other_choice">
   <input name="input_1_other" type="hidden" value="<%= number_to_currency(@pledge.amount) %>">
   <input name="input_3" type="hidden" value="One-Time Gift">
   <input name="input_26.1" type="hidden" value="Same as Cardholder Information">
   <input name="input_2" type="hidden" value="Richmond ES">
   <input name="input_41" type="hidden" value="<%= number_to_currency(@pledge.amount) %>|<%= @pledge.amount %>" >
-  <input type="hidden" class="gform_hidden" name="is_submit_2" value="1">
-  <input type="hidden" class="gform_hidden" name="gform_submit" value="2">
-  <input type="hidden" class="gform_hidden" name="gform_target_page_number_2" value="0">
-  <input type="hidden" class="gform_hidden" name="gform_source_page_number_2" value="1">
+  <input type="hidden" name="is_submit_2" value="1">
+  <input type="hidden" name="input_36" value="Read-A-Thon pledge for: <%= @pledge.student.first %> <%= @pledge.student.last[0, 1] %>, <%= @pledge.student.teacher.grade.ordinalize %> Grade, <%= @pledge.student.teacher.last %>'s class, Pledge Id: <%= @pledge.id %>">
+  <input type="hidden" name="gform_submit" value="2">
+  <input type="hidden" name="gform_target_page_number_2" value="0">
+  <input type="hidden" name="gform_source_page_number_2" value="1">
   <input type="submit" id="gform_submit_button_2" value="Submit Donation">
 </form>
 

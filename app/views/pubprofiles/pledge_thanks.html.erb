@@ -5,7 +5,7 @@
     <div class="small-breadcrumb">
       <div class="left-breadcrumb">
         <%= link_to "#{@pledge.student.first}'s Profile", @pledge.student.bitly_profile %>
-        <a href="<%= pub_make_pledge_path(Student.obscure_id(@pledge.student.id)) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
+        <a href="<%= pub_make_pledge_path(@pledge.student.obscure_id) %>"><i class="fa fa-angle-right"></i>Make a Pledge</a>
         <a href="#"><i class="fa fa-angle-right"></i>Thank You</a>
       </div>
       <div class="right-breadcrumb">
@@ -27,7 +27,6 @@
       <br/><br/>
       Together we can do it!  Issho ni ganbarou!
     </p>
-
 
     <div class="decoration hide-if-responsive"></div>
     <div class="clear"></div>

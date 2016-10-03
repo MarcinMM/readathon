@@ -21,6 +21,15 @@
     <div style="margin-bottom:20px;" class="decoration"></div>
   </div>
 
+  <% if flash[:notice] %>
+      <blockquote class="quote-one green-quote">
+        <div style="float:left;margin-left:15px;"><strong><%= flash[:notice]['title'] %></strong>
+          <span style="margin-left:10px;color:black;"><%= flash[:notice]['msg'] %></span>
+        </div>
+      </blockquote>
+      <br/>
+  <% end %>
+
   <h4>Read-A-Thon Students List</h4>
 
   <%= form_for rmgr_students_path, method: 'get' do |f| %>

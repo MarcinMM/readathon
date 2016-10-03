@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   end
 
   match '/rmgr' => 'rmgr/overviews#index', :as => :rmgr_overviews, :via => :get
+  match '/rmgr/student/flyer/:id' => 'rmgr/students#send_flyer', :as => :rmgr_students_send_flyer, :via => :get
   match '/teachers' => 'teachers/overviews#index', :as => :teachers_overviews, :via => :get
 
   root 'pubprofiles#home'
