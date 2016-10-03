@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   match '/logout' => 'logins#logout', :as => :logout, :via => :post
 
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
-  match '/register' => 'logins#register', :as => :register, :via => :post
+  match '/register'       => 'logins#register',        :as => :register,        :via => :post
+  match '/autologin/:id'  => 'logins#autologin',       :as => :autologin,       :via => :get
 
   match '/profile'               => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
   match '/profile/avatar'        => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get
