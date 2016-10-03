@@ -55,8 +55,8 @@ class Rmgr::StudentsController < ApplicationController
   def send_flyer
     @student = Student.find(params[:id])
     teacher = Teacher.find(@student.teacher_id)
-
     GeneralMailer.welcome_flyer(@student).deliver
+    @student.update_attribute :flyer_sent_date, Time.zone.today
     redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Welcome flyer was sent.'}
   end
 
