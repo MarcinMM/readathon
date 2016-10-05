@@ -52,7 +52,7 @@ class PriprofilesController < ApplicationController
       email_list += "#{email},"
     end
 
-    PledgeMailer.email2(email_list, params[:name], profile_pledge_bitly_url(current_student.id), current_student).deliver
+    PledgeMailer.email2(email_list, params[:name], params[:message], current_student.bitly_pledge, current_student).deliver
     redirect_to :priprofile_pledge, alert: "true"
   end
 
