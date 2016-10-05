@@ -5,10 +5,8 @@
   <div class="box-960">
     <div class="one-half-responsive no-bottom" style="margin-right:5%">
       <img style="float:left; margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:150px;" src="/images/avatars/<%= @student.avatar_id %>.png"/>
-      <div style="margin-left:30px; margin-top:10px; float:left;">
+      <div style="margin-left:30px; margin-top:50px; float:left;">
         <h1 style="margin-bottom:0;font-size:30px;"><%= @student.first %> <%= @student.last[0, 1] %></h1>
-        <p style="margin-bottom:0; margin-top:10px;font-style: italic;"><%= @student.teacher.grade.ordinalize %> Grade</p>
-        <p style="font-style: italic;"><%= @student.teacher.last %>'s class</p>
       </div>
       <div class="clear"></div>
       <p class="dropcaps dropcaps-2"><%= @student.first %> is asking for your help to raise money for Richmond Elementary
@@ -59,65 +57,6 @@
       <div class="clear"></div>
     </div>
   </div>
-</div>
 
-<div id="more_info" class="parallax-strip bg5 full-bottom item" data-0="background-position:0px 0px;" data-150000="background-position:0px -50000px;">
-  <div class="overlay"></div>
-  <div class="box-960">
-    <h1 class="center-text">So where does all the money go?</h1>
-    <p class="center-text larger transparent">The breakdown of the money is easy. Our school keeps 97% of what is
-      raised.</p>
-  </div>
-</div>
-
-<div class="content">
-  <div class="box-960">
-
-    <div class="container center-heading">
-      <p class="center-text larger">
-        There is no better way for a school to raise money then a Read-A-Thon. Family, Friends, and neighbors understand
-        how important education and reading skills are.
-        Very few fundraising ideas offer such clear benefits to children and the groups they are raising money for.
-      </p>
-    </div>
-    <div class="orange-decoration half-bottom"></div>
-    <div class="container half-bottom">
-      <div class="one-third-responsive">
-        <div class="center-icon-column red-center-icon-column">
-          <h1><i class="fa fa-dollar fa-3x"></i></h1>
-          <h5>Low Overhead</h5>
-          <p class="half-bottom">
-            We keep as much of our fundraising dollars at Richmond. Our only expense is a 3% credit card transaction
-            fee.
-          </p>
-          <a href="#" class="button button-red center-button">Read More</a>
-        </div>
-      </div>
-      <div class="decoration hide-if-responsive half-bottom"></div>
-      <div class="one-third-responsive">
-        <div class="center-icon-column blue-center-icon-column">
-          <h1><i class="fa fa-hand-paper-o fa-3x"></i></h1>
-          <h5>No Gimmick Prizes</h5>
-          <p class="half-bottom">
-            Our Read-A-Thon is not about toys. Children can redeem a small % of the money raised to buy books at our PTA
-            book fare.
-          </p>
-          <a href="#" class="button button-blue center-button">Read More</a>
-        </div>
-      </div>
-      <div class="decoration hide-if-responsive half-bottom"></div>
-      <div class="one-third-responsive no-bottom last">
-        <div class="center-icon-column green-center-icon-column">
-          <h1><i class="fa fa-child fa-3x"></i></h1>
-          <h5>Supports Teaching Positions</h5>
-          <p class="half-bottom">
-            Our sole mission is to raise funds for staff positions at our school to help sustain Richmond's
-            dual-immersion model.
-          </p>
-          <a href="#" class="button button-green center-button">Read More</a>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
+  <%= render 'money' %>
 </div>
