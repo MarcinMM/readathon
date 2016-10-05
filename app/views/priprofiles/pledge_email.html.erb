@@ -14,7 +14,7 @@
         <ul>
           <li><a href="#tab-3">Single</a></li>
           <li><a href="#tab-4">Group</a></li>
-          <li><a href="#tab-5">Free Form</a></li>
+          <li><a href="#tab-5" style="display:none;">Free Form</a></li>
         </ul>
 
         <div id="tab-3">
@@ -57,7 +57,10 @@
                           onblur="if (this.value=='') this.value = 'To: Email Addresses (separated by comma)'">To: Email Addresses (separated by comma)</textarea>
 
               Dear Friends and Family,
-              <br/><br/>
+              <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
+                        onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
+                        onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
+              <br/>
               I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
               <br/><br/>
               I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.

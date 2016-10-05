@@ -905,24 +905,29 @@
                                         style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;"
                                         valign="top">
 
-                                      <h5 style="-webkit-appearance: none;margin: 0 0 15px;padding: 0;border: 0;font-size: 18px;vertical-align: baseline;outline: none;text-size-adjust: none;box-sizing: border-box;font-weight: 600;color: #1F1F1F;font-family: &quot;Source Sans Pro&quot;, sans-serif;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;letter-spacing: normal;orphans: 2;text-align: start;text-indent: 0px;text-transform: none;white-space: normal;widows: 2;word-spacing: 0px;-webkit-text-stroke-width: 0px;background-color: #FFFFFF;">
-                                        The Richmond Read-A-Thon is complete!</h5>
+                                      <h5 style="-webkit-appearance: none;margin: 0 0 15px;padding: 0;border: 0;font-size: 18px;vertical-align: baseline;outline: none;text-size-adjust: none;box-sizing: border-box;font-weight: 600;color: #1F1F1F;font-family: &quot;Source Sans Pro&quot;, sans-serif;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;letter-spacing: normal;orphans: 2;text-align: start;text-indent: 0px;text-transform: none;white-space: normal;widows: 2;word-spacing: 0px;-webkit-text-stroke-width: 0px;background-color: #FFFFFF;">The Richmond Read-A-Thon is complete!</h5>
                                       <p>
                                         <span style="-webkit-text-stroke-width: 0;background-color: #FFFFFF;color: #464646;display: inline !important;float: none;font-family: verdana,geneva,sans-serif;font-size: 14px;font-style: normal;font-variant-caps: normal;font-variant-ligatures: normal;font-weight: normal;letter-spacing: normal;orphans: 2;text-align: start;text-indent: 0px;text-transform: none;white-space: normal;widows: 2;word-spacing: 0px;">
-                                          Thank you for pledging <b><%= @pledge.student.first %></b> in our Read-A-Thon
+                                          Thank you for pledging <b><%= @pledge.student.first %></b> in the Read-A-Thon.  <b><%= @pledge.student.first %></b> read for <b><%= @pledge.student.student_minutes_total %></b> minutes and completed <b><%= @pledge.student.challanges.length %></b> daily challenges.  Overall, Richmond students read more than 125,000 minutes!
                                           <br/><br/>
-                                          Cain read for <b><%= @pledge.student.student_minutes_total %></b> minutes and completed <b><%= @pledge.student.challanges.length %></b> of the daily challanges.
+                                          With your pledge, you join more than 500 families and friends in supporting Richmond’s students, teachers, and staff.  Please help us make the most of this outpouring of support by fulfilling your pledge today!
                                           <br/><br/>
-                                          With your pledge of <b><%= number_to_currency(@pledge.amount) %></b> a minute you helped <%= @pledge.student.first %>
-                                          raise <b><%= number_to_currency(@pledge.total_owed) %></b>.
-                                          <br><br/>
-                                          <b>You can pay in online</b> via <a href="">All Hands Raised</a>
+                                          Here are the details of your Read-A-Thon pledge:
+                                          <br/><br/>
+                                          Pledge amount: <b><%= number_to_currency(@pledge.amount) %></b>/hour<br/>
+                                          Minimum donation pledged: <b><%= number_to_currency(@pledge.min_amt) %></b><br/>
+                                          Maximum donation pledged: <b><%= number_to_currency(@pledge.max_amt) %></b><br/>
+                                          <b><%= @pledge.student.first %></b>’s reading total: <b><%= @pledge.student.student_minutes_total %></b> minutes
+                                          <hr style=" border: 0;height: 1px;background: #000;width:300px;">
+                                          Your total pledged contribution: <b><%= number_to_currency(@pledge.total_owed) %></b><br/>
+                                          <br/><br/>
+                                          You can fulfill your pledge online at All Hands Raised or mail a check to
                                           <br><br/>
                                           or mail us a check:<br/><br/>
                                           Richmond School Foundation<br/>
                                           2276 SE 41st Ave<br/>
                                           Portland, OR 97214<br/><br/>
-                                          <i>* On the check please include Cain's name and Pledge Id: 1234</i>
+                                          <i>* On the check please include Cain's name and Pledge Id: <%= @pledge.id %></i>
                                         </span>
                                       </p>
                                     </td>

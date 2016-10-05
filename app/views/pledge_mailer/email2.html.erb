@@ -4,6 +4,12 @@
   <title>Help support <%= @student.first %>'s Read-A-Thon</title>
 </head>
 <body>
+Dear Friends and Family,
+<br/><br/>
+<% unless @message == "Message (optional)" %>
+    <%= @message %>
+    <br/><br/>
+<% end %>
 I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
 <br/><br/>
 I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.
