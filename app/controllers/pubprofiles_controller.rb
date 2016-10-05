@@ -1,4 +1,5 @@
 class PubprofilesController < ApplicationController
+  layout "mailer", only: [:pledge_email]
 
   def show
     @student = Student.find_by_obscure_id params[:id]
