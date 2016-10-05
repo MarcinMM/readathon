@@ -81,11 +81,11 @@
               <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
                         onfocus="if (this.value=='Message (optional)') this.value = ''"
                         onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-              <input onfocus="if (this.value=='Pledage Amount') this.value = ''"
-                     onblur="if (this.value=='') this.value = 'Pledage Amount'"
+              <input onfocus="if (this.value=='Pledge Amount') this.value = ''"
+                     onblur="if (this.value=='') this.value = 'Pledge Amount'"
                      type="text" class="text-input-one good-value" name="pledge[amount]"
-                     value="Pledage Amount">
-              <br/><strong>Clicking the 'Make Pledge' button will forward you to All Hands Raised where you can securely make your donation.  Thanks You!</strong>
+                     value="Pledge Amount">
+              <br/><strong>Clicking the 'Make Pledge' button will forward you to All Hands Raised where you can securely make your donation.  Thank You!</strong>
               <input type="submit" class="button button-green center-button" value="Make Pledge"/>
               <div style="margin-top:20px;"><i>Don't worry if you see a red error message at the top of the donation page! Once you fill in your information and click "Submit Donation", it will disappear.</i></div>
           <% end %>
@@ -153,7 +153,7 @@
       $("#fpledge").validate({
         rules: {
           "pledge[name]": {lengthBetween: ["Name or Nickname (optional)", 3, 24]},
-          "pledge[amount]": {requiredNotEqual: "Pledage Amount"},
+          "pledge[amount]": {requiredNotEqual: "Pledge Amount"},
           "pledge[amount]": {currency: ['$', false]},
         }
       });
