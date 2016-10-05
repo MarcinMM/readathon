@@ -1,5 +1,9 @@
 <div class="one-half-responsive">
-  <h5>Badges you have earned</h5>
+  <% if private %>
+      <h5>Badges you have earned</h5>
+  <% else %>
+      <h5>Badges <%= @student.first %> has earned</h5>
+  <% end %>
   <% closedDiv=false %>
   <% student.challanges.each_with_index do |challange, index| %>
       <% if (index%3)==0 %><% closedDiv=true %> <div style="clear: both;display: inline-block;"> <% end %>
