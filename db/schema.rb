@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825063921) do
+ActiveRecord::Schema.define(version: 20160825063923) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer "level_id", limit: 4
@@ -39,14 +39,16 @@ ActiveRecord::Schema.define(version: 20160825063921) do
   create_table "pledges", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "student_id", limit: 4
-    t.string   "name",       limit: 24
-    t.string   "email",      limit: 36
-    t.string   "ptype",      limit: 10
-    t.decimal  "amount",                   precision: 6, scale: 2
-    t.decimal  "min_amt",                  precision: 6, scale: 2
-    t.decimal  "max_amt",                  precision: 6, scale: 2
-    t.text     "message",    limit: 65535
+    t.integer  "student_id",       limit: 4
+    t.string   "name",             limit: 24
+    t.string   "email",            limit: 36
+    t.string   "ptype",            limit: 10
+    t.decimal  "amount",                         precision: 6, scale: 2
+    t.decimal  "min_amt",                        precision: 6, scale: 2
+    t.decimal  "max_amt",                        precision: 6, scale: 2
+    t.text     "message",          limit: 65535
+    t.datetime "email_sent_date"
+    t.datetime "email_click_date"
   end
 
   create_table "readlogs", force: :cascade do |t|
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160825063921) do
     t.string   "bitly_profile",   limit: 256
     t.string   "bitly_pledge",    limit: 256
     t.datetime "flyer_sent_date"
+    t.datetime "accepted_date"
   end
 
   create_table "teachers", force: :cascade do |t|

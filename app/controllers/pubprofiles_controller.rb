@@ -42,10 +42,18 @@ class PubprofilesController < ApplicationController
 
   def pledge_ahrf
     @pledge = Pledge.find_by_obscure_id params[:id]
+
+    if @pledge.email_click_date.nil?
+      @pledge.update_attribute :email_click_date, Time.zone.now
+    end
   end
 
   def pledge_ahrh
     @pledge = Pledge.find_by_obscure_id params[:id]
+
+    if @pledge.email_click_date.nil?
+      @pledge.update_attribute :email_click_date, Time.zone.now
+    end
   end
 
   def pledge_email
