@@ -18,6 +18,11 @@
 
       <%= render 'edit', f: f %>
 
+      <div>
+        <%= f.label :teacher_id, class: 'field-title defaultField' do %>
+            Accepted Date: <%= @student.accepted_date.nil? ? "" : @student.accepted_date.strftime("%m/%d/%Y") %>
+        <% end %>
+      </div>
       <div class="field half-bottom">
         <%= f.label :teacher_id, class: 'field-title defaultField' do %>
             Welcome Flyer Sent Date: <%= @student.flyer_sent_date.nil? ? "" : @student.flyer_sent_date.strftime("%m/%d/%Y") %>
