@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>*|MC:SUBJECT|*</title>
+  <title>Richmond Read-A-Thon</title>
 
   <style type="text/css">
     p {
@@ -926,7 +926,7 @@
                                           <hr style="margin-left:0; border: 0;height: 1px;background: #000;width:300px;">
                                           Your total pledged contribution: <b><%= number_to_currency(@pledge.total_owed) %></b>
                                           <br/><br/>
-                                          You can fulfill your pledge online at All Hands Raised
+                                          You can fulfill your pledge online at <%= link_to 'All Hands Raised', pub_pledge_ahrh_url(@pledge.obscure_id) %>
                                           <br><br/>
                                           or mail us a check:<br/><br/>
                                           Richmond School Foundation<br/>

@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   match '/public/pledge/:id'  => 'pubprofiles#pledge',      :as => :pub_pledge,      :via => :get
   match '/public/pledge/:id'  => 'pubprofiles#make_pledge', :as => :pub_make_pledge, :via => :post
   match '/public/pledge/thanks/:id' => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
-  match '/public/pledge/ahr/:id'    => 'pubprofiles#pledge_ahr',    :as => :pub_pledge_ahr,    :via => :get
+  match '/public/pledge/ahrf/:id'   => 'pubprofiles#pledge_ahrf',   :as => :pub_pledge_ahrf,   :via => :get
+  match '/public/pledge/ahrh/:id'   => 'pubprofiles#pledge_ahrh',   :as => :pub_pledge_ahrh,   :via => :get
   match '/public/pledge/email/:id'  => 'pubprofiles#pledge_email',  :as => :pub_pledge_email,  :via => :get
 
   devise_for :users, skip: :registrations
