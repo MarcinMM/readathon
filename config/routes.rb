@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  match '/denied' => 'logins#denied',  :as => :denied,     :via => :get
-
-  match '/login' => 'logins#login_screen', :as => :login_screen, :via => :get
-  match '/login' => 'logins#login', :as => :login, :via => :post
-  match '/logout' => 'logins#logout', :as => :logout, :via => :post
+  match '/login'   => 'logins#login_screen', :as => :login_screen, :via => :get
+  match '/login'   => 'logins#login',        :as => :login,        :via => :post
+  match '/logout'  => 'logins#logout',       :as => :logout,       :via => :post
+  match '/support' => 'logins#support',      :as => :support,      :via => :get
+  match '/denied'  => 'logins#denied',       :as => :denied,       :via => :get
 
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register'       => 'logins#register',        :as => :register,        :via => :post
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   match '/profile'               => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
   match '/profile/avatar'        => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get
   match '/profile/avatar'        => 'priprofiles#avatar_update',       :as => :priprofile_avatar_update, :via => :post
-  match '/profile/challange'     => 'priprofiles#challange',           :as => :priprofile_challange,     :via => :post
+  match '/profile/challenge'     => 'priprofiles#challenge',           :as => :priprofile_challenge,     :via => :post
   match '/profile/pledge'        => 'priprofiles#pledge',              :as => :priprofile_pledge,        :via => :get
   match '/profile/pledge/email'  => 'priprofiles#pledge_email',        :as => :priprofile_pledge_email,  :via => :get
   match '/profile/pledge/email1' => 'priprofiles#pledge_email1',       :as => :priprofile_pledge_email1, :via => :post
@@ -22,10 +22,10 @@ Rails.application.routes.draw do
   match '/profile/add15m'        => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
   match '/profile/subtract15m'   => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
 
-  match '/home'               => 'pubprofiles#home',        :as => :pub_home,        :via => :get
-  match '/public/profile/:id' => 'pubprofiles#show',        :as => :pub_profile,     :via => :get
-  match '/public/pledge/:id'  => 'pubprofiles#pledge',      :as => :pub_pledge,      :via => :get
-  match '/public/pledge/:id'  => 'pubprofiles#make_pledge', :as => :pub_make_pledge, :via => :post
+  match '/home'                     => 'pubprofiles#home',          :as => :pub_home,          :via => :get
+  match '/public/profile/:id'       => 'pubprofiles#show',          :as => :pub_profile,       :via => :get
+  match '/public/pledge/:id'        => 'pubprofiles#pledge',        :as => :pub_pledge,        :via => :get
+  match '/public/pledge/:id'        => 'pubprofiles#make_pledge',   :as => :pub_make_pledge,   :via => :post
   match '/public/pledge/thanks/:id' => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
   match '/public/pledge/ahrf/:id'   => 'pubprofiles#pledge_ahrf',   :as => :pub_pledge_ahrf,   :via => :get
   match '/public/pledge/ahrh/:id'   => 'pubprofiles#pledge_ahrh',   :as => :pub_pledge_ahrh,   :via => :get

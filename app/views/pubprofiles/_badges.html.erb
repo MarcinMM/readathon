@@ -5,11 +5,11 @@
       <h5>Badges <%= @student.first %> has earned</h5>
   <% end %>
   <% closedDiv=false %>
-  <% student.challanges.each_with_index do |challange, index| %>
+  <% student.challenges.each_with_index do |challenge, index| %>
       <% if (index%3)==0 %><% closedDiv=true %> <div style="clear: both;display: inline-block;"> <% end %>
       <div style="width:130px; float:left; text-align:center; margin:10px 10px 10px 0;">
-        <img style="width:130px;" src="/images/badges/badge<%= challange.id %>.png"/>
-        <%= challange.description %>
+        <img style="width:130px;" src="/images/badges/badge<%= challenge.id %>.png"/>
+        <%= challenge.description %>
       </div>
       <% if ((index+1)%3)==0 %><% closedDiv=false %> </div> <% end %>
   <% end %>

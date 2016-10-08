@@ -35,10 +35,10 @@ class PriprofilesController < ApplicationController
     redirect_to :priprofile_index
   end
 
-  def challange
-    @challange = Challange.daily_challange
+  def challenge
+    @challenge = Challenge.daily_challenge
     @student = current_student
-    @student.challanges << @challange
+    @student.challenges << @challenge
     render :index
   end
 

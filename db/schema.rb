@@ -18,17 +18,17 @@ ActiveRecord::Schema.define(version: 20160825063923) do
     t.string  "category", limit: 24
   end
 
-  create_table "challanges", force: :cascade do |t|
+  create_table "challenges", force: :cascade do |t|
     t.string "description", limit: 255
   end
 
-  create_table "challanges_students", id: false, force: :cascade do |t|
-    t.integer "challange_id", limit: 4, null: false
+  create_table "challenges_students", id: false, force: :cascade do |t|
+    t.integer "challenge_id", limit: 4, null: false
     t.integer "student_id",   limit: 4, null: false
   end
 
-  add_index "challanges_students", ["challange_id", "student_id"], name: "index_challanges_students_on_challange_id_and_student_id", using: :btree
-  add_index "challanges_students", ["student_id", "challange_id"], name: "index_challanges_students_on_student_id_and_challange_id", using: :btree
+  add_index "challenges_students", ["challenge_id", "student_id"], name: "index_challenges_students_on_challenge_id_and_student_id", using: :btree
+  add_index "challenges_students", ["student_id", "challenge_id"], name: "index_challenges_students_on_student_id_and_challenge_id", using: :btree
 
   create_table "levels", force: :cascade do |t|
     t.string  "name",        limit: 24
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160825063923) do
   create_table "readlogs", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "day"
+    t.date     "day"
     t.integer  "teacher_id", limit: 4
     t.integer  "student_id", limit: 4
     t.integer  "minutes",    limit: 4

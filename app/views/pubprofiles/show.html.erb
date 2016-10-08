@@ -27,11 +27,11 @@
         </h2>
         <ul>
           <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
-          <li><strong><%= @student.challanges.length %></strong> badges earned</li>
+          <li><strong><%= @student.challenges.length %></strong> badges earned</li>
           <li><strong><%= @student.pledges.length %></strong> pledges</li>
         </ul>
 
-        <% if Challange.days_remaining > 0 %>
+        <% if Challenge.days_remaining > 0 %>
             <a href="<%= @student.bitly_pledge %>" style="width:250px;" class="button center-button button-red">Pledge <%= @student.first %></a>
         <% else %>
           <p style="margin:20px;"><strong>The Read-A-Thon has ended but...</strong> You can contribute securely online at the <%= link_to 'All Hands Raised', 'http://allhandsraised.org/donate/' %> website either a single donation,
