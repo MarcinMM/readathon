@@ -1,7 +1,7 @@
 class Teachers::OverviewsController < ApplicationController
   before_filter :authenticate_user!
   before_filter do
-    redirect_to :denied unless current_user.teacher?
+    redirect_to :denied if current_user.teacher.nil?
   end
 
   def index
