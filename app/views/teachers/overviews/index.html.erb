@@ -1,1 +1,66 @@
-<h3>Read-A-Thon Teacher Admin</h3>
+<script>
+  jQuery(document).ready(function () {
+    jQuery("tr:even").addClass("even");
+  });
+</script>
+<div class="content">
+  <div class="half-bottom"></div>
+  <div class="box-960">
+    <% if flash[:notice] %>
+        <blockquote class="quote-one green-quote">
+          <div style="float:left;margin-left:15px;"><strong><%= flash[:notice]['title'] %></strong>
+            <span style="margin-left:10px;color:black;"><%= flash[:notice]['msg'] %></span>
+          </div>
+        </blockquote>
+        <br/>
+    <% end %>
+
+    <%= form_tag(teachers_log_time_path, method: 'post') do %>
+        <h3>Read-A-Thon Teacher Admin - <%= current_teacher.first %> <%= current_teacher.last %></h3>
+        <div style="float:left">
+          Set time Read in class:
+          <select style="-webkit-appearance: menulist; border-style: solid; border-width: 1px; width:100px;">
+            <option value="0">0 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="30" selected="selected">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">1 hour</option>
+          </select>
+        </div>
+        <div style="float:right">
+          <input class="button button-green half-bottom" type="submit" value="Set Time For Selected Students"/>
+        </div>
+        <div style="clear:both;"></div>
+
+        <table class="table half-bottom">
+          <tbody>
+          <tr>
+            <th>Include?</th>
+            <th class="table-title blue-title">Student</th>
+            <th class="table-title red-title">Mins Read In Class Today</th>
+            <th class="table-title blue-title">Total Mins Read In Class</th>
+            <th class="table-title blue-title">Total Mins Read At Home</th>
+          </tr>
+
+          <% current_teacher.students.each do |student| %>
+              <tr>
+                <td style="padding-top:5px; padding-bottom:5px;">
+                  <input style="-webkit-appearance: checkbox;height:15px;width:15px;margin-left:40px;" type="checkbox" name="student_id" value="<%= student.id %>" checked="checked"/>
+                </td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= student.last %> <%= student.first %></td>
+                <td style="padding-top:5px; padding-bottom:5px;">1 hour 45 minutes</td>
+                <td style="padding-top:5px; padding-bottom:5px;">0 minutes</td>
+                <td style="padding-top:5px; padding-bottom:5px;">5 hours 30 minutes</td>
+              </tr>
+          <% end %>
+
+          </tbody>
+        </table>
+    <% end %>
+    <p>
+      If you are experiencing problems adding time to students please email us:
+      <a href="mailto:rsf.pdx@gmail.com">rsf.pdx@gmail.com</a>
+    </p>
+
+  </div>
+</div>
