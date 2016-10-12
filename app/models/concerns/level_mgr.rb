@@ -11,12 +11,12 @@ module LevelMgr
 
     next_level_id = self.level_id + 1
     next_level = Level.find next_level_id
-    mins_left = next_level.minutes - self.student_minutes_total
+    mins_left = next_level.minutes - self.total_minutes_read
     mins_left < 0 ? 0 : mins_left
   end
 
   def earned_level_id
-    level = Level.where("minutes <= ?", self.student_minutes_total).order(id: :desc).first
+    level = Level.where("minutes <= ?", self.total_minutes_read).order(id: :desc).first
     level.id
   end
 

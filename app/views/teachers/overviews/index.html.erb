@@ -18,8 +18,8 @@
     <%= form_tag(teachers_log_time_path, method: 'post') do %>
         <h3>Read-A-Thon Teacher Admin - <%= current_teacher.first %> <%= current_teacher.last %></h3>
         <div style="float:left">
-          Set time Read in class:
-          <select style="-webkit-appearance: menulist; border-style: solid; border-width: 1px; width:100px;">
+          Set total time read in class today:
+          <select name="minutes" style="-webkit-appearance: menulist; border-style: solid; border-width: 1px; width:100px;">
             <option value="0">0 minutes</option>
             <option value="15">15 minutes</option>
             <option value="30" selected="selected">30 minutes</option>
@@ -45,12 +45,12 @@
           <% current_teacher.students.each do |student| %>
               <tr>
                 <td style="padding-top:5px; padding-bottom:5px;">
-                  <input style="-webkit-appearance: checkbox;height:15px;width:15px;margin-left:40px;" type="checkbox" name="student_id" value="<%= student.id %>" checked="checked"/>
+                  <input style="-webkit-appearance: checkbox;height:15px;width:15px;margin-left:40px;" type="checkbox" name="student_id[]" value="<%= student.id %>" checked="checked"/>
                 </td>
                 <td style="padding-top:5px; padding-bottom:5px;"><%= student.last %> <%= student.first %></td>
-                <td style="padding-top:5px; padding-bottom:5px;">1 hour 45 minutes</td>
-                <td style="padding-top:5px; padding-bottom:5px;">0 minutes</td>
-                <td style="padding-top:5px; padding-bottom:5px;">5 hours 30 minutes</td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_today(current_teacher.id)) %></td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_total(current_teacher.id)) %></td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.student_minutes_total) %></td>
               </tr>
           <% end %>
 

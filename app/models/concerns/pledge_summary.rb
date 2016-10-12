@@ -16,7 +16,7 @@ module PledgeSummary
 
 
   def money_raised
-    total = (pledged_per_hour.to_f / 60.to_f) * student_minutes_total.to_f
+    total = (pledged_per_hour.to_f / 60.to_f) * total_minutes_read.to_f
     total += pledged_flat
   end
 

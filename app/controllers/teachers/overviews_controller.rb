@@ -6,10 +6,17 @@ class Teachers::OverviewsController < ApplicationController
   helper_method :current_teacher
 
   def index
-#    @summary = Registration.get_summary
   end
 
   def log_time
+
+    unless params[:student_id].nil?
+      params[:student_id].each do |id|
+        student = Student.find(id)
+        student.teacher_minutes_update current_teacher.id, params[:minutes].to_i
+      end
+    end
+
     redirect_to teachers_overviews_path, notice: {title: 'Success', msg: 'Logged classroom reading time for students.'}
   end
 

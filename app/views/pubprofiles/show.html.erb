@@ -26,7 +26,7 @@
           <%= days_to_end %> day(s) remaining
         </h2>
         <ul>
-          <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.student_minutes_total) %></strong></li>
+          <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.total_minutes_read) %></strong></li>
           <li><strong><%= @student.challenges.length %></strong> badges earned</li>
           <li><strong><%= @student.pledges.length %></strong> pledges</li>
         </ul>
