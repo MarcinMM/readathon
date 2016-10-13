@@ -69,7 +69,7 @@ class Rmgr::StudentsController < ApplicationController
   private
 
   def student_params params
-    params.require(:student).permit(:first, :last, :email, :teacher_id)
+    params.require(:student).permit(:first, :last, :email, :email2, :teacher_id)
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825063923) do
+ActiveRecord::Schema.define(version: 20160825063924) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer "level_id", limit: 4
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20160825063923) do
     t.string   "bitly_pledge",    limit: 256
     t.datetime "flyer_sent_date"
     t.datetime "accepted_date"
+    t.string   "email2",          limit: 256
   end
 
   create_table "teachers", force: :cascade do |t|
