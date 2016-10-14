@@ -34,59 +34,59 @@
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">K</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_k[:setup] %></td>
+      <td><%= @summary_k[:registered] %></td>
+      <td><%= @summary_k[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_k[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_k[:collected]) %></td>
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">1ST</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_1[:setup] %></td>
+      <td><%= @summary_1[:registered] %></td>
+      <td><%= @summary_1[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_1[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_1[:collected]) %></td>
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">2ND</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_2[:setup] %></td>
+      <td><%= @summary_2[:registered] %></td>
+      <td><%= @summary_2[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_2[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_2[:collected]) %></td>
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">3RD</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_3[:setup] %></td>
+      <td><%= @summary_3[:registered] %></td>
+      <td><%= @summary_3[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_3[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_3[:collected]) %></td>
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">4TH</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_4[:setup] %></td>
+      <td><%= @summary_4[:registered] %></td>
+      <td><%= @summary_4[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_4[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_4[:collected]) %></td>
     </tr>
     <tr>
       <td class="table-sub-title dblue-title">5TH</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td class="price">$199.<sup class="small-price">99</sup></td>
-      <td class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_5[:setup] %></td>
+      <td><%= @summary_5[:registered] %></td>
+      <td><%= @summary_5[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_5[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_5[:collected]) %></td>
     </tr>
-    <tr>
+    <tr style="font-weight:bold;">
       <td class="table-sub-title dblue-title">TOTALS</td>
-      <td style="font-weight:bold;color:black;">No</td>
-      <td style="font-weight:bold;color:black;">No</td>
-      <td style="font-weight:bold;color:black;">No</td>
-      <td style="font-weight:bold;color:black;" class="price">$199.<sup class="small-price">99</sup></td>
-      <td style="font-weight:bold;color:black;" class="price">$599.<sup class="small-price">99</sup></td>
+      <td><%= @summary_t[:setup] %></td>
+      <td><%= @summary_t[:registered] %></td>
+      <td><%= @summary_t[:minutes] %></td>
+      <td class="price"><%= number_to_currency(@summary_t[:pledged]) %></td>
+      <td class="price"><%= number_to_currency(@summary_t[:collected]) %></td>
     </tr>
     </tbody>
   </table>
