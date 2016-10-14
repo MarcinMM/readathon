@@ -42,8 +42,8 @@
     <tbody>
     <tr>
       <th style="width:100px;">GRADE</th>
-      <th>FIRST</th>
       <th>LAST</th>
+      <th>FIRST</th>
       <th>CODE</th>
       <th>EMAIL</th>
       <th></th>
@@ -51,8 +51,8 @@
     <% @students.each do |student| %>
         <tr>
           <td><%= student.teacher.grade %></td>
-          <td><%= student.first %></td>
           <td><%= student.last %></td>
+          <td><%= student.first %></td>
           <td><%= student.code %></td>
           <td><%= student.email %></td>
           <td>

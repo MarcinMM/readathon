@@ -6,14 +6,13 @@ class Rmgr::StudentsController < ApplicationController
 
   def index
     @teacher_id = params[:teacher_id]
-    @students = Array.new
     @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
 
     if @teacher_id == nil
       @teacher_id = @teachers[0][1]
     end
 
-    @students = Student.joins(:teacher).where("teachers.id=?", @teacher_id)
+    @students = Student.joins(:teacher).where("teachers.id=?", @teacher_id).order("last")
   end
 
   def new
