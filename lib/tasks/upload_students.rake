@@ -9,11 +9,11 @@ task :upload_students => :environment do
     last_name, first_name = teacher_name.split('_')
 
     if first_name != nil
-p "1: #{last_name} #{first_name}"
       teacher = Teacher.where("last=? and first=?", last_name, first_name).first
+p "1: #{last_name} #{first_name} #{teacher}"
     else
-p "2: #{last_name} #{first_name}"
       teacher = Teacher.find_by_last(teacher_name)
+p "2: #{last_name} #{first_name} #{teacher}"
     end
 
     found_header = false
