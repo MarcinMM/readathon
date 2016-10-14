@@ -13,7 +13,6 @@ task :upload_students => :environment do
 p "1: #{last_name} #{first_name} #{teacher}"
     else
       teacher = Teacher.where("lower(last)=?", last_name).first
-      teacher = Teacher.find_by_last(teacher_name)
 p "2: #{last_name} #{first_name} #{teacher}"
     end
 
