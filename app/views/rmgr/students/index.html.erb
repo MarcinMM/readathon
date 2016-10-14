@@ -2,8 +2,8 @@
   jQuery(document).ready(function () {
     jQuery("tr:even").addClass("even");
 
-    jQuery('#grade_select').change(function() {
-      self.location = '<%= rmgr_students_path %>?grade='+ jQuery('#grade_select').val();
+    jQuery('#teacher_select').change(function() {
+      self.location = '<%= rmgr_students_path %>?teacher_id='+ jQuery('#teacher_select').val();
     });
   });
 </script>
@@ -33,12 +33,8 @@
   <h4>Read-A-Thon Students List</h4>
 
   <%= form_for rmgr_students_path, method: 'get' do |f| %>
-
-      Select Grade:
-      <%= f.select :grade,
-                   options_for_select([['Kindergarten', 'K'], ['1st Grade', '1'], ['2nd Grade', '2'], ['3rd Grade', '3'], ['4th Grade', '4'], ['5th Grade', '5']], @grade),
-                   {}, {id: 'grade_select', style: 'width:230px;', class: 'contactField field-deco requiredField'} %>
-
+      Select Teacher:
+      <%= f.select :teacher_id, options_for_select(@teachers, @teacher_id), {}, {id: 'teacher_select', style: 'width:230px;', class: 'contactField field-deco requiredField'} %>
   <% end %>
   <br/>
 
@@ -46,7 +42,6 @@
     <tbody>
     <tr>
       <th style="width:100px;">GRADE</th>
-      <th>TEACHER</th>
       <th>FIRST</th>
       <th>LAST</th>
       <th>CODE</th>
@@ -56,7 +51,6 @@
     <% @students.each do |student| %>
         <tr>
           <td><%= student.teacher.grade %></td>
-          <td><%= student.teacher.last %></td>
           <td><%= student.first %></td>
           <td><%= student.last %></td>
           <td><%= student.code %></td>

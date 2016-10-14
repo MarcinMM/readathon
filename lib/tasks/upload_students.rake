@@ -10,10 +10,10 @@ task :upload_students => :environment do
 
     if first_name != nil
       teacher = Teacher.where("lower(last)=? and lower(first)=?", last_name, first_name).first
-p "1: #{last_name} #{first_name} #{teacher}"
+      p "1: #{last_name} #{first_name} #{teacher}"
     else
       teacher = Teacher.where("lower(last)=?", last_name).first
-p "2: #{last_name} #{first_name} #{teacher}"
+      p "2: #{last_name} #{first_name} #{teacher}"
     end
 
     found_header = false
@@ -26,7 +26,6 @@ p "2: #{last_name} #{first_name} #{teacher}"
         end
         columns = line.split(',')
         puts "#{filename}  =>  #{columns[0]}   #{columns[1]}   #{columns[2]}   #{columns[3]}   #{columns[4]}"
-
         Student.create(first: columns[0], last: columns[1], email: columns[3], email2: columns[4], teacher_id: teacher.id)
       end
     end
