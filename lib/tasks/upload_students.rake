@@ -2,7 +2,7 @@ desc "Upload Students"
 task :upload_students => :environment do
 
   ['ando.csv', 'aubrecht.csv', 'biornstad.csv', 'farrell.csv', 'fujiwara.csv', 'gaynor.csv', 'gross.csv', 'hirahara.csv', 'kapranos_anna.csv', 'kapranos_jaina.csv', 'kawasaki.csv', 'iverson.csv',
-   'marsh.csv', 'mcCollister.csv', 'yoshida.csv', 'loveland.csv', 'martin.csv', 'mogi.csv', 'pineo.csv', 'rivera.csv', 'scheiman.csv', 'taya.csv', 'uchida.csv', 'wenger.csv']
+   'marsh.csv', 'mccollister.csv', 'yoshida.csv', 'loveland.csv', 'martin.csv', 'mogi.csv', 'pineo.csv', 'rivera.csv', 'scheiman.csv', 'taya.csv', 'uchida.csv', 'wenger.csv']
       .each do |filename|
 
     teacher_name = filename.split('.')[0]
