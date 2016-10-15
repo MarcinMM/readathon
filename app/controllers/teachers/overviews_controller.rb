@@ -6,7 +6,7 @@ class Teachers::OverviewsController < ApplicationController
   helper_method :current_teacher
 
   def index
-    @students = Student.where("teacher_id=?", current_teacher.id)
+    @students = Student.where("teacher_id=?", current_teacher.id).order(:last)
   end
 
   def log_time
