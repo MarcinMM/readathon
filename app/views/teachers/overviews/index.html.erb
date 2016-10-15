@@ -42,7 +42,7 @@
             <th class="table-title blue-title">Total Mins Read At Home</th>
           </tr>
 
-          <% current_teacher.students.each do |student| %>
+          <% @students.each do |student| %>
               <tr>
                 <td style="padding-top:5px; padding-bottom:5px;">
                   <input style="-webkit-appearance: checkbox;height:15px;width:15px;margin-left:40px;" type="checkbox" name="student_id[]" value="<%= student.id %>" checked="checked"/>
