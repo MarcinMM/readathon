@@ -35,7 +35,7 @@ class Rmgr::StudentsController < ApplicationController
 
     if @student.save
       teacher = Teacher.find(@student.teacher_id)
-      redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Added student successfully.'}
+      redirect_to rmgr_students_path(teacher_id: teacher.id), notice: {title: 'Success', msg: 'Added student successfully.'}
     else
       render :new
     end
@@ -46,7 +46,7 @@ class Rmgr::StudentsController < ApplicationController
 
     if @student.update_attributes(student_params(params))
       teacher = Teacher.find(@student.teacher_id)
-      redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Student was successfully updated.'}
+      redirect_to rmgr_students_path(teacher_id: teacher.id), notice: {title: 'Success', msg: 'Student was successfully updated.'}
     else
       render :edit
     end
@@ -57,7 +57,7 @@ class Rmgr::StudentsController < ApplicationController
     teacher = Teacher.find(@student.teacher_id)
     GeneralMailer.welcome_flyer(@student).deliver
     @student.update_attribute :flyer_sent_date, Time.zone.today
-    redirect_to rmgr_students_path(grade: teacher.grade), notice: {title: 'Success', msg: 'Welcome flyer was sent.'}
+    redirect_to rmgr_students_path(teacher_id: teacher.id), notice: {title: 'Success', msg: 'Welcome flyer was sent.'}
   end
 
 #  def destroy
