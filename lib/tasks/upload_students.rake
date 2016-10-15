@@ -24,7 +24,7 @@ task :upload_students => :environment do
           found_header = true
           next
         end
-        columns = line.split(',')
+        columns = line.split(',').map(&:strip)
         puts "#{filename}  =>  #{columns[0]}   #{columns[1]}   #{columns[2]}   #{columns[3]}   #{columns[4]}"
         Student.create(first: columns[0], last: columns[1], email: columns[3], email2: columns[4], teacher_id: teacher.id)
       end

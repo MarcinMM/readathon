@@ -21,8 +21,17 @@ class Rmgr::OverviewsController < ApplicationController
     }
   end
 
-  def search
-#    @results = Registration.search params[:term]
+  def unregistered
+    @students = Student.where("accepted_date is null")
+    headers['Content-Disposition'] = "attachment; filename=\"unregistered_students.csv\""
+    headers['Content-Type'] ||= 'text/csv'
+  end
+
+  def uncollected
+    @pledges = Pledge.where("email_click_date is null")
+    headers['Content-Disposition'] = "attachment; filename=\"uncollected_pledges.csv\""
+    headers['Content-Type'] ||= 'text/csv'
+
   end
 
   private
