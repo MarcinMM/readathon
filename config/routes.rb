@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   match '/login'   => 'logins#login',        :as => :login,        :via => :post
   match '/logout'  => 'logins#logout',       :as => :logout,       :via => :post
   match '/support' => 'logins#support',      :as => :support,      :via => :get
+  match '/privacy' => 'logins#privacy',      :as => :privacy,      :via => :get
   match '/denied'  => 'logins#denied',       :as => :denied,       :via => :get
 
   match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
