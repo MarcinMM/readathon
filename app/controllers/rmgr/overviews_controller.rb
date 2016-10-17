@@ -47,12 +47,14 @@ class Rmgr::OverviewsController < ApplicationController
     Teacher.where("grade=?", grade).each do |teacher|
       teacher.students.each do |student|
         setup += 1
+
         unless student.accepted_date.nil?
           registered += 1
         end
+
         minutes += student.total_minutes_read
 
-        student.pledges do |pledge|
+        student.pledges.each do |pledge|
           pledged += pledge.total_owed
 
           unless pledge.email_click_date.nil?
