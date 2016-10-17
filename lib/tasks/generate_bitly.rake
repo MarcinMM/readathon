@@ -1,7 +1,8 @@
 desc "Generate Bitly"
 task :generate_bitly => :environment do
 
-  Student.where('bitly_profile is null').each do |student|
+  [167, 636, 604, 12].each do |id|
+    student = Student.find id
     p "-> #{student.first} #{student.last}"
     student.gen_bitly
   end
