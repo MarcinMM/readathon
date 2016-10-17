@@ -14,7 +14,7 @@ class Teachers::OverviewsController < ApplicationController
     unless params[:student_id].nil?
       params[:student_id].each do |id|
         student = Student.find(id)
-        student.teacher_minutes_update current_teacher.id, params[:minutes].to_i
+        student.teacher_minutes_update params[:minutes].to_i
       end
     end
 

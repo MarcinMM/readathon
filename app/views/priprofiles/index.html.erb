@@ -119,7 +119,8 @@
         </h2>
         <ul>
           <li><strong><%= days_to_end %> days remaining</strong></li>
-          <li>You have read for <strong><%= mins_to_words(current_student.total_minutes_read) %></strong></li>
+          <li>Read at home for <strong><%= mins_to_words(current_student.student_minutes_total) %></strong></li>
+          <li>Read at school for <strong><%= mins_to_words(current_student.teacher_minutes_total) %></strong></li>
           <% if current_student.level_id < 13 %>
             <li><strong><%= current_student.mins_to_next_level %></strong> minutes to next level</li>
           <% end %>

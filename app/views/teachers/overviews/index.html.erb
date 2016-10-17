@@ -48,8 +48,8 @@
                   <input style="-webkit-appearance: checkbox;height:15px;width:15px;margin-left:40px;" type="checkbox" name="student_id[]" value="<%= student.id %>" checked="checked"/>
                 </td>
                 <td style="padding-top:5px; padding-bottom:5px;"><%= student.last %> <%= student.first %></td>
-                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_today(current_teacher.id)) %></td>
-                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_total(current_teacher.id)) %></td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_today) %></td>
+                <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.teacher_minutes_total) %></td>
                 <td style="padding-top:5px; padding-bottom:5px;"><%= mins_to_words(student.student_minutes_total) %></td>
               </tr>
           <% end %>
