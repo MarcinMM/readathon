@@ -31,7 +31,12 @@ class Rmgr::OverviewsController < ApplicationController
     @pledges = Pledge.where("email_click_date is null")
     headers['Content-Disposition'] = "attachment; filename=\"uncollected_pledges.csv\""
     headers['Content-Type'] ||= 'text/csv'
+  end
 
+  def collected
+    @pledges = Pledge.where("email_click_date is not null")
+    headers['Content-Disposition'] = "attachment; filename=\"collected_pledges.csv\""
+    headers['Content-Type'] ||= 'text/csv'
   end
 
   private
