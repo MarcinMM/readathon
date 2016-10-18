@@ -6,11 +6,14 @@ class Teachers::OverviewsController < ApplicationController
   helper_method :current_teacher
 
   def index
-    @students = Student.where("teacher_id=?", current_teacher.id).order(:last)
+    @switch_teacher = switch_teacher
+    @switch = params[:switch]
+
+    teacher = params[:switch] == 'yes' ? switch_teacher : current_teacher
+    @students = Student.where("teacher_id=?", teacher.id).order(:last)
   end
 
   def log_time
-
     unless params[:student_id].nil?
       params[:student_id].each do |id|
         student = Student.find(id)
@@ -18,7 +21,7 @@ class Teachers::OverviewsController < ApplicationController
       end
     end
 
-    redirect_to teachers_overviews_path, notice: {title: 'Success', msg: 'Logged classroom reading time for students.'}
+    redirect_to teachers_overviews_path(switch: params[:switch]), notice: {title: 'Success', msg: 'Logged classroom reading time for students.'}
   end
 
   private
@@ -27,5 +30,8 @@ class Teachers::OverviewsController < ApplicationController
     RequestStore.store[:current_teacher] ||= Teacher.find_by_user_id current_user.id
   end
 
+  def switch_teacher
+    Teacher.find current_teacher.id.even? ? current_teacher.id - 1 : current_teacher.id + 1
+  end
 
 end

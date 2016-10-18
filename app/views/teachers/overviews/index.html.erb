@@ -1,6 +1,10 @@
 <script>
   jQuery(document).ready(function () {
     jQuery("tr:even").addClass("even");
+
+    jQuery("#switch").change(function() {
+      self.location="<%= teachers_overviews_path %>?switch="+ jQuery(this).val()
+    });
   });
 </script>
 <div class="content">
@@ -16,9 +20,15 @@
     <% end %>
 
     <%= form_tag(teachers_log_time_path, method: 'post') do %>
-        <h3>Read-A-Thon Teacher Admin - <%= current_teacher.first %> <%= current_teacher.last %></h3>
+        <h3>Read-A-Thon Teacher Admin</h3>
         <div style="float:left">
-          Set total time read in class today:
+          Showing homeroom for:
+          <select id="switch" name="switch" style="-webkit-appearance: menulist; border-style: solid; border-width: 1px; width:200px;">
+            <option value="no" <%= @switch != 'no' ? 'selected=selected' : "" %>><%= current_teacher.first %> <%= current_teacher.last %></option>
+            <option value="yes" <%= @switch == 'yes' ? 'selected=selected' : "" %>><%= @switch_teacher.first %> <%= @switch_teacher.last %></option>
+          </select>
+          <br/>
+          Time read in class today:
           <select name="minutes" style="-webkit-appearance: menulist; border-style: solid; border-width: 1px; width:100px;">
             <option value="0">0 minutes</option>
             <option value="15">15 minutes</option>
