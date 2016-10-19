@@ -3,7 +3,7 @@ module CodeGen
 
   included do
     before_create :gen_code
-    #after_create :gen_bitly
+    after_create :gen_bitly
   end
 
   module ClassMethods
