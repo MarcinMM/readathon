@@ -60,8 +60,8 @@ class Rmgr::TeachersController < ApplicationController
     counter = 0
     students.each do |student|
       if student.flyer_sent_date.nil?
-        #GeneralMailer.welcome_flyer(student).deliver
-        #student.update_attribute :flyer_sent_date, Time.zone.today
+        GeneralMailer.welcome_flyer(student).deliver
+        student.update_attribute :flyer_sent_date, Time.zone.today
         counter += 1
       end
     end
