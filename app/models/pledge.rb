@@ -11,7 +11,7 @@ class Pledge < ActiveRecord::Base
     if ptype == 'hourly'
       total_minutes = self.student.total_minutes_read
       total = (total_minutes.to_f/60.to_f) * amount.to_f
-      total = total > max_amt ? max_amt : total
+      total = max_amt > 0 && total > max_amt ? max_amt : total
       total = total < min_amt ? min_amt : total
       return total
     end
