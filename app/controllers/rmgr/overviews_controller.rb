@@ -48,28 +48,43 @@ class Rmgr::OverviewsController < ApplicationController
     minutes = 0
     pledged = 0
     collected = 0
+    teachers = Array.new
 
     Teacher.where("grade=?", grade).each do |teacher|
+      tsetup = 0
+      tregistered = 0
+      tminutes = 0
+      tpledged = 0
+      tcollected = 0
+
       teacher.students.each do |student|
-        setup += 1
+        tsetup += 1
 
         unless student.accepted_date.nil?
-          registered += 1
+          tregistered += 1
         end
 
-        minutes += student.total_minutes_read
+        tminutes += student.total_minutes_read
 
         student.pledges.each do |pledge|
-          pledged += pledge.total_owed
+          tpledged += pledge.total_owed
 
           unless pledge.email_click_date.nil?
-            collected += pledge.total_owed
+            tcollected += pledge.total_owed
           end
         end
       end
+
+      registered += tregistered
+      setup += tsetup
+      minutes += tminutes
+      pledged += tpledged
+      collected += tcollected
+
+      teachers << {grade: teacher.grade, last: teacher.last, setup: tsetup, registered: tregistered, minutes: tminutes, pledged: tpledged, collected: tcollected}
     end
 
-    {setup: setup, registered: registered, minutes: minutes, pledged: pledged, collected: collected}
+    {setup: setup, registered: registered, minutes: minutes, pledged: pledged, collected: collected, teachers: teachers}
   end
 
 end
