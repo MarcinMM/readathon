@@ -67,10 +67,13 @@ class Rmgr::OverviewsController < ApplicationController
         tminutes += student.total_minutes_read
 
         student.pledges.each do |pledge|
-          tpledged += pledge.total_owed
+          total_owed = pledge.total_owed
+          unless total_owed.nil?
+            tpledged += total_owed
 
-          unless pledge.email_click_date.nil?
-            tcollected += pledge.total_owed
+            unless pledge.email_click_date.nil?
+              tcollected += pledge.total_owed
+            end
           end
         end
       end
