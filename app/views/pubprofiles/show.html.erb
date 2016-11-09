@@ -34,8 +34,10 @@
         <% if Challenge.days_remaining > 0 %>
             <a href="<%= @student.bitly_pledge %>" style="width:250px;" class="button center-button button-red">Pledge <%= @student.first %></a>
         <% else %>
-          <p style="margin:20px;"><strong>The Read-A-Thon has ended but...</strong> You can contribute securely online at the <%= link_to 'All Hands Raised', 'http://allhandsraised.org/donate/' %> website either a single donation,
-          or setup a recurring, monthly contribution. Make sure to select “Richmond ES” as the designated school.</p>
+          <p style="margin:20px;"><strong>The Read-A-Thon has ended but...</strong>
+            You can still <a style="font-weight:bold;" href="<%= @student.bitly_pledge %>">make a flat pledge to <%= @student.first %></a> or
+            you can contribute directly to all Hands Raised at the <%= link_to 'All Hands Raised', 'http://allhandsraised.org/donate/' %> website either a single donation,
+            or setup a recurring, monthly contribution. Make sure to select “Richmond ES” as the designated school.</p>
         <% end %>
 
       </div>

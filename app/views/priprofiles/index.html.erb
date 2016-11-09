@@ -127,9 +127,7 @@
           <li><strong><%= current_student.challenges.length %></strong> badges earned</li>
           <li><strong><%= current_student.pledges.length %></strong> people have pledged you</li>
         </ul>
-        <% if Challenge.days_remaining > 0 %>
           <a href="<%= priprofile_pledge_path %>" style="width:170px;" class="button center-button button-red">Request a pledge</a>
-        <% end %>
       </div>
     </div>
     <div class="clear"></div>
