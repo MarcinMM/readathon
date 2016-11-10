@@ -57,8 +57,8 @@ class PubprofilesController < ApplicationController
   end
 
   def pledge_email
-    @pledge = Pledge.find params[:id]
-    render 'general_mailer/pledge_payment'
+    pledge = Pledge.find params[:id]
+    GeneralMailer.pledge_payment(pledge).deliver
   end
 
   private
