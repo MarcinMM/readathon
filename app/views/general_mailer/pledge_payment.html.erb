@@ -909,7 +909,7 @@
                                         Richmond Read-A-Thon is complete!</h5>
 
                                         <span style="-webkit-text-stroke-width: 0;background-color: #FFFFFF;color: #464646;display: inline !important;float: none;font-family: verdana,geneva,sans-serif;font-size: 14px;font-style: normal;font-variant-caps: normal;font-variant-ligatures: normal;font-weight: normal;letter-spacing: normal;orphans: 2;text-align: start;text-indent: 0px;text-transform: none;white-space: normal;widows: 2;word-spacing: 0px;">
-                                          Thank you for pledging <b><%= @pledge.student.first %></b> in the Read-A-Thon.  <b><%= @pledge.student.first %></b> read for <b><%= @pledge.student.total_minutes_read %></b> minutes and completed <b><%= @pledge.student.challenges.length %></b> daily challenges.  Overall, Richmond students read more than 274,000 minutes!
+                                          Thank you for pledging <b><%= @pledge.student.first %></b> in the Read-A-Thon.  <b><%= @pledge.student.first %></b> read for <b><%= @pledge.student.total_minutes_read %></b> minutes and completed <b><%= @pledge.student.challenges.length %></b> daily challenges.  Overall, Richmond students read nearly 275,000 minutes!
                                           <br/><br/>
                                           With your pledge, you join more than 500 families and friends in supporting Richmond’s students, teachers, and staff.  Please help us make the most of this outpouring of support by fulfilling your pledge today!
                                           <br/><br/>
@@ -926,6 +926,8 @@
                                           <hr style="margin-left:0; border: 0;height: 1px;background: #000;width:300px;">
                                           Your total pledged contribution: <b><%= number_to_currency(@pledge.total_owed) %></b>
                                           <br/><br/>
+                                          *Every donation makes a difference!  If you can't fulfill your full pledge amount, please give what you can.  If you find you are able to give a little more, it is so appreciated!
+                                          <br><br/>
                                           You can fulfill your pledge online at <%= link_to 'All Hands Raised', pub_pledge_ahrh_url(@pledge.obscure_id) %>
                                           <br><br/>
                                           or mail us a check:<br/><br/>
