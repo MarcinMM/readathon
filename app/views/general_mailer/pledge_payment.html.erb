@@ -926,9 +926,11 @@
                                           <hr style="margin-left:0; border: 0;height: 1px;background: #000;width:300px;">
                                           Your total pledged contribution: <b><%= number_to_currency(@pledge.total_owed) %></b>
                                           <br/><br/>
-                                          *Every donation makes a difference!  If you can't fulfill your full pledge amount, please give what you can.  If you find you are able to give a little more, it is so appreciated!
+                                          Every donation makes a difference!  If you can't fulfill your full pledge amount, please give what you can.  If you find you are able to give a little more, it is appreciated!
                                           <br><br/>
                                           You can fulfill your pledge online at <%= link_to 'All Hands Raised', pub_pledge_ahrh_url(@pledge.obscure_id) %>
+                                          <br><br/>
+                                          <i>* Don't worry if you see a red error message at the top of the donation page! Once you fill in your information and click "Submit Donation", it will disappear.</i>
                                           <br><br/>
                                           or mail us a check:<br/><br/>
                                           Richmond School Foundation<br/>
