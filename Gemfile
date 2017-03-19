@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-#site5 kind of blows
-gem 'json', '1.8.2'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
 gem 'mysql2', '0.4.3'
