@@ -4,6 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.datetime "created_at"
       t.datetime "updated_at"
 
+      t.integer  "user_id",             limit: 4
       t.integer  "avatar_id",           limit: 4, default: 0
       t.integer  "level_id",            limit: 4, default: 0
       t.integer  "teacher_id",          limit: 4

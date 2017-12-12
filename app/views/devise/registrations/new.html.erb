@@ -1,29 +1,33 @@
-<h2>Sign up</h2>
+<%= render '/includes/strip' %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="content">
+
+  <div class="login-box-one one-third-responsive">
+    <div style="display: none; width: 270px;margin: 0 auto;">
+    </div>
+    <div style="width: 270px;margin: 0 auto;">
+      &nbsp;
+    </div>
+  </div>
+
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {style: 'overflow:visible;'} do |f| %>
+    <div class="login-box-one one-third-responsive full-bottom">
+      <div class="login-wrapper half-bottom">
+        <img src="/images/rsf_logo.png" alt="img">
+        <p class="half-bottom" style="margin-top:70px;"></p>
+        <em><i class="fa fa-envelope"></i>Email</em>
+        <%= f.email_field :email, autofocus: true, class: 'green-focus login-box-one-pwd half-bottom' %>
+        <em><i class="fa fa-lock"></i>Password</em>
+        <%= f.password_field :password, autocomplete: "off", class: 'green-focus login-box-one-pwd half-bottom' %>
+        <em><i class="fa fa-lock"></i>Confirm Password</em>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'green-focus login-box-one-pwd half-bottom' %>
+        <%= f.submit "Sign Up", class: "button button-green center-button" %>
+        <em class="forgot-login no-bottom" style="margin-top:10px;"><a href="<%= new_session_path(resource_name) %>">Already have an account?</a></em>
+        <em class="forgot-login no-bottom"><a href="<%= new_password_path(resource_name) %>">Forgot your password?</a></em>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

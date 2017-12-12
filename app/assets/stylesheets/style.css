@@ -254,7 +254,7 @@
 	
 	.not-animated{
 		transition:all 0ms linear!important;
-        background-color:#2d3090!important;
+        background-color:#FF0000!important;
 	}
 	
 	.boxed-header{

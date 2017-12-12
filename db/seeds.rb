@@ -6,125 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'wmccollister@pps.net', password: password)
-Teacher.create(first: 'Wakana', last: 'McCollister', grade: 'K', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'jiverson@pps.net', password: password)
-Teacher.create(first: 'Jill', last: 'Iverson', grade: 'K', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'marsh@pps.net', password: password)
-Teacher.create(first: 'Kelly', last: 'Marsh', grade: 'K', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'ryoshida@pps.net', password: password)
-Teacher.create(first: 'Reiko', last: 'Yoshida', grade: 'K', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'suchida@pps.net', password: password)
-Teacher.create(first: 'Sumiko', last: 'Uchida', grade: '1', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'apineo@pps.net', password: password)
-Teacher.create(first: 'Angie', last: 'Pineo', grade: '1', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'trivera@pps.net', password: password)
-Teacher.create(first: 'Toshiko', last: 'Rivera', grade: '1', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'sgaynor@pps.net', password: password)
-Teacher.create(first: 'Sarah', last: 'Gaynor', grade: '1', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'emogi@pps.net', password: password)
-Teacher.create(first: 'Eriko', last: 'Mogi', grade: '2', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'mtaya@pps.net', password: password)
-Teacher.create(first: 'Minori', last: 'Taya', grade: '2', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'ascheima@pps.net', password: password)
-Teacher.create(first: 'Anne', last: 'Scheiman', grade: '2', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'akaprano@pps.net', password: password)
-Teacher.create(first: 'Anna', last: 'Kapranos', grade: '2', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'mparshal@pps.net', password: password)
-Teacher.create(first: 'Michiko', last: 'Hirahara', grade: '3', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'mwenger@pps.net', password: password)
-Teacher.create(first: 'Melissa', last: 'Wenger', grade: '3', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'rfujiwar@pps.net', password: password)
-Teacher.create(first: 'Ritsuko', last: 'Fujiwara', grade: '3', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'mgross@pps.net', password: password)
-Teacher.create(first: 'Martha', last: 'Gross', grade: '3', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'okawasaki@pps.net', password: password)
-Teacher.create(first: 'Gori', last: 'Kawasaki', grade: '4', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'emartin@pps.net', password: password)
-Teacher.create(first: 'Beth', last: 'Martin', grade: '4', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'kbiornst@pps.net', password: password)
-Teacher.create(first: 'Kaoru', last: 'Biornstad', grade: '4', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'jainak@pps.net', password: password)
-Teacher.create(first: 'Jaina', last: 'Kapranos', grade: '4', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'ando@pps.net', password: password)
-Teacher.create(first: 'Atsuko', last: 'Ando', grade: '5', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'baubrech@pps.net', password: password)
-Teacher.create(first: 'Bill', last: 'Aubrecht', grade: '5', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'mfarrell@pps.net', password: password)
-Teacher.create(first: 'Miki', last: 'Farrell', grade: '5', user_id: user.id)
-puts "#{user.email} #{password}"
-
-password = SecureRandom.urlsafe_base64(6)
-user = User.create(email: 'jlovela1@pps.net', password: password)
-Teacher.create(first: 'Jen', last: 'Loveland', grade: '5', user_id: user.id)
-puts "#{user.email} #{password}"
+Teacher.create(first: 'Wakana', last: 'McCollister', grade: 'K')
+Teacher.create(first: 'Jill', last: 'Iverson', grade: 'K')
+Teacher.create(first: 'Kelly', last: 'Marsh', grade: 'K')
+Teacher.create(first: 'Reiko', last: 'Yoshida', grade: 'K')
+Teacher.create(first: 'Sumiko', last: 'Uchida', grade: '1')
+Teacher.create(first: 'Angie', last: 'Pineo', grade: '1')
+Teacher.create(first: 'Toshiko', last: 'Rivera', grade: '1')
+Teacher.create(first: 'Sarah', last: 'Gaynor', grade: '1')
+Teacher.create(first: 'Eriko', last: 'Mogi', grade: '2')
+Teacher.create(first: 'Minori', last: 'Taya', grade: '2')
+Teacher.create(first: 'Anne', last: 'Scheiman', grade: '2')
+Teacher.create(first: 'Anna', last: 'Kapranos', grade: '2')
+Teacher.create(first: 'Michiko', last: 'Hirahara', grade: '3')
+Teacher.create(first: 'Melissa', last: 'Wenger', grade: '3')
+Teacher.create(first: 'Ritsuko', last: 'Fujiwara', grade: '3')
+Teacher.create(first: 'Martha', last: 'Gross', grade: '3')
+Teacher.create(first: 'Gori', last: 'Kawasaki', grade: '4')
+Teacher.create(first: 'Beth', last: 'Martin', grade: '4')
+Teacher.create(first: 'Kaoru', last: 'Biornstad', grade: '4')
+Teacher.create(first: 'Jaina', last: 'Kapranos', grade: '4')
+Teacher.create(first: 'Atsuko', last: 'Ando', grade: '5')
+Teacher.create(first: 'Bill', last: 'Aubrecht', grade: '5')
+Teacher.create(first: 'Miki', last: 'Farrell', grade: '5')
+Teacher.create(first: 'Jen', last: 'Loveland', grade: '5')
 
 Level.create(id: 0, name: 'Level 0 Reader', description: "If you don’t like to read, you haven’t found the right book." , minutes: 0)
 Level.create(id: 1, name: 'Level 1 Reader', description: 'Reading one book is like eating just one potato chip.', minutes: 30)

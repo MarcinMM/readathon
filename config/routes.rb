@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   match '/privacy' => 'logins#privacy',      :as => :privacy,      :via => :get
   match '/denied'  => 'logins#denied',       :as => :denied,       :via => :get
 
-  match '/register/:code' => 'logins#register_screen', :as => :register_screen, :via => :get
+  match '/register'       => 'logins#register_screen', :as => :register_screen, :via => :get
   match '/register'       => 'logins#register',        :as => :register,        :via => :post
   match '/autologin/:id'  => 'logins#autologin',       :as => :autologin,       :via => :get
 
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   match '/public/pledge/ahrf/:id'   => 'pubprofiles#pledge_ahrf',   :as => :pub_pledge_ahrf,   :via => :get
   match '/public/pledge/ahrh/:id'   => 'pubprofiles#pledge_ahrh',   :as => :pub_pledge_ahrh,   :via => :get
 
-  devise_for :users, skip: :registrations
+  devise_for :users
 
   # Admin Resources
   namespace :rmgr do
