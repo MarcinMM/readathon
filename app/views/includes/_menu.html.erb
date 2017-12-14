@@ -18,29 +18,30 @@
   </li>
   <% if current_user != nil %>
       <li>
-        <p id="logout1" style="margin-top:15px;">
+        <p id="logout1">
           <i class="fa fa-user"></i>
           <i class="fa fa-circle"></i>
           Admin Logout
-          <!--em><%= current_user.email %></em-->
+          <em style="color:white;"><%= current_user.email %></em>
         </p>
       </li>
   <% end %>
   <% if current_student != nil %>
       <li>
-        <p id="logout2" style="margin-top:15px;">
+        <p id="logout2">
           <i class="fa fa-user"></i>
           <i class="fa fa-circle"></i>
           Logout
+          <em style="color:white;"><%= current_student.first %></em>
         </p>
       </li>
       <li>
-        <p style="margin-top:15px;">
+        <p>
           <a href="<%= priprofile_index_path %>">
             <i class="fa fa-home"></i>
             <i class="fa fa-circle"></i>
             <%= current_student.first %>'s &nbsp; Profile
-            <!--em>my home page</em-->
+            <em style="color:white;"><%= current_student.first %> <%= current_student.last %></em>
           </a>
         </p>
       </li>
@@ -51,7 +52,7 @@
             <i class="fa fa-home"></i>
             <i class="fa fa-circle"></i>
             Richmond Read-A-Thon
-            <em>sponsor and help fund our school</em>
+            <em style="color:white;">sponsor and help fund our school</em>
           </a>
         </p>
       </li>

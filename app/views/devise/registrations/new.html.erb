@@ -2,21 +2,27 @@
 
 <div class="content">
 
-  <div class="login-box-one one-third-responsive">
-    <div style="display: none; width: 270px;margin: 0 auto;">
-    </div>
-    <div style="width: 270px;margin: 0 auto;">
-      &nbsp;
-    </div>
-  </div>
-
-  <%= devise_error_messages! %>
+  <div class="login-box-one one-third-responsive">&nbsp;</div>
 
   <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {style: 'overflow:visible;'} do |f| %>
     <div class="login-box-one one-third-responsive full-bottom">
       <div class="login-wrapper half-bottom">
-        <img src="/images/rsf_logo.png" alt="img">
-        <p class="half-bottom" style="margin-top:70px;"></p>
+
+        <h5 class="center-text">Read-A-Thon Parent Signup</h5>
+        <p class="center-text half-bottom" style="margin-top:10px;">
+          Create an account to access the Read-A-Thon.
+          After you can register your children.
+        </p>
+
+        <% if resource.errors.any? %>
+          <div class="red-notification" style="margin-bottom:20px;">
+            <p class="uppercase" style="font-size:smaller;text-align:left;margin-top:5px;margin-bottom:5px;">
+              <i class="fa fa-warning"></i>
+              <% resource.errors.full_messages.each do |msg| %><%= msg %><br/><% end %>
+            </p>
+          </div>
+        <% end %>
+
         <em><i class="fa fa-envelope"></i>Email</em>
         <%= f.email_field :email, autofocus: true, class: 'green-focus login-box-one-pwd half-bottom' %>
         <em><i class="fa fa-lock"></i>Password</em>
