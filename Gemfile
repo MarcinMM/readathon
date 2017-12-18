@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
-gem 'mysql2', '0.4.3'
+gem 'rails', '4.2.10'
 gem "bitly"
 gem 'devise'
 gem 'pg'

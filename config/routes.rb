@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  match '/login'   => 'logins#login_screen', :as => :login_screen, :via => :get
   match '/login'   => 'logins#login',        :as => :login,        :via => :post
   match '/logout'  => 'logins#logout',       :as => :logout,       :via => :post
   match '/support' => 'logins#support',      :as => :support,      :via => :get
