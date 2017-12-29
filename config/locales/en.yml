@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+      attributes:
+        parent:
+          first: "First Name"
+          last: "Last Name"

@@ -17,24 +17,18 @@
     <em>Navigation</em>
   </li>
   <% if current_user != nil %>
-      <li>
-        <p id="logout1">
-          <i class="fa fa-user"></i>
-          <i class="fa fa-circle"></i>
-          Admin Logout
-          <em style="color:white;"><%= current_user.email %></em>
-        </p>
-      </li>
+    <li>
+      <p id="acount">
+        <i class="fa fa-user"></i>
+        <i class="fa fa-circle"></i>
+        <a href="<%= account_path %>">
+          Account
+          <em style="color:white;">logout / switch user</em>
+        </a>
+      </p>
+    </li>
   <% end %>
   <% if current_student != nil %>
-      <li>
-        <p id="logout2">
-          <i class="fa fa-user"></i>
-          <i class="fa fa-circle"></i>
-          Logout
-          <em style="color:white;"><%= current_student.first %></em>
-        </p>
-      </li>
       <li>
         <p>
           <a href="<%= priprofile_index_path %>">

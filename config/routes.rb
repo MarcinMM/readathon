@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  match '/login'   => 'logins#login',        :as => :login,        :via => :post
-  match '/logout'  => 'logins#logout',       :as => :logout,       :via => :post
-  match '/support' => 'logins#support',      :as => :support,      :via => :get
-  match '/privacy' => 'logins#privacy',      :as => :privacy,      :via => :get
-  match '/denied'  => 'logins#denied',       :as => :denied,       :via => :get
+  match '/login'         => 'logins#login',        :as => :login,        :via => :post
+  match '/logout'        => 'logins#logout',       :as => :logout,       :via => :post
+  match '/support'       => 'logins#support',      :as => :support,      :via => :get
+  match '/privacy'       => 'logins#privacy',      :as => :privacy,      :via => :get
+  match '/denied'        => 'logins#denied',       :as => :denied,       :via => :get
+  match '/autologin/:id' => 'logins#autologin',    :as => :autologin,    :via => :get
 
-  match '/register'       => 'logins#register_screen', :as => :register_screen, :via => :get
-  match '/register'       => 'logins#register',        :as => :register,        :via => :post
-  match '/autologin/:id'  => 'logins#autologin',       :as => :autologin,       :via => :get
+  match '/account'     => 'accounts#index',        :as => :account,      :via => :get
+  match '/account/new' => 'accounts#add_student',  :as => :add_student,  :via => :post
 
   match '/profile'               => 'priprofiles#index',               :as => :priprofile_index,         :via => :get
   match '/profile/avatar'        => 'priprofiles#avatar',              :as => :priprofile_avatar,        :via => :get

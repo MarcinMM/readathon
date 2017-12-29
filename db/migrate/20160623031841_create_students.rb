@@ -9,7 +9,6 @@ class CreateStudents < ActiveRecord::Migration
       t.integer  "level_id",            limit: 4, default: 0
       t.integer  "teacher_id",          limit: 4
       t.string "code",                  limit: 10
-      t.string "email",                 limit: 56
       t.string "first",                 limit: 56
       t.string "last",                  limit: 56
 

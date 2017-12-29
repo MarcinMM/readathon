@@ -1,0 +1,69 @@
+<%= render '/includes/strip' %>
+
+<div class="content">
+  <div class="full-bottom"></div>
+  <div class="box-960">
+    <div class="one-half-responsive half-bottom">
+      <p class="dropcaps dropcaps-3">
+        Parent Portal
+        Hello parents. Use this page to create new registrations for your kids.  After you have registered your kids
+        you will see a link for them below.  Click the link to launch Read-A-Thon.
+      </p>
+      <div>
+        <p style="margin-top:30px;">
+          <% current_user.students.each do |student| %>
+            <a href="<%= autologin_path(student.code) %>" class="button button-icon button-green">
+              <i class="fa fa-angle-double-right"></i>Login as <%= student.first %> <%= student.last[0, 1] %></a>
+          <% end %>
+        </p>
+      </div>
+    </div>
+
+    <div class="decoration hide-if-responsive"></div>
+
+    <div class="contact-box one-half-responsive last">
+      <div>
+        <p class="dropcaps dropcaps-3">
+          Register your children.  So they can start logging their reading and getting sponsors.
+          <br/><br/>
+
+          <% if @student.errors.any? %>
+            <div class="red-notification" style="margin-bottom:20px;">
+            <p class="uppercase" style="font-size:smaller;text-align:left;margin-top:5px;margin-bottom:5px;">
+              <i class="fa fa-warning"></i>
+              <% @student.errors.full_messages.each do |msg| %><%= msg %><br/><% end %>
+            </p>
+            </div>
+          <% end %>
+
+          <%= form_for @student, url: add_student_path do |f| %>
+          <div class="field half-bottom">
+            <%= f.label :first, class: 'field-title defaultField' do %>
+              First <span>(required)</span>
+            <% end %>
+            <%= f.text_field :first, class: 'contactField field-deco requiredField' %>
+          </div>
+
+          <div class="field half-bottom">
+            <%= f.label :last, class: 'field-title defaultField' do %>
+              Last <span>(required)</span>
+            <% end %>
+            <%= f.text_field :last, class: 'contactField field-deco requiredField' %>
+          </div>
+
+          <div class="field half-bottom">
+            <%= f.label :teacher_id, class: 'field-title defaultField' do %>
+              Teacher <span>(required)</span>
+            <% end %>
+            <%= f.select :teacher_id, options_for_select(@teachers), {}, {class: 'contactField field-deco requiredField'} %>
+          </div>
+          <%= f.submit "Add Student", class: 'button button-blue half-bottom', style: "height:40px; float:left; margin-right:10px;" %>
+        <% end %>
+        <br/>
+        </p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+</div>

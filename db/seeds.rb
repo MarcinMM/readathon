@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+password = SecureRandom.urlsafe_base64(6)
+user = User.create(email: 'mgiacomi@gltech.com', password: password, admin: 1)
+puts "Created Admin: #{user.email} #{password}"
+
 Teacher.create(first: 'Wakana', last: 'McCollister', grade: 'K')
 Teacher.create(first: 'Jill', last: 'Iverson', grade: 'K')
 Teacher.create(first: 'Kelly', last: 'Marsh', grade: 'K')

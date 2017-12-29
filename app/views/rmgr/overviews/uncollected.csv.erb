@@ -19,7 +19,6 @@
           pledge.max_amt,
           pledge.total_owed
       ]
-p "!!! #{pledge.student.last} #{pledge.student.first}  minutes: #{pledge.student.total_minutes_read}  amount: #{pledge.amount.to_f}  hours: #{(pledge.student.total_minutes_read.to_f/60.to_f)}  total: #{(pledge.student.total_minutes_read.to_f/60.to_f) * pledge.amount.to_f}  total: #{pledge.total_owed}"
     end
   end.html_safe
 %>
