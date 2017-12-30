@@ -104,7 +104,7 @@
     <div class="decoration hide-if-responsive"></div>
 
     <div class="one-fifth-responsive one-half-full" style="float:right;">
-      <div class="pricing-table pricing-selected-green">
+      <div class="pricing-table pricing-selected-blue">
         <h1>
           <strong style="font-size: 1.3em;"><%= current_student.level.name %></strong>
           <br/>
@@ -113,8 +113,7 @@
         <h2>
           <%= number_to_currency(current_student.money_raised) %> Raised
           <em>
-            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_per_hour) %></span>/hour in pledges, plus
-            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_flat) %></span> in donations
+            <span style="font-weight:bold; color: #FFFFFF;"><%= number_to_currency(current_student.pledged_flat) %></span> in pledges
           </em>
         </h2>
         <ul>

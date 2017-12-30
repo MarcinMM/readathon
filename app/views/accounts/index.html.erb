@@ -1,3 +1,13 @@
+<script>
+    jQuery(document).ready(function () {
+        jQuery("#logout").click(function () {
+            jQuery("#logout_form").submit();
+        });
+    });
+</script>
+
+<%= form_tag(destroy_user_session_path, id: 'logout_form', method: 'delete') do %><% end %>
+
 <%= render '/includes/strip' %>
 
 <div class="content">
@@ -13,8 +23,13 @@
         <p style="margin-top:30px;">
           <% current_user.students.each do |student| %>
             <a href="<%= autologin_path(student.code) %>" class="button button-icon button-green">
-              <i class="fa fa-angle-double-right"></i>Login as <%= student.first %> <%= student.last[0, 1] %></a>
+              <i class="fa fa-user"></i>Login as <%= student.first %> <%= student.last[0, 1] %></a>
+            <br/>
           <% end %>
+        </p>
+        <p style="margin-top:50px;">
+          <a href="#" id="logout" class="button button-icon button-red">
+            <i class="fa fa-sign-out"></i>Sign Out</a>
         </p>
       </div>
     </div>

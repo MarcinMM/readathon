@@ -1,17 +1,3 @@
-<script>
-  jQuery(document).ready(function () {
-    jQuery("#logout1").click(function () {
-      jQuery("#logout_form1").submit();
-    });
-    jQuery("#logout2").click(function () {
-      jQuery("#logout_form2").submit();
-    });
-  });
-</script>
-
-<%= form_tag(destroy_user_session_path, id: 'logout_form1', method: 'delete') do %><% end %>
-<%= form_tag(logout_path, id: 'logout_form2', method: 'post') do %><% end %>
-
 <ul class="navigation">
   <li class="mobile-navigation-breadcrumb">
     <em>Navigation</em>
@@ -27,6 +13,17 @@
         </a>
       </p>
     </li>
+  <% else %>
+    <li>
+      <p id="acount">
+        <i class="fa fa-user"></i>
+        <i class="fa fa-circle"></i>
+        <a href="<%= account_path %>">
+          Sign In or Sign Up
+          <em style="color:white;text-transform:none;font-weight:bold;">Richmond Read-A-Thon</em>
+        </a>
+      </p>
+    </li>
   <% end %>
   <% if current_student != nil %>
       <li>
@@ -36,17 +33,6 @@
             <i class="fa fa-circle"></i>
             <%= current_student.first %>'s &nbsp; Profile
             <em style="color:white;"><%= current_student.first %> <%= current_student.last %></em>
-          </a>
-        </p>
-      </li>
-  <% else %>
-      <li>
-        <p>
-          <a href="/">
-            <i class="fa fa-home"></i>
-            <i class="fa fa-circle"></i>
-            Richmond Read-A-Thon
-            <em style="color:white;">sponsor and help fund our school</em>
           </a>
         </p>
       </li>

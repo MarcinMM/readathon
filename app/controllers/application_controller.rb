@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
     RequestStore.store[:current_student] ||= Student.find_by_code cookies[:code]
   end
 
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(resource_or_scope)
+    cookies.permanent[:code] = nil
+    pub_home_path
+  end
+
 end
