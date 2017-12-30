@@ -5,7 +5,7 @@ module ReadlogMgr
   end
 
   def total_minutes_read
-    Readlog.where("student_id=?", self.id).sum(:minutes)
+    Readlog.where("student_id=?", self.id).sum(:minutes) + teacher_minutes_total
   end
 
   ########################################
@@ -53,7 +53,9 @@ module ReadlogMgr
   end
 
   def teacher_minutes_total
-    Readlog.where("teacher_id=? and student_id=?", self.teacher_id, self.id).sum(:minutes)
+    days_from_start = (Time.zone.today - Rails.configuration.start_date).to_i
+    days_from_start < 0 ? 0 : days_from_start
+    self.teacher.minutes * days_from_start
   end
 
   def teacher_minutes_update minutes

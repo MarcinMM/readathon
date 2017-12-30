@@ -23,7 +23,7 @@
         <p style="margin-top:30px;">
           <% current_user.students.each do |student| %>
             <a href="<%= autologin_path(student.code) %>" class="button button-icon button-green">
-              <i class="fa fa-user"></i>Login as <%= student.first %> <%= student.last[0, 1] %></a>
+              <i class="fa fa-user"></i>Access <%= student.first %> <%= student.last[0, 1] %> Profile</a>
             <br/>
           <% end %>
         </p>

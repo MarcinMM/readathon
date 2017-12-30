@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20160825063924) do
     t.string   "first",      limit: 56
     t.string   "last",       limit: 56
     t.integer  "grade",      limit: 2,  default: 0
+    t.integer  "minutes"
   end
 
   create_table "users", force: :cascade do |t|

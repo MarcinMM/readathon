@@ -11,6 +11,7 @@ module Readathon
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.start_date = Date.strptime("12/28/2017", "%m/%d/%Y")
     config.end_date = Date.strptime("1/10/2018", "%m/%d/%Y")
     ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/cacert.pem"
 
