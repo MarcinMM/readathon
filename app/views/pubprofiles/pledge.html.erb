@@ -18,72 +18,23 @@
 
       <br/>
       <p>
-        You can choose how you want to support the Read-A-Thon!
-        <br/><br/>
-        Option 1: Pledge per hour.  If you make an hourly pledge, your total gift will depend on how much your reader reads. Most students will read for at least 30 minutes/day in the classroom for the 10 days of the Read-A-Thon, plus any reading they do on their own. You may set a minimum and/or maximum amount to your pledge, and you will be notified of your total commitment at the end of the Read-A-Thon (November 6).
-        <br/><br/>
-        Option 2: Pledge a fixed amount.  If you know exactly how much you want to give, you can make a flat donation today.  You can still follow your readers progress by visiting their profile page during the Read-A-Thon.
-        <br/><br/>
-        No matter how you choose to give, your support makes a big difference - to your reader and to Richmond.  Thank you for supporting the Read-A-Thon!
+I need something to say here
       </p>
     </div>
 
     <div style="margin-top:20px;" class="one-half-responsive last no-bottom">
       <div class="horizontalTab">
         <ul>
-          <% if Challenge.days_remaining > 0 %>
-            <li><a href="#tab-3">Pledge Per Hour</a></li>
-          <% end %>
           <li><a href="#tab-4">Pledge Fixed $ Amount</a></li>
         </ul>
 
-        <% if Challenge.days_remaining > 0 %>
-          <div id="tab-3">
-            <h6 style="margin-bottom:0">Hourly Pledge</h6>
-            <%= form_tag(pub_make_pledge_path(@student.obscure_id), id: 'hpledge', method: 'post') do %>
-                <input type="hidden" name="pledge[ptype]" value="hourly"/>
-                <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[name]"
-                       value="Name or Nickname (optional)">
-                <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Email Address (required)'"
-                       type="email" class="text-input-one good-value" name="pledge[email]"
-                       value="Email Address (required)" required>
-                <span style="color:red;text-size:10px;font-style: italic">* Your email address will only be used for this Read-A-Thon, and will not be shared or saved for future events.</span>
-                <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
-                          onfocus="if (this.value=='Message (optional)') this.value = ''"
-                          onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
-                <input onfocus="if (this.value=='Pledge Per Hour (required)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Pledge Per Hour (required)'"
-                       type="text" class="text-input-one good-value" name="pledge[amount]"
-                       value="Pledge Per Hour (required)">
-                <input onfocus="if (this.value=='Min Amount (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Min Amount (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[min_amt]"
-                       value="Min Amount (optional)">
-                <input onfocus="if (this.value=='Max Amount (optional)') this.value = ''"
-                       onblur="if (this.value=='') this.value = 'Max Amount (optional)'"
-                       type="text" class="text-input-one good-value" name="pledge[max_amt]"
-                       value="Max Amount (optional)">
-                <input type="submit" class="button button-green center-button" value="Make Pledge"/>
-            <% end %>
-            <p class="half-bottom"></p>
-          </div>
-        <% end %>
         <div id="tab-4">
           <h6 style="margin-bottom:0">Fixed Pledge</h6>
           <%= form_tag(pub_make_pledge_path(@student.obscure_id), id: 'fpledge', method: "post") do %>
-              <input type="hidden" name="pledge[ptype]" value="flat"/>
               <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
                      onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"
                      type="text" class="text-input-one good-value" name="pledge[name]"
                      value="Name or Nickname (optional)">
-              <input onfocus="if (this.value=='Email Address (required)') this.value = ''"
-                     onblur="if (this.value=='') this.value = 'Email Address (required)'"
-                     type="email" class="text-input-one good-value" name="pledge[email]"
-                     value="Email Address (required)" required>
-              <span style="color:red;text-size:10px;font-style: italic">* Your email address will only be used for this Read-A-Thon, and will not be shared or saved for future events.</span>
               <textarea class="textarea-input contactTextarea field-deco requiredField" name="pledge[message]"
                         onfocus="if (this.value=='Message (optional)') this.value = ''"
                         onblur="if (this.value=='') this.value = 'Message (optional)'">Message (optional)</textarea>
@@ -91,9 +42,7 @@
                      onblur="if (this.value=='') this.value = 'Pledge Amount'"
                      type="text" class="text-input-one good-value" name="pledge[amount]"
                      value="Pledge Amount">
-              <br/><strong>Clicking the 'Make Pledge' button will forward you to All Hands Raised where you can securely make your donation.  Thank You!</strong>
               <input type="submit" class="button button-green center-button" value="Make Pledge"/>
-              <div style="margin-top:20px;"><i>Don't worry if you see a red error message at the top of the donation page! Once you fill in your information and click "Submit Donation", it will disappear.</i></div>
           <% end %>
           <p class="half-bottom"></p>
         </div>
@@ -143,18 +92,6 @@
 
         return this.optional(element) || (value.length >= param[1] && value.length <= param[2]);
       }, "Length between {1} and {2}.");
-
-      $("#hpledge").validate({
-        rules: {
-          "pledge[name]": {lengthBetween: ["Name or Nickname (optional)", 3, 24]},
-          "pledge[amount]": {requiredNotEqual: "Pledge Per Hour (required)"},
-          "pledge[amount]": {currency: ['$', false]},
-          "pledge[min_amt]": {currencyIfNotEq: "Min Amount (optional)"},
-          "pledge[min_amt]": {between0N9999: "Min Amount (optional)"},
-          "pledge[max_amt]": {currencyIfNotEq: "Max Amount (optional)"},
-          "pledge[max_amt]": {between0N9999: "Max Amount (optional)"},
-        }
-      });
 
       $("#fpledge").validate({
         rules: {

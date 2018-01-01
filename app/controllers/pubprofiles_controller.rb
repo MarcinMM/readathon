@@ -17,20 +17,8 @@ class PubprofilesController < ApplicationController
     @pledge.message = @pledge.message == 'Message (optional)' ? '' : @pledge.message
     @pledge.amount = params[:pledge]['amount'].delete('$ ,')
 
-    if params[:pledge]['min_amt'] != nil
-      @pledge.min_amt = params[:pledge]['min_amt'].delete('$ ,')
-    end
-
-    if params[:pledge]['max_amt'] != nil
-      @pledge.max_amt = params[:pledge]['max_amt'].delete('$ ,')
-    end
-
     if @pledge.save
-      if @pledge.ptype == "flat"
-        redirect_to pub_pledge_ahrf_path(@pledge.obscure_id)
-      else
-        redirect_to pub_pledge_thanks_path(@pledge.obscure_id)
-      end
+      redirect_to pub_pledge_thanks_path(@pledge.obscure_id)
     else
       render :action => "pledge"
     end
@@ -40,26 +28,10 @@ class PubprofilesController < ApplicationController
     @pledge = Pledge.find_by_obscure_id params[:id]
   end
 
-  def pledge_ahrf
-    @pledge = Pledge.find_by_obscure_id params[:id]
-
-    if @pledge.email_click_date.nil?
-      @pledge.update_attribute :email_click_date, Time.zone.now
-    end
-  end
-
-  def pledge_ahrh
-    @pledge = Pledge.find_by_obscure_id params[:id]
-
-    if @pledge.email_click_date.nil?
-      @pledge.update_attribute :email_click_date, Time.zone.now
-    end
-  end
-
   private
 
   def pledge_params params
-    params.require(:pledge).permit(:ptype, :name, :email, :amount, :message, :min_amt, :max_amt)
+    params.require(:pledge).permit(:name, :email, :amount, :message, :min_amt, :max_amt)
   end
 
 end
