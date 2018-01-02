@@ -20,13 +20,13 @@ Rails.application.routes.draw do
   match '/profile/add15m'        => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
   match '/profile/subtract15m'   => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
 
-  match '/home'                     => 'pubprofiles#home',          :as => :pub_home,          :via => :get
-  match '/public/profile/:id'       => 'pubprofiles#show',          :as => :pub_profile,       :via => :get
-  match '/public/pledge/:id'        => 'pubprofiles#pledge',        :as => :pub_pledge,        :via => :get
-  match '/public/pledge/:id'        => 'pubprofiles#make_pledge',   :as => :pub_make_pledge,   :via => :post
-  match '/public/pledge/thanks/:id' => 'pubprofiles#pledge_thanks', :as => :pub_pledge_thanks, :via => :get
-  match '/public/pledge/ahrf/:id'   => 'pubprofiles#pledge_ahrf',   :as => :pub_pledge_ahrf,   :via => :get
-  match '/public/pledge/ahrh/:id'   => 'pubprofiles#pledge_ahrh',   :as => :pub_pledge_ahrh,   :via => :get
+  match '/home'                      => 'pubprofiles#home',           :as => :pub_home,           :via => :get
+  match '/public/profile/:id'        => 'pubprofiles#show',           :as => :pub_profile,        :via => :get
+  match '/public/pledge/:id'         => 'pubprofiles#pledge',         :as => :pub_pledge,         :via => :get
+  match '/public/pledge/:id'         => 'pubprofiles#make_pledge',    :as => :pub_make_pledge,    :via => :post
+  match '/public/pledge/paypal/:id'  => 'pubprofiles#pledge_paypal',  :as => :pub_pledge_paypal,  :via => :get
+  match '/public/pledge/thanks/:id'  => 'pubprofiles#pledge_thanks',  :as => :pub_pledge_thanks,  :via => :post
+  match '/public/pledge/receipt/:id' => 'pubprofiles#pledge_receipt', :as => :pub_pledge_receipt, :via => :post
 
   devise_for :users
 

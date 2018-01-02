@@ -29,7 +29,6 @@ I need something to say here
         </ul>
 
         <div id="tab-4">
-          <h6 style="margin-bottom:0">Fixed Pledge</h6>
           <%= form_tag(pub_make_pledge_path(@student.obscure_id), id: 'fpledge', method: "post") do %>
               <input onfocus="if (this.value=='Name or Nickname (optional)') this.value = ''"
                      onblur="if (this.value=='') this.value = 'Name or Nickname (optional)'"

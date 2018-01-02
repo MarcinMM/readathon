@@ -1,0 +1,32 @@
+<script>
+    $(document).ready(function () {
+        $('#rat_payment_form').submit();
+    });
+</script>
+
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" id="rat_payment_form" method="post">
+  <input type="hidden" name="cmd" value="_cart"/>
+  <input type="hidden" name="upload" value="1"/>
+  <input type="hidden" name="business" value="mgiacomi-facilitator@gltech.com"/>
+  <input type="hidden" name="currency_code" value="USD"/>
+  <input type="hidden" name="image_url" value="http://www.read4richmond.com/images/bulldog.png"/>
+  <input type="hidden" name="notify_url" value="<%= pub_pledge_receipt_url %>"/>
+  <input type="hidden" name="cancel_return" value="<%= pub_pledge_paypal_url(@pledge.id) %>"/>
+  <input type="hidden" name="return" value="<%= pub_pledge_thanks_url(@pledge.id) %>"/>
+  <input type="hidden" name="rm" value="2"/>
+  <input type="hidden" name="invoice" value="<%= @pledge.id %>-<%= Time.now.to_i %>"/>
+  <input type="hidden" name="item_name_1" value="Read-A-Thon Pledge"/>
+  <input type="hidden" name="item_number_1" value="Flat pledge for <%= @pledge.student.first %>"/>
+  <input type="hidden" name="quantity_1" value="1"/>
+  <input type="hidden" name="amount_1" value="<%= @pledge.amount %>"/>
+</form>
+
+<div class="content">
+  <div class="full-bottom"></div>
+  <div class="box-960">
+    <div class="one-half-responsive half-bottom" style="margin-right:5%">
+      <p style="font-weight: bold; color: green;">Redirecting to Paypal ...</p>
+    </div>
+  </div>
+</div>
+

@@ -18,9 +18,32 @@ class PubprofilesController < ApplicationController
     @pledge.amount = params[:pledge]['amount'].delete('$ ,')
 
     if @pledge.save
-      redirect_to pub_pledge_thanks_path(@pledge.obscure_id)
+      redirect_to pub_pledge_paypal_path(@pledge.id)
     else
       render :action => "pledge"
+    end
+  end
+
+  def pledge_paypal
+    @pledge = Pledge.find params[:id]
+  end
+
+  def pledge_receipt
+    if params[:payment_status] == "Completed"
+      family_id = params[:invoice].split('-')[0]
+
+      payment = Payment.new
+      payment.amount = params[:payment_gross]
+      payment.fee = params[:payment_fee]
+      payment.pmtdate = params[:payment_date]
+      payment.pmttype = "Paypal"
+      payment.family_id = family_id
+
+      if payment.save
+        logger.info "Saved Payment: #{params[:invoice]} #{params[:payment_gross]} #{params[:payment_status]} #{params[:payment_date]}"
+      else
+        logger.info "Failed to save payment: #{params[:invoice]} #{params[:payment_gross]} #{params[:payment_status]} #{params[:payment_date]}"
+      end
     end
   end
 
