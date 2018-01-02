@@ -55,27 +55,6 @@ class Rmgr::TeachersController < ApplicationController
     end
   end
 
-  def send_flyer
-    students = Student.where("teacher_id=? and flyer_sent_date is null", params[:id])
-    counter = 0
-    students.each do |student|
-      if student.flyer_sent_date.nil?
-        GeneralMailer.welcome_flyer(student).deliver
-        student.update_attribute :flyer_sent_date, Time.zone.today
-        counter += 1
-      end
-    end
-
-    redirect_to rmgr_students_path(teacher_id: params[:id]), notice: {title: 'Success', msg: "Welcome flyer was sent to #{counter} students."}
-  end
-
-#  def destroy
-#    teacher = Teacher.find(params[:id])
-#    teacher.user.destroy
-#    teacher.destroy
-#    redirect_to rmgr_teachers_path
-#  end
-
   private
 
   def user_params params

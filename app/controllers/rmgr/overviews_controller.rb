@@ -21,12 +21,6 @@ class Rmgr::OverviewsController < ApplicationController
     }
   end
 
-  def unregistered
-    @students = Student.where("accepted_date is null")
-    headers['Content-Disposition'] = "attachment; filename=\"unregistered_students.csv\""
-    headers['Content-Type'] ||= 'text/csv'
-  end
-
   def uncollected
     @pledges = Pledge.where("email_click_date is null")
     headers['Content-Disposition'] = "attachment; filename=\"uncollected_pledges.csv\""
@@ -65,11 +59,7 @@ class Rmgr::OverviewsController < ApplicationController
 
       teacher.students.each do |student|
         tsetup += 1
-
-        unless student.accepted_date.nil?
-          tregistered += 1
-        end
-
+        tregistered += 1
         tminutes += student.total_minutes_read
 
         student.pledges.each do |pledge|

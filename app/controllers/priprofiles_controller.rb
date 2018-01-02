@@ -7,10 +7,6 @@ class PriprofilesController < ApplicationController
       @levelup = true
       @new_avatars = Avatar.where("level_id = ?", current_student.level_id).order(:category)
     end
-
-    if current_student.accepted_date.nil?
-      current_student.update_attribute :accepted_date, Time.zone.now
-    end
   end
 
   def add_15_minutes

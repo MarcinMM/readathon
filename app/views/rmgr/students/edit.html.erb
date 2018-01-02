@@ -18,17 +18,6 @@
 
       <%= render 'edit', f: f %>
 
-      <div>
-        <%= f.label :teacher_id, class: 'field-title defaultField' do %>
-            Accepted Date: <%= @student.accepted_date.nil? ? "" : @student.accepted_date.strftime("%m/%d/%Y") %>
-        <% end %>
-      </div>
-      <div class="field half-bottom">
-        <%= f.label :teacher_id, class: 'field-title defaultField' do %>
-            Welcome Flyer Sent Date: <%= @student.flyer_sent_date.nil? ? "" : @student.flyer_sent_date.strftime("%m/%d/%Y") %>
-        <% end %>
-      </div>
-
       <%= f.submit "Update Student", class: 'button button-blue half-bottom', style: "height:40px; float:left; margin-right:10px;" %>
       <%= link_to "Resend Welcome Flyer", rmgr_students_send_flyer_path(@student.id), class: 'button button-light', style: 'width:190px; float:left; margin-left:10px;' %>
       <%= link_to "Back", :back, class: 'button button-light', style: 'width:90px; float:left; margin-left:10px;' %>
