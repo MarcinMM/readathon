@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825063924) do
+ActiveRecord::Schema.define(version: 20160825063920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20160825063924) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "student_id"
-    t.string   "name",             limit: 24
-    t.decimal  "amount",                      precision: 6, scale: 2
+    t.string   "name",       limit: 24
+    t.string   "email",      limit: 36
+    t.decimal  "amount",                precision: 6, scale: 2
+    t.decimal  "collected",             precision: 6, scale: 2
     t.text     "message"
-    t.datetime "email_sent_date"
-    t.datetime "email_click_date"
   end
 
   create_table "readlogs", force: :cascade do |t|
@@ -63,17 +63,14 @@ ActiveRecord::Schema.define(version: 20160825063924) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "avatar_id",                   default: 0
-    t.integer  "level_id",                    default: 0
+    t.integer  "avatar_id",                 default: 0
+    t.integer  "level_id",                  default: 0
     t.integer  "teacher_id"
-    t.string   "code",            limit: 10
-    t.string   "first",           limit: 56
-    t.string   "last",            limit: 56
-    t.string   "bitly_profile",   limit: 256
-    t.string   "bitly_pledge",    limit: 256
-    t.datetime "flyer_sent_date"
-    t.datetime "accepted_date"
-    t.string   "email2",          limit: 256
+    t.string   "code",          limit: 10
+    t.string   "first",         limit: 56
+    t.string   "last",          limit: 56
+    t.string   "bitly_profile", limit: 256
+    t.string   "bitly_pledge",  limit: 256
   end
 
   create_table "teachers", force: :cascade do |t|

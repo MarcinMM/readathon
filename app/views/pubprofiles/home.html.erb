@@ -5,17 +5,25 @@
   <div class="box-960">
     <div class="one-half-responsive half-bottom">
       <h5>Support the Richmond Read-A-Thon!</h5>
-      <p>
-        The Richmond Read-A-Thon is an exciting way to encourage students to read each day.
-        The Read-A-Thon is also a fundraiser for the Richmond School Foundation (RSF), supporting the school's budget
-        for teachers and staff.
-        The Read-A-Thon raises funds through pledges, and the more our kids read, the more support the school receives!
-        <br/><br/>
-        The RSF is proud to be a part of this fun project that helps our teachers and staff AND encourages our amazing
-        young readers.
-        Please support our students by making a pledge to the Read-A-Thon and sharing your student's Read-A-Thon page
-        with friends and family.
-      </p>
+      <div>
+        <p class="dropcaps dropcaps-2">
+          Read for Richmond is a fun way to encourage students to build their academic
+          skills by reading every day. This year, Read for Richmond is also a Richmond PTA
+          fundraiser that will raise money for Science, Technology, Engineering, Arts, Math
+          and Music (STEAM) enrichment at Richmond through online pledges.
+        </p>
+      </div>
+      <br/>
+      <div>
+        <p class="dropcaps dropcaps-2">
+          The Richmond PTA is proud to be a part of this exciting project that supports
+          STEAM enrichment at school AND encourages our amazing young readers. Please
+          support our students by making a pledge to Read for Richmond and sharing your
+          student’s page with friends and family. Our fundraising goal this year is $25,000,
+          or approximately $40 per student. If you are unable to donate, your child can still
+          participate by tracking their reading and working toward their class reading goal!
+        </p>
+      </div>
     </div>
 
     <div class="decoration hide-if-responsive"></div>
@@ -23,39 +31,31 @@
     <div class="contact-box one-half-responsive last">
       <div>
         <p class="dropcaps dropcaps-2">
-          Students and parents: To access your personal Read-A-Thon page and begin logging your reading minutes, please
-          enter the code provided in your Read-A-Thon e-mail.
-          If you have not received your code, please e-mail us at
-          <a href="mailto:rsf.pdx@gmail.com">rsf.pdx@gmail.com</a>
-          <br/>
-          <a href="<%= priprofile_index_path %>" class="button button-icon button-green">
-            <i class="fa fa-angle-double-right"></i>Student Home Page</a>
+          Students and parents: to access your personal Read-A-Thon page and begin
+          logging your reading minutes, please Sign Up or if you have already created a problem then Sign In
         </p>
       </div>
-      <div style="margin-top:30px;">
+      <br/>
+      <div>
         <p class="dropcaps dropcaps-2">
-          We are trying to raise $35 dollars per student to help support our programs.
-          <br/><br/>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="YXGZRUDP4AXJL">
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
+          If you want to pledge a reader, please contact your student or their parent for a
+          link to their personal pledge page, or contact us at
+          <a href="mailto:richmondptapdx@gmail.com">richmondptapdx@gmail.com</a>
+          and we’ll send a link directly to your email. You can also donate directly to Read for Richmond
+          <a style="font-weight:bold;" href="javascript:void(0)" onclick="$('#donate_form').submit()">Donate here!</a>.
+          Your Read for Richmond pledge makes a difference at Richmond!
         </p>
       </div>
-      <div class="clear"></div>
+      <br/>
+      <div>
+        <p class="dropcaps dropcaps-2">
+          Donations to Richmond PTA’s Read for Richmond directly support STEAM at
+          Richmond. Richmond PTA is run by parent volunteers who are dedicated to
+          maximizing the impact of your fundraising dollars. Learn more about Richmond
+          PTA at <a href="http://richmondptapdx.com">richmondptapdx.com</a>.
+        </p>
+      </div>
     </div>
-  </div>
-
-  <div class="box-960 half-bottom">
-    <p class="dropcaps dropcaps-2">
-      If you want to pledge a reader, please contact your student or their parent for a link to their personal
-      pledge page, or contact us <a href="mailto:rsf.pdx@gmail.com">rsf.pdx@gmail.com</a> with the student's name, and
-      we'll send a link directly to your e-mail. You can
-      donate directly to the Richmond School Foundation any time:
-      <a href="http://allhandsraised.org/donate/">http://allhandsraised.org/donate/</a>
-    </p>
   </div>
 
   <%= render 'money' %>
