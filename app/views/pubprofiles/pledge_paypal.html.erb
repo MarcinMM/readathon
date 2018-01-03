@@ -12,9 +12,9 @@
   <input type="hidden" name="image_url" value="http://www.read4richmond.com/images/bulldog.png"/>
   <input type="hidden" name="notify_url" value="<%= pub_pledge_receipt_url %>"/>
   <input type="hidden" name="cancel_return" value="<%= pub_pledge_url(@pledge.student.obscure_id) %>"/>
-  <input type="hidden" name="return" value="<%= pub_pledge_thanks_url(@pledge.id) %>"/>
+  <input type="hidden" name="return" value="<%= pub_pledge_thanks_url(@pledge.obscure_id) %>"/>
   <input type="hidden" name="rm" value="2"/>
-  <input type="hidden" name="invoice" value="<%= @pledge.id %>-<%= Time.now.to_i %>"/>
+  <input type="hidden" name="invoice" value="<%= @pledge.obscure_id %>-<%= Time.now.to_i %>"/>
   <input type="hidden" name="item_name_1" value="Read-A-Thon Pledge"/>
   <input type="hidden" name="item_number_1" value="Flat pledge for <%= @pledge.student.first %>"/>
   <input type="hidden" name="quantity_1" value="1"/>

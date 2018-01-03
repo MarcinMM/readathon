@@ -40,7 +40,7 @@ class PubprofilesController < ApplicationController
   def pledge_receipt
     if params[:payment_status] == "Completed"
       pledge_id = params[:invoice].split('-')[0]
-      pledge = Pledge.find pledge_id
+      pledge = Pledge.find_by_obscure_id pledge_id
       pledge.col_amt = params[:payment_gross]
       pledge.col_fee = params[:payment_fee]
       pledge.col_date = params[:payment_date]
