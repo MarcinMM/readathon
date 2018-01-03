@@ -6,7 +6,11 @@ class PubprofilesController < ApplicationController
     if current_user.nil?
       render :action => "home"
     else
-      redirect_to account_path
+      if current_student.nil?
+        redirect_to account_path
+      else
+        redirect_to priprofile_index_path
+      end
     end
   end
 
