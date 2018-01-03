@@ -3,13 +3,13 @@ class AccountsController < ApplicationController
 
   def index
     @student = Student.new
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
   end
 
   def add_student
     @student = Student.new(student_params(params))
     @student.user = current_user
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
 
     if @student.save
       redirect_to account_path, notice: {title: 'Success', msg: 'Added student successfully.'}

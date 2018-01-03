@@ -4,7 +4,7 @@
   CSV.generate do |csv|
     @pledges.each do |pledge|
       csv << [
-          pledge.student.teacher.last,
+          pledge.student.teacher.name,
           pledge.student.teacher.grade,
           pledge.student.last,
           pledge.student.first,

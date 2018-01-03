@@ -80,7 +80,7 @@ class Rmgr::OverviewsController < ApplicationController
       pledged += tpledged
       collected += tcollected
 
-      teachers << {grade: teacher.grade, last: teacher.last, setup: tsetup, registered: tregistered, minutes: tminutes, pledged: tpledged, collected: tcollected}
+      teachers << {grade: teacher.grade, last: teacher.name, setup: tsetup, registered: tregistered, minutes: tminutes, pledged: tpledged, collected: tcollected}
     end
 
     {setup: setup, registered: registered, minutes: minutes, pledged: pledged, collected: collected, teachers: teachers}

@@ -5,7 +5,7 @@
     <div class="left-social-strip animated fadeIn">
       <a href="<%= !current_student.nil? && current_student.id == student.id ? priprofile_pledge_path : 'javascript:void(0)'%>">
         <h3>Help the PTA support STEM at Richmond!</h3>
-        <h5 style="line-height:11px;">Share your Read-A-Thon page with friends and family</h5>
+        <h5 style="line-height:11px;">Share your Read for Richmond page with friends and family</h5>
       </a>
     </div>
     <div class="right-social-strip">
@@ -17,7 +17,7 @@
          href="https://twitter.com/share"
          data-size="small"
          data-url="<%= student.bitly_pledge %>"
-         data-text="Please support <%= student.first %>'s Read-A-Thon through Richmond Elementary School.">
+         data-text="Please support <%= student.first %>'s Read for Richmond through Richmond Elementary School.">
         Tweet
       </a>
     </div>

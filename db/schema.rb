@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 20160825063920) do
     t.string   "name",       limit: 24
     t.string   "email",      limit: 36
     t.decimal  "amount",                precision: 6, scale: 2
-    t.decimal  "collected",             precision: 6, scale: 2
+    t.decimal  "col_amt",               precision: 6, scale: 2
+    t.decimal  "col_fee",               precision: 6, scale: 2
+    t.datetime "col_date"
     t.text     "message"
   end
 
@@ -76,10 +78,11 @@ ActiveRecord::Schema.define(version: 20160825063920) do
   create_table "teachers", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first",      limit: 56
-    t.string   "last",       limit: 56
-    t.integer  "grade",      limit: 2,  default: 0
+    t.string   "name",           limit: 56
+    t.integer  "grade",          limit: 2,  default: 0
     t.integer  "minutes"
+    t.integer  "total_students"
+    t.integer  "reading_goal"
   end
 
   create_table "users", force: :cascade do |t|

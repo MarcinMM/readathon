@@ -6,7 +6,7 @@ class Rmgr::StudentsController < ApplicationController
 
   def index
     @teacher_id = params[:teacher_id]
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
 
     if @teacher_id == nil
       @teacher_id = @teachers[0][1]
@@ -18,7 +18,7 @@ class Rmgr::StudentsController < ApplicationController
   def new
     @student = Student.new
     @student.build_teacher
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
   end
 
   def show
@@ -27,7 +27,7 @@ class Rmgr::StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.first} #{t.last}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
   end
 
   def create

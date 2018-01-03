@@ -17,7 +17,7 @@
     <div style="margin-bottom:20px;" class="decoration"></div>
   </div>
 
-  <h4>Read-A-Thon Teachers List</h4>
+  <h4>Read for Richmond Teachers List</h4>
 
   <table class="table">
     <tbody>
@@ -31,8 +31,7 @@
     <% @teachers.each do |teacher| %>
         <tr>
           <td><%= teacher.grade %></td>
-          <td><%= teacher.first %></td>
-          <td><%= teacher.last %></td>
+          <td><%= teacher.name %></td>
           <td><%= teacher.user.email %></td>
           <td>
             <%= link_to 'edit', edit_rmgr_teacher_path(teacher), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
