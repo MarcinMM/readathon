@@ -2,6 +2,14 @@ class PubprofilesController < ApplicationController
   layout "mailer", only: [:pledge_email]
   skip_before_action :verify_authenticity_token, :only => [:pledge_receipt, :pledge_thanks]
 
+  def direct
+    if current_user.nil?
+      render :action => "home"
+    else
+      redirect_to account_path
+    end
+  end
+
   def show
     @student = Student.find_by_obscure_id params[:id]
   end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   match '/profile/add15m'        => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
   match '/profile/subtract15m'   => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
 
+  match '/'                          => 'pubprofiles#direct',         :as => :direct,             :via => :get
   match '/home'                      => 'pubprofiles#home',           :as => :pub_home,           :via => :get
   match '/public/profile/:id'        => 'pubprofiles#show',           :as => :pub_profile,        :via => :get
   match '/public/pledge/:id'         => 'pubprofiles#pledge',         :as => :pub_pledge,         :via => :get
@@ -46,7 +47,7 @@ Rails.application.routes.draw do
   match '/teachers'          => 'teachers/overviews#index',    :as => :teachers_overviews, :via => :get
   match '/teachers/log/time' => 'teachers/overviews#log_time', :as => :teachers_log_time, :via => :post
 
-  root 'pubprofiles#home'
+  root 'pubprofiles#direct'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
