@@ -45,7 +45,7 @@ class PubprofilesController < ApplicationController
       pledge.col_fee = params[:payment_fee]
       pledge.col_date = params[:payment_date]
 
-      if payment.save
+      if pledge.save
         logger.info "Saved Pledge: #{params[:invoice]} #{params[:payment_gross]} #{params[:payment_status]} #{params[:payment_date]}"
       else
         logger.info "Failed to save pledge: #{params[:invoice]} #{params[:payment_gross]} #{params[:payment_status]} #{params[:payment_date]}"
