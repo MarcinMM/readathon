@@ -18,62 +18,58 @@
         </ul>
 
         <div id="tab-3">
-          <%= form_tag(priprofile_pledge_email1_path, method: "post") do %>
-              <input onfocus="if (this.value=='To: Email Address (required)') this.value = ''"
-                     onblur="if (this.value=='') this.value = 'To: Email Address (required)'"
-                     type="text" class="text-input-one good-value" name="email"
-                     value="To: Email Address (required)">
-              Dear <input onfocus="if (this.value=='Name or Nickname (required)') this.value = ''"
-                          onblur="if (this.value=='') this.value = 'Name or Nickname (required)'"
-                          type="text" class="text-input-one good-value" name="name"
-                          style="display:inline-block; width:300px;"
-                          value="Name or Nickname (required)">,
-              <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
-                        onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
-                        onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
+          <%= form_tag(priprofile_pledge_email1_path, id: 'single_form', method: "post") do %>
+            <input onfocus="if (this.value=='To: Email Address (required)') this.value = ''"
+                   onblur="if (this.value=='') this.value = 'To: Email Address (required)'"
+                   type="text" class="text-input-one good-value" name="email"
+                   value="To: Email Address (required)">
+            Dear <input onfocus="if (this.value=='Name or Nickname (required)') this.value = ''"
+                        onblur="if (this.value=='') this.value = 'Name or Nickname (required)'"
+                        type="text" class="text-input-one good-value" name="name"
+                        style="display:inline-block; width:300px;"
+                        value="Name or Nickname (required)">
+            <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
+                      onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
+                      onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
 
-              <br/>
-              I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
-              <br/><br/>
-              I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.
-              <br/><br/>
-              Your pledge will help support Richmond's two-classroom teaching model, which helps me learn in both Japanese and English each day.  You will also be supporting P.E., library time, computer literacy, and the teachers and staff that make Richmond such a great school.
-              <br/><br/>
-              You can choose to pledge each hour that I read, or make a flat donation of any amount.  The easist way to pledge me is by filling out this online pledge form: <%= current_student.bitly_pledge %>.
-              <i>(Note from the Richmond School Foundation: If you choose to make flat donation today, you will be re-directed to the donation page at All Hands Raised, who administers our foundation.)</i>
-              You can also mail a check to Richmond School Foundation, 2276 SE 41st Ave., Portland, OR, 97214.  Just be sure to put my name in the memo line!
-              <br/><br/>
-              Thank you for encouraging me to read, and for supporting literacy and teachers at Richmond!
-              <br/><br/>
-              Sincerely, <%= current_student.first %> <%= current_student.last %>
-              <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
+            <br/>
+            I am excited to participate in the Richmond PTA’s Read for Richmond this year, and I need your help! You can support literacy and help support Science, Technology, Engineering, Arts, Math and Music (STEAM) enrichment at Richmond by pledging my participation in Read for Richmond today! Please visit Read4Richmond.com for examples of how pledge money will be used.
+            <br/><br/>
+            I have made a commitment to read every day. I will keep track of the minutes I read, and you can visit my profile page any time to see how I’m doing.
+            You can pledge me by <%= current_student.bitly_pledge %>.
+            You can also mail a check to Richmond School PTA, 2276 se 41 ST Ave., Portland OR, 97214. Just be sure to put my name and “Read for Richmond” in the memo line!
+            <br/><br/>
+            Thank you for encouraging me to read, and for supporting literacy and STEAM at Richmond!
+            <br/><br/>
+            Sincerely,
+            <br/>
+            <%= current_student.first %> <%= current_student.last %>
+            <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
           <% end %>
         </div>
 
         <div id="tab-4">
-          <%= form_tag(priprofile_pledge_email2_path, method: "post") do %>
-                <textarea class="textarea-input contactTextarea field-deco requiredField" name="emails"
-                          onfocus="if (this.value=='To: Email Addresses (separated by comma)') this.value = ''"
-                          onblur="if (this.value=='') this.value = 'To: Email Addresses (separated by comma)'">To: Email Addresses (separated by comma)</textarea>
+          <%= form_tag(priprofile_pledge_email2_path, id: 'group_form', method: "post") do %>
+            <textarea class="textarea-input contactTextarea field-deco requiredField" name="emails"
+                      onfocus="if (this.value=='To: Email Addresses (separated by comma)') this.value = ''"
+                      onblur="if (this.value=='') this.value = 'To: Email Addresses (separated by comma)'">To: Email Addresses (separated by comma)</textarea>
 
-              Dear Friends and Family,
-              <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
-                        onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
-                        onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
-              <br/>
-              I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
-              <br/><br/>
-              I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.
-              <br/><br/>
-              Your pledge will help support Richmond's two-classroom teaching model, which helps me learn in both Japanese and English each day.  You will also be supporting P.E., library time, computer literacy, and the teachers and staff that make Richmond such a great school.
-              <br/><br/>
-              You can choose to pledge each hour that I read, or make a flat donation of any amount.  The easist way to pledge me is by filling out this online pledge form: <%= current_student.bitly_pledge %>.
-              <i>(Note from the Richmond School Foundation: If you choose to make flat donation today, you will be re-directed to the donation page at All Hands Raised, who administers our foundation.)</i>
-              You can also mail a check to Richmond School Foundation, 2276 SE 41st Ave., Portland, OR, 97214.  Just be sure to put my name in the memo line!
-              <br/><br/>
-              Thank you for encouraging me to read, and for supporting literacy and teachers at Richmond!
-              <br/><br/>
-              Sincerely, <%= current_student.first %> <%= current_student.last %>
+            Dear Friends and Family,
+            <textarea class="textarea-input contactTextarea field-deco requiredField" name="message"
+                      onfocus="if (this.value=='Personal Message (optional)') this.value = ''"
+                      onblur="if (this.value=='') this.value = 'Personal Message (optional)'">Personal Message (optional)</textarea>
+            <br/>
+            I am excited to participate in the Richmond PTA’s Read for Richmond this year, and I need your help! You can support literacy and help support Science, Technology, Engineering, Arts, Math and Music (STEAM) enrichment at Richmond by pledging my participation in Read for Richmond today! Please visit Read4Richmond.com for examples of how pledge money will be used.
+            <br/><br/>
+            I have made a commitment to read every day. I will keep track of the minutes I read, and you can visit my profile page any time to see how I’m doing.
+            You can pledge me by <%= current_student.bitly_pledge %>.
+            You can also mail a check to Richmond School PTA, 2276 se 41 ST Ave., Portland OR, 97214. Just be sure to put my name and “Read for Richmond” in the memo line!
+            <br/><br/>
+            Thank you for encouraging me to read, and for supporting literacy and STEAM at Richmond!
+            <br/><br/>
+            Sincerely,
+            <br/>
+            <%= current_student.first %> <%= current_student.last %>
               <input type="submit" class="button button-green center-button half-bottom" value="Send Email"/>
           <% end %>
         </div>
@@ -91,6 +87,24 @@
         </div>
       </div>
     </div>
+
+    <script>
+        jQuery.validator.addMethod("requiredNotEqual", function (value, element, param) {
+            return this.optional(element) || value != param;
+        }, "Required Field");
+
+        $("#single_form").validate({
+            rules: {
+                "email": {requiredNotEqual: "To: Email Address (required)"},
+                "name": {requiredNotEqual: "Name or Nickname (required)"}
+            }
+        });
+        $("#group_form").validate({
+            rules: {
+                "emails": {requiredNotEqual: "To: Email Addresses (separated by comma)"}
+            }
+        });
+    </script>
 
     <br/>
   </div>

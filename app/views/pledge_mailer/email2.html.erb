@@ -4,24 +4,22 @@
   <title>Help support <%= @student.first %>'s Read-A-Thon</title>
 </head>
 <body>
-Dear Friends and Family,
-<br/><br/>
-<% unless @message == "Message (optional)" %>
-    <%= @message %>
-    <br/><br/>
-<% end %>
-I am excited to participate in Richmond's Read-A-Thon this year, and I need your help!  You can support literacy and help Richmond's teachers by pledging my Read-A-Thon today.
-<br/><br/>
-I have made a commitment to reading every day.  I will keep track of the minutes I read, and you can visit my profile page any time to see how I'm doing.
-<br/><br/>
-Your pledge will help support Richmond's two-classroom teaching model, which helps me learn in both Japanese and English each day.  You will also be supporting P.E., library time, computer literacy, and the teachers and staff that make Richmond such a great school.
-<br/><br/>
-You can choose to pledge each hour that I read, or make a flat donation of any amount.  The easist way to pledge me is by filling out this online pledge form: <a href="<%= @student.bitly_pledge %>"><%= @student.bitly_pledge %></a>.
-<i>(Note from the Richmond School Foundation: If you choose to make flat donation today, you will be re-directed to the donation page at All Hands Raised, who administers our foundation.)</i>
-You can also mail a check to Richmond School Foundation, 2276 SE 41st Ave., Portland, OR, 97214.  Just be sure to put my name in the memo line!
-<br/><br/>
-Thank you for encouraging me to read, and for supporting literacy and teachers at Richmond!
-<br/><br/>
-Sincerely, <%= @student.first %> <%= @student.last %>
+  Dear Friends and Family,
+  <br/><br/>
+  <% unless @message == "Personal Message (optional)" %>
+      <%= @message %>
+      <br/><br/>
+  <% end %>
+  I am excited to participate in the Richmond PTA’s Read for Richmond this year, and I need your help! You can support literacy and help support Science, Technology, Engineering, Arts, Math and Music (STEAM) enrichment at Richmond by pledging my participation in Read for Richmond today! Please visit Read4Richmond.com for examples of how pledge money will be used.
+  <br/><br/>
+  I have made a commitment to read every day. I will keep track of the minutes I read, and you can visit my profile page any time to see how I’m doing.
+  You can pledge me by <a href="<%= @student.bitly_pledge %>"><%= @student.bitly_pledge %></a>.
+  You can also mail a check to Richmond School PTA, 2276 se 41 ST Ave., Portland OR, 97214. Just be sure to put my name and “Read for Richmond” in the memo line!
+  <br/><br/>
+  Thank you for encouraging me to read, and for supporting literacy and STEAM at Richmond!
+  <br/><br/>
+  Sincerely,
+  <br/>
+  <%= @student.first %> <%= @student.last %>
 </body>
 </html>
