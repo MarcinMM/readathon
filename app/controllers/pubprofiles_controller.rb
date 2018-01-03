@@ -1,5 +1,6 @@
 class PubprofilesController < ApplicationController
   layout "mailer", only: [:pledge_email]
+  skip_before_action :verify_authenticity_token, :only => [:pledge_receipt, :pledge_thanks]
 
   def show
     @student = Student.find_by_obscure_id params[:id]

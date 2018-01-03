@@ -11,7 +11,7 @@
   <input type="hidden" name="currency_code" value="USD"/>
   <input type="hidden" name="image_url" value="http://www.read4richmond.com/images/bulldog.png"/>
   <input type="hidden" name="notify_url" value="<%= pub_pledge_receipt_url %>"/>
-  <input type="hidden" name="cancel_return" value="<%= pub_pledge_paypal_url(@pledge.id) %>"/>
+  <input type="hidden" name="cancel_return" value="<%= pub_pledge_url(@pledge.student.obscure_id) %>"/>
   <input type="hidden" name="return" value="<%= pub_pledge_thanks_url(@pledge.id) %>"/>
   <input type="hidden" name="rm" value="2"/>
   <input type="hidden" name="invoice" value="<%= @pledge.id %>-<%= Time.now.to_i %>"/>
