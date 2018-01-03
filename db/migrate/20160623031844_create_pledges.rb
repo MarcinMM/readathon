@@ -8,7 +8,9 @@ class CreatePledges < ActiveRecord::Migration
       t.string "name",          limit: 24
       t.string "email",         limit: 36
       t.decimal "amount",       precision: 6, scale: 2
-      t.decimal "collected",    precision: 6, scale: 2
+      t.decimal "col_amt",      precision: 6, scale: 2
+      t.decimal "col_fee",      precision: 6, scale: 2
+      t.datetime "col_date"
       t.text "message"
 
     end
