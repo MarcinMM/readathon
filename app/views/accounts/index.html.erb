@@ -50,7 +50,7 @@
             </div>
           <% end %>
 
-          <%= form_for @student, url: add_student_path do |f| %>
+          <%= form_for @student, id: 'add_student', url: add_student_path do |f| %>
           <div class="field half-bottom">
             <%= f.label :first, class: 'field-title defaultField' do %>
               First <span>(required)</span>
@@ -69,7 +69,7 @@
             <%= f.label :teacher_id, class: 'field-title defaultField' do %>
               Teacher <span>(required)</span>
             <% end %>
-            <%= f.select :teacher_id, options_for_select(@teachers), {}, {class: 'contactField field-deco requiredField'} %>
+            <%= f.select :teacher_id, options_for_select(@teachers, @student.teacher.id), {include_blank: true}, {class: 'contactField field-deco requiredField'} %>
           </div>
           <%= f.submit "Add Student", class: 'button button-blue half-bottom', style: "height:40px; float:left; margin-right:10px;" %>
         <% end %>
@@ -79,5 +79,17 @@
       <div class="clear"></div>
     </div>
   </div>
+
+<script>
+    jQuery.validator.addMethod("requiredNotEqual", function (value, element, param) {
+        return this.optional(element) || value != param;
+    }, "Required Field");
+
+    $("#add_student").validate({
+        rules: {
+            "student[teacher_id]": {requiredNotEqual: ""},
+        }
+    });
+</script>
 
 </div>

@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
 
   def index
     @student = Student.new
+    @student.teacher = Teacher.new(id: -1)
     @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
   end
 

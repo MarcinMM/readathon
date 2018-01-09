@@ -27,3 +27,4 @@ en:
         parent:
           first: "First Name"
           last: "Last Name"
+          teacher_id: "Teacher"
