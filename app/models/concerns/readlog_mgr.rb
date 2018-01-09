@@ -54,7 +54,7 @@ module ReadlogMgr
 
   def teacher_minutes_total
     days_from_start = (Time.zone.today - Rails.configuration.start_date).to_i
-    days_from_start < 0 ? 0 : days_from_start
+    days_from_start = days_from_start < 0 ? 0 : days_from_start
     self.teacher.minutes * days_from_start
   end
 
