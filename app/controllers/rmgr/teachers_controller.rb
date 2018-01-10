@@ -10,7 +10,6 @@ class Rmgr::TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
-    @teacher.build_user
   end
 
   def show
@@ -24,17 +23,11 @@ class Rmgr::TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params(params))
 
-    user = User.new(user_params(params[:teacher]))
-    user.teacher = @teacher
-    user.save
-
     if @teacher.save
       redirect_to rmgr_teachers_path, notice: {title: 'Success', msg: 'Added teacher successfully.'}
     else
       render :new
     end
-
-    @teacher = user
   end
 
   def update
@@ -62,7 +55,7 @@ class Rmgr::TeachersController < ApplicationController
   end
 
   def teacher_params params
-    params.require(:teacher).permit(:first, :last, :grade)
+    params.require(:teacher).permit(:name, :grade)
   end
 
 end

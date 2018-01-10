@@ -37,7 +37,6 @@ Rails.application.routes.draw do
   end
 
   match '/rmgr'                      => 'rmgr/overviews#index',        :as => :rmgr_overviews,           :via => :get
-  match '/rmgr/unregistered.:format' => 'rmgr/overviews#unregistered', :as => :rmgr_unregistered,        :via => :get
   match '/rmgr/uncollected.:format'  => 'rmgr/overviews#uncollected',  :as => :rmgr_uncollected,         :via => :get
   match '/rmgr/collected.:format'    => 'rmgr/overviews#collected',    :as => :rmgr_collected,           :via => :get
   match '/rmgr/pledge/email/:id'     => 'rmgr/overviews#pledge_email', :as => :rmgr_pledge_email,        :via => :get
