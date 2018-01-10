@@ -28,7 +28,7 @@
         <ul>
           <li><%= @student.first %> has read for <strong><%= mins_to_words(@student.total_minutes_read) %></strong></li>
           <li><strong><%= @student.challenges.length %></strong> badges earned</li>
-          <li><strong><%= @student.pledges.length %></strong> pledges</li>
+          <li><strong><%= @student.pledges.where('col_amt is not null').length %></strong> pledges</li>
         </ul>
 
         <% if Challenge.days_remaining > 0 %>

@@ -9,7 +9,7 @@
 
 <div class="one-half-responsive last no-bottom">
   <h5>Recent people who have pledged</h5>
-  <% student.pledges.take(5).each do |pledge| %>
+  <% student.pledges.where('col_amt is not null').take(5).each do |pledge| %>
       <blockquote class="quote-one">
         <strong>
           <%= pledge.name %> has pledged

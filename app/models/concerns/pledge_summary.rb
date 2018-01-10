@@ -5,7 +5,7 @@ module PledgeSummary
   end
 
   def pledged_flat
-    pf = self.pledges.map{ |p| p.amount}.reduce {|sum, n| sum + n}
+    pf = self.pledges.select{|p| !p.col_amt.nil?}.map{|p| p.amount}.reduce{|sum, n| sum + n}
     pf.nil? ? 0 : pf
   end
 
