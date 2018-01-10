@@ -13,10 +13,8 @@ class Rmgr::OverviewsController < ApplicationController
     @summary_5 = get_summary_by_grade 5
 
     @summary_t = {
-        setup: @summary_k[:setup] + @summary_1[:setup] + @summary_2[:setup] + @summary_3[:setup] + @summary_4[:setup] + @summary_5[:setup],
         registered: @summary_k[:registered] + @summary_1[:registered] + @summary_2[:registered] + @summary_3[:registered] + @summary_4[:registered] + @summary_5[:registered],
         minutes: @summary_k[:minutes] + @summary_1[:minutes] + @summary_2[:minutes] + @summary_3[:minutes] + @summary_4[:minutes] + @summary_5[:minutes],
-        pledged: @summary_k[:pledged] + @summary_1[:pledged] + @summary_2[:pledged] + @summary_3[:pledged] + @summary_4[:pledged] + @summary_5[:pledged],
         collected: @summary_k[:collected] + @summary_1[:collected] + @summary_2[:collected] + @summary_3[:collected] + @summary_4[:collected] + @summary_5[:collected]
     }
   end
@@ -43,7 +41,6 @@ class Rmgr::OverviewsController < ApplicationController
 
   def get_summary_by_grade grade
 
-    setup = 0
     registered = 0
     minutes = 0
     pledged = 0
@@ -51,39 +48,29 @@ class Rmgr::OverviewsController < ApplicationController
     teachers = Array.new
 
     Teacher.where("grade=?", grade).each do |teacher|
-      tsetup = 0
       tregistered = 0
       tminutes = 0
-      tpledged = 0
       tcollected = 0
 
       teacher.students.each do |student|
-        tsetup += 1
         tregistered += 1
         tminutes += student.total_minutes_read
 
         student.pledges.each do |pledge|
-          total_owed = pledge.total_owed
-          unless total_owed.nil?
-            tpledged += total_owed
-
-            unless pledge.email_click_date.nil?
-              tcollected += pledge.total_owed
-            end
+          unless pledge.col_amt.nil?
+            tcollected += pledge.col_amt
           end
         end
       end
 
       registered += tregistered
-      setup += tsetup
       minutes += tminutes
-      pledged += tpledged
       collected += tcollected
 
-      teachers << {grade: teacher.grade, last: teacher.name, setup: tsetup, registered: tregistered, minutes: tminutes, pledged: tpledged, collected: tcollected}
+      teachers << {grade: teacher.grade, last: teacher.name, registered: tregistered, minutes: tminutes, collected: tcollected}
     end
 
-    {setup: setup, registered: registered, minutes: minutes, pledged: pledged, collected: collected, teachers: teachers}
+    {registered: registered, minutes: minutes, collected: collected, teachers: teachers}
   end
 
 end

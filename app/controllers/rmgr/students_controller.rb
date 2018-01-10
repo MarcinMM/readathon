@@ -15,12 +15,6 @@ class Rmgr::StudentsController < ApplicationController
     @students = Student.joins(:teacher).where("teachers.id=?", @teacher_id).order("last")
   end
 
-  def new
-    @student = Student.new
-    @student.build_teacher
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
-  end
-
   def show
     @student = Student.find(params[:id])
   end
@@ -28,17 +22,6 @@ class Rmgr::StudentsController < ApplicationController
   def edit
     @student = Student.find(params[:id])
     @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
-  end
-
-  def create
-    @student = Student.new(student_params(params))
-
-    if @student.save
-      teacher = Teacher.find(@student.teacher_id)
-      redirect_to rmgr_students_path(teacher_id: teacher.id), notice: {title: 'Success', msg: 'Added student successfully.'}
-    else
-      render :new
-    end
   end
 
   def update

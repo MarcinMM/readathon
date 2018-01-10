@@ -41,8 +41,6 @@ Rails.application.routes.draw do
   match '/rmgr/uncollected.:format'  => 'rmgr/overviews#uncollected',  :as => :rmgr_uncollected,         :via => :get
   match '/rmgr/collected.:format'    => 'rmgr/overviews#collected',    :as => :rmgr_collected,           :via => :get
   match '/rmgr/pledge/email/:id'     => 'rmgr/overviews#pledge_email', :as => :rmgr_pledge_email,        :via => :get
-  match '/rmgr/student/flyer/:id'    => 'rmgr/students#send_flyer',    :as => :rmgr_students_send_flyer, :via => :get
-  match '/rmgr/teacher/flyer/:id'    => 'rmgr/teachers#send_flyer',    :as => :rmgr_teacher_send_flyer,  :via => :get
 
   match '/teachers'          => 'teachers/overviews#index',    :as => :teachers_overviews, :via => :get
   match '/teachers/log/time' => 'teachers/overviews#log_time', :as => :teachers_log_time, :via => :post

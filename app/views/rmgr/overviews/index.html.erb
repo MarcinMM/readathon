@@ -26,11 +26,9 @@
     <tbody>
     <tr>
       <th>TEACHER</th>
-      <th class="table-title dblue-title">GRADE</th>
-      <th class="table-title red-title">SETUP</th>
+      <th class="table-title red-title">GRADE</th>
       <th class="table-title green-title">REGISTERED</th>
       <th class="table-title purple-title">MINUTES</th>
-      <th class="table-title orange-title">PLEDGED</th>
       <th class="table-title blue-title">COLLECTED</th>
     </tr>
     <% [@summary_k, @summary_1, @summary_2, @summary_3, @summary_4, @summary_5].each do |summary| %>
@@ -38,10 +36,8 @@
         <tr>
           <td class="table-sub-title dblue-title"><%= teacher[:last] %></td>
           <td><%= teacher[:grade] %></td>
-          <td><%= teacher[:setup] %></td>
           <td><%= teacher[:registered] %></td>
           <td><%= teacher[:minutes] %></td>
-          <td class="price"><%= number_to_currency(teacher[:pledged]) %></td>
           <td class="price"><%= number_to_currency(teacher[:collected]) %></td>
         </tr>
       <% end %>
@@ -49,10 +45,8 @@
     <tr style="font-weight:bold;">
       <td class="table-sub-title dblue-title">TOTALS</td>
       <td></td>
-      <td><%= @summary_t[:setup] %></td>
       <td><%= @summary_t[:registered] %></td>
       <td><%= @summary_t[:minutes] %></td>
-      <td class="price"><%= number_to_currency(@summary_t[:pledged]) %></td>
       <td class="price"><%= number_to_currency(@summary_t[:collected]) %></td>
     </tr>
     </tbody>

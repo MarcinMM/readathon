@@ -45,7 +45,6 @@
       <th>LAST</th>
       <th>FIRST</th>
       <th>CODE</th>
-      <th>EMAIL</th>
       <th></th>
     </tr>
     <% @students.each do |student| %>
@@ -54,7 +53,6 @@
           <td><%= student.last %></td>
           <td><%= student.first %></td>
           <td><%= student.code %></td>
-          <td><%= student.email %></td>
           <td>
             <%= link_to 'edit', edit_rmgr_student_path(student), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
             <%= link_to 'delete', rmgr_student_path(student), style: 'display:inline;', method: 'delete', confirm: 'Are you sure?' %>
@@ -64,7 +62,4 @@
     </tbody>
   </table>
   <br/>
-
-  <%= link_to 'Add Student', new_rmgr_student_path, class: 'button button-blue half-bottom', style: "float:left; margin-right:10px;" %>
-  <%= link_to "Send Welcome Flyers", rmgr_teacher_send_flyer_path(@teacher_id), class: 'button button-light', style: 'width:200px; float:right; margin-left:10px;' %>
 </div>
