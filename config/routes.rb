@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   match '/support'       => 'logins#support',      :as => :support,      :via => :get
+  match '/faq'           => 'logins#faq',          :as => :faq,          :via => :get
   match '/privacy'       => 'logins#privacy',      :as => :privacy,      :via => :get
   match '/denied'        => 'logins#denied',       :as => :denied,       :via => :get
   match '/autologin/:id' => 'logins#autologin',    :as => :autologin,    :via => :get
