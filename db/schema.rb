@@ -44,12 +44,11 @@ ActiveRecord::Schema.define(version: 20160825063920) do
     t.datetime "updated_at"
     t.integer  "student_id"
     t.string   "name",       limit: 24
-    t.string   "email",      limit: 36
     t.decimal  "amount",                precision: 6, scale: 2
+    t.text     "message"
     t.decimal  "col_amt",               precision: 6, scale: 2
     t.decimal  "col_fee",               precision: 6, scale: 2
     t.datetime "col_date"
-    t.text     "message"
   end
 
   create_table "readlogs", force: :cascade do |t|
