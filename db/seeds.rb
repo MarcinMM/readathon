@@ -36,7 +36,7 @@ Level.create(id: 9, name: 'Level 9 Reader', description: 'Books are a uniquely p
 Level.create(id: 10, name: 'Level 10 Reader', description: 'In books I have traveled, not only to other worlds, but into my own.', minutes: 960)
 Level.create(id: 11, name: 'Level 11 Reader', description: 'Reading gives us someplace to go when we have to stay where we are.', minutes: 1020)
 Level.create(id: 12, name: 'Level 12 Reader', description: 'Not all readers are leaders, but all leaders are readers.', minutes: 1380)
-Level.create(id: 13, name: 'Level 13 Reader', description: 'As Agatha Swanburne once said, "To be kept waiting is unfortunate, but to be kept waiting with nothing interesting to read is a tragedy of Greek proportions."', minutes: 1620)
+Level.create(id: 13, name: 'Level 13 Reader', description: 'To be kept waiting is unfortunate, but to be kept waiting with nothing interesting to read is a tragedy of Greek proportions.', minutes: 1620)
 
 Avatar.create(id: 0, level_id: 0, category: 'leaf')
 Avatar.create(id: 1, level_id: 1, category: 'kawaii')
