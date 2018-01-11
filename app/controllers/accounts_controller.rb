@@ -10,6 +10,11 @@ class AccountsController < ApplicationController
   def add_student
     @student = Student.new(student_params(params))
     @student.user = current_user
+
+    if @student.teacher.nil?
+      @student.teacher = Teacher.new
+    end
+
     @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
 
     if @student.save
