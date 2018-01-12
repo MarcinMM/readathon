@@ -5,7 +5,8 @@ gem 'rails', '4.2.10'
 gem "bitly"
 gem 'devise'
 gem 'pg', '~> 0.21'
-gem 'raygun4ruby'
+gem 'oj', '~> 2.16.1'
+gem 'rollbar'
 gem 'request_store'
 gem 'rails_12factor', group: :production
 gem 'puma'
