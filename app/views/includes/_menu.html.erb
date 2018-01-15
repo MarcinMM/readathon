@@ -5,9 +5,9 @@
   <% if current_user != nil %>
     <li>
       <p id="acount">
-        <i class="fa fa-user"></i>
-        <i class="fa fa-circle"></i>
         <a href="<%= account_path %>">
+        <i class="fa fa-home"></i>
+        <i class="fa fa-circle"></i>
           Account
           <em style="color:white;">logout / switch profile</em>
         </a>
@@ -29,7 +29,7 @@
       <li>
         <p>
           <a href="<%= priprofile_index_path %>">
-            <i class="fa fa-home"></i>
+            <i class="fa fa-user"></i>
             <i class="fa fa-circle"></i>
             <%= current_student.first %>'s &nbsp; Profile
             <em style="color:white;"><%= current_student.first %> <%= current_student.last %></em>
