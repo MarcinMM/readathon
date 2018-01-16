@@ -9,10 +9,22 @@
         <i class="fa fa-gear"></i>
         <i class="fa fa-circle"></i>
           Settings
-          <em style="color:white;">logout / switch profile</em>
+          <em style="color:white;">account mgmt</em>
         </a>
       </p>
     </li>
+    <% current_user.students.each do |student| %>
+      <li>
+        <p>
+          <a href="<%= autologin_path(student.code) %>">
+            <i class="fa fa-user"></i>
+            <i class="fa fa-circle"></i>
+            <%= student.first %>'s &nbsp; Profile
+            <em style="color:white;"><%= student.first %> <%= student.last %></em>
+          </a>
+        </p>
+      </li>
+    <% end %>
   <% else %>
     <li>
       <p id="acount">
@@ -24,18 +36,6 @@
         </a>
       </p>
     </li>
-  <% end %>
-  <% if current_student != nil %>
-      <li>
-        <p>
-          <a href="<%= priprofile_index_path %>">
-            <i class="fa fa-user"></i>
-            <i class="fa fa-circle"></i>
-            <%= current_student.first %>'s &nbsp; Profile
-            <em style="color:white;"><%= current_student.first %> <%= current_student.last %></em>
-          </a>
-        </p>
-      </li>
   <% end %>
   <li class="mobile-navigation-breadcrumb">
     <em>Copyright 2016. All rights reserved.</em>
