@@ -24,13 +24,20 @@
     <tr>
       <th style="width:100px;">GRADE</th>
       <th>FIRST</th>
-      <th>LAST</th>
+      <th>STUDENTS</th>
+      <th>GOAL</th>
+      <th>HOME</th>
+      <th>GT%</th>
       <th></th>
     </tr>
     <% @teachers.each do |teacher| %>
         <tr>
           <td><%= teacher.grade %></td>
           <td><%= teacher.name %></td>
+          <td><%= teacher.total_students %></td>
+          <td><%= teacher.reading_goal %></td>
+          <td><%= teacher.total_minutes %></td>
+          <td><%= teacher.gt_percent %>%</td>
           <td>
             <%= link_to 'edit', edit_rmgr_teacher_path(teacher), style: 'display:inline;' %>
           </td>
