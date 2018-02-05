@@ -36,7 +36,7 @@
         <tr>
           <td class="table-sub-title dblue-title"><%= teacher[:last] %></td>
           <td><%= teacher[:grade] %></td>
-          <td><%= teacher[:registered] %></td>
+          <td><a href="<%= rmgr_students_path %>?teacher_id=<%= teacher[:id] %>"><%= teacher[:registered] %></a></td>
           <td><%= teacher[:minutes] %></td>
           <td class="price"><%= number_to_currency(teacher[:collected]) %></td>
         </tr>

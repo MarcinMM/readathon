@@ -67,7 +67,7 @@ class Rmgr::OverviewsController < ApplicationController
       minutes += tminutes
       collected += tcollected
 
-      teachers << {grade: teacher.grade, last: teacher.name, registered: tregistered, minutes: tminutes, collected: tcollected}
+      teachers << {id: teacher.id, grade: teacher.grade, last: teacher.name, registered: tregistered, minutes: tminutes, collected: tcollected}
     end
 
     {registered: registered, minutes: minutes, collected: collected, teachers: teachers}

@@ -22,4 +22,14 @@
       <%= link_to "Back", :back, class: 'button button-light', style: 'width:90px; float:left; margin-left:10px;' %>
 
   <% end %>
+  <br/>
+  <%= form_tag rmgr_students_add_pledge_path(@student.id), method: 'post' do %>
+    <b>Add Pledge:</b><br/><br/>
+    Name: <input type="text" name="name" class="contactField field-deco requiredField"/><br/>
+    Amount: <input type="text" name="amount" class="contactField field-deco requiredField"/><br/>
+    Message:<br/>
+    <textarea class="contactField field-deco requiredField" style="height:60px;" name="message"></textarea>
+    <br/>
+    <%= submit_tag "Add Pledge", class: 'button button-blue half-bottom', style: "height:40px; float:left; margin-right:10px;" %>
+  <% end %>
 </div>

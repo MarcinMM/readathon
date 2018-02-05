@@ -35,6 +35,11 @@ class Rmgr::StudentsController < ApplicationController
     end
   end
 
+  def add_pledge
+    Pledge.create(student_id: params[:id], name: params[:name], amount: params[:amount], message: params[:message], col_amt:params[:amount])
+    redirect_to edit_rmgr_student_path(params[:id]), notice: {title: 'Success', msg: 'Added Pledge'}
+  end
+
   private
 
   def student_params params

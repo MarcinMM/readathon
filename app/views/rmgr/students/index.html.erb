@@ -52,7 +52,7 @@
           <td><%= student.teacher.grade %></td>
           <td><%= student.last %></td>
           <td><%= student.first %></td>
-          <td><%= student.code %></td>
+          <td><a href="<%= autologin_path(student.code) %>"><%= student.code %></a></td>
           <td>
             <%= link_to 'edit', edit_rmgr_student_path(student), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
             <%= link_to 'delete', rmgr_student_path(student), style: 'display:inline;', method: 'delete', confirm: 'Are you sure?' %>

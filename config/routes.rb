@@ -42,8 +42,7 @@ Rails.application.routes.draw do
   match '/rmgr/collected.:format'    => 'rmgr/overviews#collected',    :as => :rmgr_collected,           :via => :get
   match '/rmgr/pledge/email/:id'     => 'rmgr/overviews#pledge_email', :as => :rmgr_pledge_email,        :via => :get
 
-  match '/teachers'          => 'teachers/overviews#index',    :as => :teachers_overviews, :via => :get
-  match '/teachers/log/time' => 'teachers/overviews#log_time', :as => :teachers_log_time, :via => :post
+  match '/rmgr/pledge/student/:id'   => 'rmgr/students#add_pledge',    :as => :rmgr_students_add_pledge, :via => :post
 
   root 'pubprofiles#direct'
 
