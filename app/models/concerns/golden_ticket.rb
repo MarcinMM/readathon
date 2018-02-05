@@ -5,7 +5,7 @@ module GoldenTicket
   end
 
   def percent_boost
-    20
+    30
   end
 
   def total_minutes
