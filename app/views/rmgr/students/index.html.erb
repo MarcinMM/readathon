@@ -44,6 +44,7 @@
       <th style="width:100px;">GRADE</th>
       <th>LAST</th>
       <th>FIRST</th>
+      <th>MINS</th>
       <th>CODE</th>
       <th></th>
     </tr>
@@ -52,6 +53,7 @@
           <td><%= student.teacher.grade %></td>
           <td><%= student.last %></td>
           <td><%= student.first %></td>
+          <td><%= student.student_minutes_total %></td>
           <td><a href="<%= autologin_path(student.code) %>"><%= student.code %></a></td>
           <td>
             <%= link_to 'edit', edit_rmgr_student_path(student), style: 'display:inline;' %>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
