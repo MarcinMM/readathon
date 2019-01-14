@@ -44,7 +44,7 @@
             <ul style="list-style-type: none;margin: 10px;padding: 0;text-align:center;display:inline-block">
               <li style="float:left;display:inline;">
                 <a href="<%= priprofile_avatar_path %>">
-                  <img src="/images/avatars/<%= avatar.id %>.png" style="width:100px;">
+                  <img src="/images/avatars/<%= avatar.id %>.jpg" style="width:100px;">
                 </a>
               </li>
             </ul>
@@ -80,7 +80,7 @@
       <em><%= current_student.teacher.grade.ordinalize %> Grade - <%= current_student.teacher.name %></em>
 
       <a style="margin-top:10px;margin-left:60px;font-weight: bold;" href="<%= priprofile_avatar_path %>">change your avatar</a>
-      <a href="<%= priprofile_avatar_path %>"><img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:275px;" src="/images/avatars/<%= current_student.avatar_id %>.png"/></a>
+      <a href="<%= priprofile_avatar_path %>"><img style="margin-bottom: 20px; border-radius: 25px; border: 2px solid #000; height:275px;" src="/images/avatars/<%= current_student.avatar_id %>.jpg"/></a>
 
       <% if Challenge.days_remaining > 0 %>
         <div style="margin-bottom:20px;">
