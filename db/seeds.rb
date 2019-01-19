@@ -10,6 +10,10 @@ password = SecureRandom.urlsafe_base64(6)
 user = User.create(email: 'mgiacomi@gltech.com', password: password, admin: 1)
 puts "Created Admin: #{user.email} #{password}"
 
+password = SecureRandom.urlsafe_base64(6)
+user = User.create(email: 'read4richmond@richmondptapdx.com', password: password, admin: 1)
+puts "Created Admin: #{user.email} #{password}"
+
 Teacher.create(name: 'McCollister / Iverson', grade: 'K', minutes: 30, total_students: 55, reading_goal: 150)
 Teacher.create(name: 'Yoshida / Marsh', grade: 'K', minutes: 30, total_students: 55, reading_goal: 150)
 Teacher.create(name: 'Uchida / Pineo', grade: '1', minutes: 30, total_students: 54, reading_goal: 150)
