@@ -12,7 +12,6 @@
       <p class="dropcaps dropcaps-2">
         <%= @student.first %> needs your help to raise funds for Richmond Elementary School!
         By pledging <%= @student.first %> in the Read for Richmond, you are supporting teachers and staff at Richmond and encouraging daily reading.
-        Visit <%= @student.first %>’s Read for Richmond page to find out how you can help.
       </p>
       <br/>
       <p>Thank you for your support!</p>
@@ -35,9 +34,8 @@
             <a href="<%= @student.bitly_pledge %>" style="width:250px;" class="button center-button button-red">Pledge <%= @student.first %></a>
         <% else %>
           <p style="margin:20px;"><strong>The Read for Richmond has ended but...</strong>
-            You can still <a style="font-weight:bold;" href="<%= @student.bitly_pledge %>">make a flat pledge to <%= @student.first %></a> or
-            you can contribute directly to all Hands Raised at the <%= link_to 'All Hands Raised', 'http://allhandsraised.org/donate/' %> website either a single donation,
-            or setup a recurring, monthly contribution. Make sure to select “Richmond ES” as the designated school.</p>
+            You can still <a style="font-weight:bold;" href="<%= @student.bitly_pledge %>">make a flat pledge to <%= @student.first %></a>.
+          Thank you for your support!</p>
         <% end %>
 
       </div>
