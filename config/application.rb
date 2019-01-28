@@ -12,7 +12,7 @@ module Readathon
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.start_date = Date.strptime("1/27/2019", "%m/%d/%Y")
-    config.end_date = Date.strptime("2/9/2019", "%m/%d/%Y")
+    config.end_date = Date.strptime("2/10/2019", "%m/%d/%Y")
     ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/cacert.pem"
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
