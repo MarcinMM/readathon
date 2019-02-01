@@ -40,6 +40,14 @@ class Rmgr::StudentsController < ApplicationController
     redirect_to edit_rmgr_student_path(params[:id]), notice: {title: 'Success', msg: 'Added Pledge'}
   end
 
+  def destroy
+    student = Student.find(params[:id])
+    name = student.first
+    teacher_id = student.teacher_id
+    student.destroy
+    redirect_to rmgr_students_path(teacher_id: teacher_id), notice: {title: 'Success', msg: "Student #{name} removed."}
+  end
+
   private
 
   def student_params params
