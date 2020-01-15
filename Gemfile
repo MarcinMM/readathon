@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
-ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
 gem "bitly", '1.1.2'
 gem 'devise', '4.5.0'
 gem 'pg', '~> 0.21'
-gem 'oj', '~> 2.16.1'
+gem 'oj', '~> 3.10.0'
 gem 'rollbar', '2.18.0'
 gem 'request_store'
 gem 'rails_12factor', group: :production
