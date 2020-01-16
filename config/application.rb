@@ -13,7 +13,7 @@ module Readathon
     # -- all .rb files in that directory are automatically loaded.
     config.start_date = Date.strptime("1/25/2020", "%m/%d/%Y")
     config.end_date = Date.strptime("2/10/2020", "%m/%d/%Y")
-    ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/cacert.pem"
+    # ENV['SSL_CERT_FILE'] = File.expand_path(File.dirname(__FILE__)) + "/cacert.pem"
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
