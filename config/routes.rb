@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  # Redirect to preferred domain if NOT preferred domain. Currently we are opting for read4richmond over readforrichmond.
+  if ENV['CANONICAL_HOST']
+    constraints(:host => Regexp.new("^(?!#{Regexp.escape(ENV['CANONICAL_HOST'])})")) do
+      match "/(*path)" => redirect { |params, req| "http://#{ENV['CANONICAL_HOST']}/#{params[:path]}" },  via: [:get, :post]
+    end
+  end
+
   match '/support'       => 'logins#support',      :as => :support,      :via => :get
   match '/faq'           => 'logins#faq',          :as => :faq,          :via => :get
   match '/privacy'       => 'logins#privacy',      :as => :privacy,      :via => :get

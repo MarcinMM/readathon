@@ -89,4 +89,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.log_level = :debug
+
+  # All SSL, all the time.
+  config.force_ssl = true
 end
