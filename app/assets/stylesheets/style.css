@@ -706,14 +706,17 @@
 		display:block;
 	}
 	
-	.deploy-mobile-homepage img{
+	.deploy-mobile-homepage a{
 		width:300px;
 		margin-top:17px;
 		padding-left:15px;
+		padding-bottom: 11px;
+		background-color: red;
 		margin-left:auto;
 		margin-right:auto;
 		font-weight: bold;
 		font-size: 2vw;
+
 	}
 		
 	.mobile-shortcuts{
