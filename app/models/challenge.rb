@@ -3,7 +3,7 @@ class Challenge < ActiveRecord::Base
   has_and_belongs_to_many :students, -> { uniq }
 
   scope :daily_challenge, lambda {
-    if days_remaining > 0 && days_remaining < 16
+    if days_remaining > 0 && days_remaining < 12
       return Challenge.find(days_remaining)
     end
 
