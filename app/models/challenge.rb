@@ -2,8 +2,11 @@ class Challenge < ActiveRecord::Base
 
   has_and_belongs_to_many :students, -> { uniq }
 
+  # This should really come from config but date math is hard and time is expensive.
+  DAYS_IN_CHALLENGE = 13
+
   scope :daily_challenge, lambda {
-    if days_remaining > 0 && days_remaining < 12
+    if active_challenge
       return Challenge.find(days_remaining)
     end
 
@@ -13,6 +16,10 @@ class Challenge < ActiveRecord::Base
   def self.days_remaining
     12
     #(Rails.configuration.end_date - Time.zone.today).to_i
+  end
+
+  def self.active_challenge
+    return days_remaining > 0 && days_remaining < DAYS_IN_CHALLENGE
   end
 
 end

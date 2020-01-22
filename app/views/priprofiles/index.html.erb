@@ -24,7 +24,7 @@
     </blockquote>
 <% end %>
 
-<% if Challenge.days_remaining > 0 && Challenge.days_remaining < 12 && !current_student.daily_challenge_complete %>
+<% if Challenge.active_challenge && !current_student.daily_challenge_complete %>
     <blockquote class="quote-one yellow-quote">
       <div style="color:black;float:left;"><img style="width:50px;" src="/images/badges/badge<%= Challenge.daily_challenge.id %>.png"/></div>
       <div style="float:left;margin-left:15px;margin-top:12px;"><strong>Today's Challenge:</strong>
@@ -90,7 +90,7 @@
           <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
           <br/>Use the + and - to adjust the time.<br/><br/>
 
-          <% if Challenge.days_remaining > 0 && Challenge.days_remaining < 12 && !current_student.daily_challenge_complete %>
+          <% if Challenge.active_challenge && !current_student.daily_challenge_complete %>
               <a id="challenge" href="#" class="checkbox checkbox-class-3">
                 <span style="color: rgba(243, 156, 18,1.0); font-weight: bold;">I have completed the Daily Challenge</span><br/>
                 <%= Challenge.daily_challenge.description %>
