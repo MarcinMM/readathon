@@ -707,15 +707,14 @@
 	}
 	
 	.deploy-mobile-homepage {
-		width:300px;
-		margin-top:17px;
-		padding-left:15px;
-		padding-bottom: 11px;
+		padding-left:45px;
+		padding-bottom: 14px;
+		padding-bottom: 14px;
 		background-color: red;
 		margin-left:auto;
 		margin-right:auto;
 		font-weight: bold;
-		font-size: 2vw;
+		font-size: 5vw;
 		color: white;
 	}
 		
