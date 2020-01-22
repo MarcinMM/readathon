@@ -14,10 +14,9 @@
 
   <div class="container center-heading">
     <p class="center-text larger">
-    <h5>Support Reading and STEAM at Richmond Elementary by Requesting a Pledge!</h5>
-    Spread the word about our read-a-thon, "Read for Richmond," and give friends and family an opportunity to support
-    <%= current_student.first %> and our school. The e-mail, Facebook, and Twitter tools below provide an automatic link
-    to your reader's pledge page. If you’d prefer to use your own e-mail account to share, be sure to include this link:
+    <h5>Support Reading and student enrichment at Richmond Elementary by Requesting a Pledge!</h5>
+    Spread the word about our read-a-thon, "Read4Richmond," and give friends and family an opportunity to support
+    <%= current_student.first %> and our school. The e-mail, Facebook, and Twitter tools below provide an automatic link to your reader's pledge page. If you’d prefer to use your own e-mail account to share, be sure to include this link:
     <strong><%= current_student.bitly_pledge %></strong>
     </p>
     <p>
@@ -31,7 +30,7 @@
       <h1 style="text-align:center;"><i class="fa fa-envelope fa-3x"></i></h1>
       <h5 style="padding-top:0;">Email</h5>
       <p class="half-bottom">
-        Our Email Wizard allows you to share info about the Read for Richmond with an individual or group.
+        Our Email Wizard allows you to share info about the Read4Richmond with an individual or group.
         You can include a personal note, and the message will include a link directly to your readers profile & pledge page.
       </p>
       <a href="<%= priprofile_pledge_email_path %>" style="width:160px;" class="button button-red center-button"><i style="margin-right:10px;" class="fa fa-envelope"></i>Email Wizard</a>
@@ -42,7 +41,7 @@
       <h1 style="text-align:center;"><i class="fa fa-facebook-official fa-3x"></i></h1>
       <h5 style="padding-top:0;">Facebook</h5>
       <p class="half-bottom">
-        Sharing on Facebook is a great way to connect with your friends and family!  With one click you can share your student’s Read for Richmond journey and help generate support for Richmond.
+        Sharing on Facebook is a great way to connect with your friends and family!  With one click you can share your student’s Read4Richmond journey and help generate support for Richmond.
       </p>
       <a href="https://www.facebook.com/sharer/sharer.php?u=<%= current_student.bitly_profile %>" style="width:160px;" class="button button-blue center-button"><i style="margin-right:10px;" class="fa fa-facebook"></i>Request Pledge</a>
       <div class="clear"></div>
@@ -52,14 +51,14 @@
       <h1 style="text-align:center;"><i class="fa fa-twitter fa-3x"></i></h1>
       <h5 style="padding-top:0;">Twitter</h5>
       <p class="half-bottom">
-        Tweet, tweet!  Share your student’s Read for Richmond page with your Twitter followers.  It’s an easy, effective way to engage friends, family, and followers in supporting your student.
+        Tweet, tweet!  Share your student’s Read4Richmond page with your Twitter followers.  It’s an easy, effective way to engage friends, family, and followers in supporting your student.
       </p>
       <center>
         <a class="twitter-share-button button button-green center-button"
            href="https://twitter.com/share"
            data-size="large"
            data-url="<%=  current_student.bitly_pledge %>"
-           data-text="Help support me in my Read for Richmond through Richmond Elementary School.">
+           data-text="Please support <%= current_student.first %>'s Read-A-Thon at Richmond Elementary School - funding student literacy and other enrichment programs and PTA initiatives. <%= current_student.bitly_pledge %>">
           Request Pledge
         </a>
       </center>

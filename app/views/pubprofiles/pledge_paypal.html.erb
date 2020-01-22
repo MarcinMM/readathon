@@ -15,7 +15,7 @@
   <input type="hidden" name="return" value="<%= pub_pledge_thanks_url(@pledge.obscure_id) %>"/>
   <input type="hidden" name="rm" value="2"/>
   <input type="hidden" name="invoice" value="<%= @pledge.obscure_id %>-<%= Time.now.to_i %>"/>
-  <input type="hidden" name="item_name_1" value="Read for Richmond Pledge"/>
+  <input type="hidden" name="item_name_1" value="Read4Richmond Pledge"/>
   <input type="hidden" name="item_number_1" value="<%= @pledge.student.first %> <%= @pledge.student.last[0, 1] %> (<%= @pledge.obscure_id %>)"/>
   <input type="hidden" name="quantity_1" value="1"/>
   <input type="hidden" name="amount_1" value="<%= @pledge.amount %>"/>
