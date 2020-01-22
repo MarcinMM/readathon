@@ -712,6 +712,8 @@
 		padding-left:15px;
 		margin-left:auto;
 		margin-right:auto;
+		font-weight: bold;
+		font-size: 2vw;
 	}
 		
 	.mobile-shortcuts{
