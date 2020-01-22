@@ -11,7 +11,7 @@ class Challenge < ActiveRecord::Base
   }
 
   def self.days_remaining
-    11
+    12
     #(Rails.configuration.end_date - Time.zone.today).to_i
   end
 
