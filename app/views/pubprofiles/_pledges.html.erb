@@ -12,8 +12,7 @@
   <% student.pledges.where('col_amt is not null').take(5).each do |pledge| %>
       <blockquote class="quote-one">
         <strong>
-          <%= pledge.name %> has pledged
-          flat donation of <%= number_to_currency(pledge.amount) %>
+          <%= pledge.name %> has pledged a flat donation of <%= number_to_currency(pledge.amount) %>
         </strong><br/><%= pledge.message %>
       </blockquote>
       <br><br>
@@ -22,8 +21,7 @@
     <% student.pledges.drop(5).each do |pledge| %>
         <blockquote class="quote-one">
           <strong>
-            <%= pledge.name %> has pledged
-            flat donation of <%= number_to_currency(pledge.amount) %>
+            <%= pledge.name %> has pledged a flat donation of <%= number_to_currency(pledge.amount) %>
           </strong><br/><%= pledge.message %>
         </blockquote>
         <br><br>
