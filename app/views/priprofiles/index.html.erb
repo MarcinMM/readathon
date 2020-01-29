@@ -85,6 +85,7 @@
       <% if Challenge.active_challenge %>
         <div style="margin-bottom:20px;">
           Minutes you have read today.<br/>
+	  All reading activities count! Individual reading, audiobooks, someone else reading to you, etc!<br/><br/>
           <%= link_to "- 15", priprofile_subtract15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
           <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= current_student.student_minutes_today %></span>
           <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
