@@ -30,7 +30,7 @@
           <li><strong><%= @student.pledges.where('col_amt is not null').length %></strong> pledges</li>
         </ul>
 
-        <% if Challenge.days_remaining > 0 %>
+        <% if Challenge.days_remaining >= 0 %>
             <a href="<%= @student.bitly_pledge %>" style="width:250px;" class="button center-button button-red">Pledge <%= @student.first %></a>
         <% else %>
           <p style="margin:20px;"><strong>The Read4Richmond has ended but...</strong>
