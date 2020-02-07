@@ -18,7 +18,7 @@ class Challenge < ActiveRecord::Base
   end
 
   def self.active_challenge
-    return days_remaining > 0 && days_remaining < DAYS_IN_CHALLENGE
+    return days_remaining >= 0 && days_remaining < DAYS_IN_CHALLENGE
   end
 
 end
