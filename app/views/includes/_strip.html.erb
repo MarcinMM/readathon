@@ -1,7 +1,7 @@
 <div class="social-strip">
   <div class="box-960">
     <div class="left-social-strip animated fadeIn">
-      <% if days_to_end > 0 %>
+      <% if days_to_end >= 0 %>
         <h3><strong><%= days_to_end %> Days Remaining</strong></h3>
         <h5 style="line-height:11px;">Richmond PTA's Read4Richmond ends <%= Rails.configuration.end_date.strftime("%b %d") %></h5>
       <% else %>
