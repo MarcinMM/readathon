@@ -21,4 +21,8 @@ class Challenge < ActiveRecord::Base
     return days_remaining >= 0 && days_remaining < DAYS_IN_CHALLENGE
   end
 
+  def self.allow_minutes
+    return days_remaining >=-1 && days_remaining < DAYS_IN_CHALLENGE
+  end
+
 end
