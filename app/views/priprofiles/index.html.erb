@@ -124,7 +124,6 @@
           <% if current_student.level_id < 13 %>
             <li><strong><%= current_student.mins_to_next_level %></strong> minutes to next level</li>
           <% end %>
-          <li>Class Reading Goal: <strong><%= current_student.teacher.gt_percent %>%</strong></li>
           <li><strong><%= current_student.challenges.length %></strong> badges earned</li>
           <li><strong><%= current_student.pledges.where('col_amt is not null').length %></strong> people have pledged you</li>
         </ul>
