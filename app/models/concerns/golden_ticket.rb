@@ -13,7 +13,11 @@ module GoldenTicket
   end
 
   def gt_percent
-    ((total_minutes.to_f / gt_total_minutes.to_f) * 100).round(0) + percent_boost
+    if gt_total_minutes > 0
+      return ((total_minutes.to_f / gt_total_minutes.to_f) * 100).round(0) + percent_boost
+    else
+      return 0
+    end
   end
 
   def gt_total_minutes
