@@ -21,7 +21,10 @@ module GoldenTicket
   end
 
   def gt_total_minutes
-    self.total_students * self.reading_goal
+    if self.total_students
+      return self.total_students * self.reading_goal
+    else
+      return 0
   end
 
 end
