@@ -25,6 +25,7 @@ module GoldenTicket
       return self.total_students * self.reading_goal
     else
       return 0
+    end
   end
 
 end
