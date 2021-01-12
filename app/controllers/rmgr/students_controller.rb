@@ -6,7 +6,7 @@ class Rmgr::StudentsController < ApplicationController
 
   def index
     @teacher_id = params[:teacher_id]
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name} (#{t.grade})", t.id] }
 
     if @teacher_id == nil
       @teacher_id = @teachers[0][1]
@@ -21,7 +21,7 @@ class Rmgr::StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name}", t.id] }
+    @teachers = Teacher.order(:grade).all.map { |t| ["#{t.name} (#{t.grade})", t.id] }
   end
 
   def update
