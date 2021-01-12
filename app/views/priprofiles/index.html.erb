@@ -120,10 +120,10 @@
         <ul>
           <li><strong><%= days_to_end %> days remaining</strong></li>
           <li>Read at home for <strong><%= mins_to_words(current_student.student_minutes_total) %></strong></li>
-          <li>Read at school for <strong><%= mins_to_words(current_student.teacher_minutes_total) %></strong></li>
           <% if current_student.level_id < 13 %>
             <li><strong><%= current_student.mins_to_next_level %></strong> minutes to next level</li>
           <% end %>
+          <li>Class Reading Goal: <strong><%= current_student.teacher.gt_percent %>%</strong></li>
           <li><strong><%= current_student.challenges.length %></strong> badges earned</li>
           <li><strong><%= current_student.pledges.where('col_amt is not null').length %></strong> people have pledged you</li>
         </ul>

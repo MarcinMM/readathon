@@ -28,6 +28,7 @@
       <th>GOAL</th>
       <th>HOME</th>
       <th>BOOST%</th>
+      <th>GT%</th>
       <th></th>
     </tr>
     <% @teachers.each do |teacher| %>
@@ -38,6 +39,7 @@
           <td><%= teacher.reading_goal %></td>
           <td><%= teacher.total_minutes %></td>
           <td><%= teacher.percent_boost %>%</td>
+          <td><%= teacher.gt_percent %>%</td>
           <td>
             <%= link_to 'edit', edit_rmgr_teacher_path(teacher), style: 'display:inline;' %>
           </td>
