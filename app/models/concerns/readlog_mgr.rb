@@ -38,6 +38,7 @@ module ReadlogMgr
       readlog_today = student_readlog_prev_day
     else
       readlog_today = student_readlog_today
+    end
 
     if readlog_today.nil?
       readlog_today = Readlog.create(student_id: self.id, minutes: 0, day: Time.zone.now.to_date)
