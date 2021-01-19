@@ -5,8 +5,14 @@
 #yesterday_minutes {
 	border: 1px solid #666;
 	padding: 10px;
-	background: #ccc;
+	background: #ddd;
 	font-size: 10px;
+}
+
+.stats-box {
+    border-top: 1px solid white;
+	text-align: center;
+	color: #ddd;
 }
 
 .disabled {
