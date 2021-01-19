@@ -2,6 +2,12 @@
 
 /* CSS Document */
 
+#yesterday_minutes {
+	border: 1px solid #666666;
+	padding: 4px;
+	background: #aaaaaa;
+}
+
 .disabled {
      display: none!important;
 }
