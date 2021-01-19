@@ -91,9 +91,9 @@
           <%= link_to "+ 15", priprofile_add15m_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
           <br/>Use the + and - to adjust the time for today.<br/><br/>
           Yesterday's minutes<br/>.
-          <%= link_to "- 15", priprofile_subtract15m_prev_day_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
+          <%= link_to "- 15", priprofile_subtract15mpd_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
           <span class="button" style="margin:0;height:70px;vertical-align: top;width:120px;background-color:#e6ebec;color:#5a5a5a;font-size:40px;padding-top:20px;"><%= current_student.student_minutes_yesterday %></span>
-          <%= link_to "+ 15", priprofile_add15m_prev_day_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
+          <%= link_to "+ 15", priprofile_add15mpd_path, method: :post, style: "margin:0;height:70px;font-size:20px;padding-top:25px;", class: "button button-light" %>
 
 
           <% if Challenge.active_challenge && !current_student.daily_challenge_complete %>
