@@ -97,8 +97,8 @@
                 <%= Challenge.daily_challenge.description %>
               </a>
           <% end %>
-
-          <h3>Missed yesterday's updates? Adjust yesterday's minutes below.</h3>
+          <hr>
+          <h4>Missed yesterday's updates? Adjust yesterday's minutes below.</h4>
           <%= link_to "- 15", priprofile_subtract15mpd_path, method: :post, style: "margin:0;height:40px;font-size:14px;padding-top:15px;", class: "button button-light" %>
           <span class="button" style="margin:0;height:40px;vertical-align: top;width:60px;background-color:#e6ebec;color:#5a5a5a;font-size:16px;padding-top:10px;"><%= current_student.student_minutes_yesterday %></span>
           <%= link_to "+ 15", priprofile_add15mpd_path, method: :post, style: "margin:0;height:40px;font-size:14px;padding-top:15px;", class: "button button-light" %>
