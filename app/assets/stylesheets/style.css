@@ -3,9 +3,10 @@
 /* CSS Document */
 
 #yesterday_minutes {
-	border: 1px solid #666666;
-	padding: 4px;
-	background: #aaaaaa;
+	border: 1px solid #666;
+	padding: 10px;
+	background: #ccc;
+	font-size: 10px;
 }
 
 .disabled {
