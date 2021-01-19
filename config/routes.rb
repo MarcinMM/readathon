@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   match '/profile/pledge/email3' => 'priprofiles#pledge_email3',       :as => :priprofile_pledge_email3, :via => :post
   match '/profile/add15m'        => 'priprofiles#add_15_minutes',      :as => :priprofile_add15m,        :via => :post
   match '/profile/subtract15m'   => 'priprofiles#subtract_15_minutes', :as => :priprofile_subtract15m,   :via => :post
+  match '/profile/add15mpd'        => 'priprofiles#add_15_minutes_prev_day',      :as => :priprofile_add15mpd,        :via => :post
+  match '/profile/subtract15mpd'   => 'priprofiles#subtract_15_minutes_prev_day', :as => :priprofile_subtract15mpd,   :via => :post
 
   match '/'                          => 'pubprofiles#direct',         :as => :direct,             :via => :get
   match '/home'                      => 'pubprofiles#home',           :as => :pub_home,           :via => :get

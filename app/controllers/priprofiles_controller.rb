@@ -19,6 +19,16 @@ class PriprofilesController < ApplicationController
     redirect_to :priprofile_index
   end
 
+  def add_15_minutes_prev_day
+    current_student.student_minutes_update(15, True)
+    redirect_to :priprofile_index
+  end
+
+  def subtract_15_minutes_prev_day
+    current_student.student_minutes_update(-15, True)
+    redirect_to :priprofile_index
+  end
+
   def avatar
     @student = current_student
     @avatars = Avatar.where("level_id > 0 and level_id < ?", @student.next_level_id).order(level_id: :desc, category: :asc)

@@ -15,8 +15,17 @@ module ReadlogMgr
     Readlog.where("teacher_id is null and student_id=? and day=?", self.id, Time.zone.now.to_date).first
   end
 
+  def student_readlog_prev_day
+    Readlog.where("teacher_id is null and student_id=? and day=?", self.id, Time.zone.yesterday.to_date).first
+  end
+
   def student_minutes_today
     readlog_today = student_readlog_today
+    readlog_today.nil? ? 0 : readlog_today.minutes
+  end
+
+  def student_minutes_yesterday
+    readlog_today = student_readlog_prev_day
     readlog_today.nil? ? 0 : readlog_today.minutes
   end
 
@@ -24,8 +33,11 @@ module ReadlogMgr
     Readlog.where("teacher_id is null and student_id=?", self.id).sum(:minutes)
   end
 
-  def student_minutes_update minutes
-    readlog_today = student_readlog_today
+  def student_minutes_update minutes, prev_day=False
+    if prev_day
+      readlog_today = student_readlog_prev_day
+    else
+      readlog_today = student_readlog_today
 
     if readlog_today.nil?
       readlog_today = Readlog.create(student_id: self.id, minutes: 0, day: Time.zone.now.to_date)
