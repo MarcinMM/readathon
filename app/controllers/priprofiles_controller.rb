@@ -20,12 +20,12 @@ class PriprofilesController < ApplicationController
   end
 
   def add_15_minutes_prev_day
-    current_student.student_minutes_update(15, True)
+    current_student.student_minutes_update(15, true)
     redirect_to :priprofile_index
   end
 
   def subtract_15_minutes_prev_day
-    current_student.student_minutes_update(-15, True)
+    current_student.student_minutes_update(-15, true)
     redirect_to :priprofile_index
   end
 

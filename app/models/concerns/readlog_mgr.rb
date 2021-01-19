@@ -33,7 +33,7 @@ module ReadlogMgr
     Readlog.where("teacher_id is null and student_id=?", self.id).sum(:minutes)
   end
 
-  def student_minutes_update minutes, prev_day=False
+  def student_minutes_update minutes, prev_day=false
     if prev_day
       readlog_today = student_readlog_prev_day
     else
