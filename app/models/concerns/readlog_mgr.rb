@@ -35,22 +35,24 @@ module ReadlogMgr
 
   def student_minutes_update minutes, prev_day=false
     if prev_day
-      readlog_today = student_readlog_prev_day
+      readlog = student_readlog_prev_day
+      if readlog.nil?
+        readlog = Readlog.create(student_id: self.id, minutes: 0, day: Time.zone.yesterday.to_date)
+      end
     else
-      readlog_today = student_readlog_today
-    end
-
-    if readlog_today.nil?
-      readlog_today = Readlog.create(student_id: self.id, minutes: 0, day: Time.zone.now.to_date)
+      readlog = student_readlog_today
+      if readlog.nil?
+        readlog = Readlog.create(student_id: self.id, minutes: 0, day: Time.zone.now.to_date)
+      end
     end
 
     # Don't allow minutes to go negative.
-    if (readlog_today.minutes + minutes) < 0
+    if (readlog.minutes + minutes) < 0
       return
     end
 
-    total_minutes = minutes + readlog_today.minutes
-    readlog_today.update_attribute :minutes, total_minutes
+    total_minutes = minutes + readlog.minutes
+    readlog.update_attribute :minutes, total_minutes
   end
 
   ########################################
