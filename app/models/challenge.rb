@@ -3,7 +3,7 @@ class Challenge < ActiveRecord::Base
   has_and_belongs_to_many :students, -> { uniq }
 
   # This should really come from config but date math is hard and time is expensive.
-  DAYS_IN_CHALLENGE = 12
+  DAYS_IN_CHALLENGE = 15
 
   scope :daily_challenge, lambda {
     if active_challenge
