@@ -148,14 +148,16 @@
   </div>
 </div>
 
-<div class="content">
-  <div class="box-960" style="margin-bottom:25px;">
-    <div id="yesterday_minutes">
-      <b>Missed yesterday's updates? Adjust yesterday's minutes below.</b><br/>
-      <%= link_to "- 15", priprofile_subtract15mpd_path, method: :post, style: "margin:0;padding-top:5px;", class: "button button-light" %>
-      <span class="button" style="margin:0;height:40px;vertical-align: top;width:60px;background-color:#e6ebec;color:#5a5a5a;font-size:14px; font-weight: bold;"><%= current_student.student_minutes_yesterday %></span>
-      <%= link_to "+ 15", priprofile_add15mpd_path, method: :post, style: "margin:0;padding-top:5px;", class: "button button-light" %>
+<% if Challenge.allow_minutes %>
+  <div class="content">
+    <div class="box-960" style="margin-bottom:25px;">
+      <div id="yesterday_minutes">
+        <b>Missed yesterday's updates? Adjust yesterday's minutes below.</b><br/>
+        <%= link_to "- 15", priprofile_subtract15mpd_path, method: :post, style: "margin:0;padding-top:5px;", class: "button button-light" %>
+        <span class="button" style="margin:0;height:40px;vertical-align: top;width:60px;background-color:#e6ebec;color:#5a5a5a;font-size:14px; font-weight: bold;"><%= current_student.student_minutes_yesterday %></span>
+        <%= link_to "+ 15", priprofile_add15mpd_path, method: :post, style: "margin:0;padding-top:5px;", class: "button button-light" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
